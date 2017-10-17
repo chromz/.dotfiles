@@ -169,7 +169,7 @@ gaps outer 8
 for_window [class="^.*"] border pixel 0
 
 # Layout default
-workspace_layout tabbed
+# workspace_layout tabbed
 
 # Compton
 exec --no-startup-id compton -b -c -f
@@ -182,3 +182,8 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute $sink toggle
 
 # Polybar
 # exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+
+# Screenshots
+set $i3_moment `date '+%Y-%m-%d-%H-%M-%S'`
+bindsym --release Print exec maim  $HOME/Pictures/$i3_moment'.png'
+bindsym --release Shift+Print exec maim -s $HOME/Pictures/$i3_moment'.png'
