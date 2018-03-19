@@ -21,7 +21,7 @@ font-2 = Wuncon Siji:pixelsize=10
 
 
 modules-left = bspwm xwindow
-modules-right = volume battery date wlan ether
+modules-right = pulseaudio date wlan ether cpu
 
 [module/bspwm]
 type = internal/bspwm
@@ -49,10 +49,9 @@ label = %title:0:120:...%
 label-padding = 4
 
 
-[module/volume]
-type = internal/alsa
+[module/pulseaudio]
+type = internal/pulseaudio
 
-headphone-soundcard = hw:0
 format-volume = <ramp-volume> <label-volume>
 
 label-muted =  muted
@@ -165,7 +164,7 @@ ramp-signal-foreground = ${bar/top.foreground}
 
 [module/ether]
 type = internal/network
-interface = enp2s0
+interface = eno1 
 interval = 3.0
 format-connected =  <label-connected>
 
