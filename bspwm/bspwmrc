@@ -17,4 +17,4 @@ bspc config focus_follows_pointer true
 
 $HOME/.config/polybar/launch.sh
 
-compton
+compton -c
