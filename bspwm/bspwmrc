@@ -2,7 +2,7 @@
 
 sxhkd &
 
-bspc monitor -d I II III IV V VI VII VIII IX X
+bspc monitor -d I II III IV V
 
 bspc config border_width         0
 bspc config window_gap          12
@@ -15,6 +15,6 @@ bspc config focus_follows_pointer true
 
 ~/.fehbg &
 
-$HOME/.config/polybar/launch.sh
+$HOME/.config/polybar/launch.sh &
 
-compton -c
+compton --config /home/chromz/.config/compton/compton.conf &
