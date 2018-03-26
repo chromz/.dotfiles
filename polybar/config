@@ -46,7 +46,7 @@ modules-right = pulseaudio wlan
 type = internal/bspwm
 format = <label-state> <label-mode>
 
-ws-icon-0 = I;
+ws-icon-0 = I;
 ws-icon-1 = II;
 ws-icon-2 = III;
 ws-icon-3 = IV;
@@ -54,7 +54,7 @@ ws-icon-4 = V;
 ws-icon-default = 
 
 label-focused = %icon%
-label-focused-underline= #ff4c4c
+label-focused-underline= #a83f3f
 label-focused-padding = 4
 
 label-occupied = %icon%
@@ -173,7 +173,6 @@ interface = wlp3s0
 interval = 3.0
 
 format-connected = <ramp-signal> <label-connected>
-format-connected-underline = #ddd
 label-connected = %essid%
 
 format-disconnected =
