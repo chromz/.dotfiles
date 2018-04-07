@@ -59,7 +59,7 @@ textbox-prompt-colon {
   expand: false;
   str: ":";
   margin: 0 1ch 0 0;
-  text-color: @base0D;
+  text-color: #FF3900;
 }
 
 entry {
@@ -71,12 +71,11 @@ case-indicator {
 }
 
 sidebar, message {
-  border: 1px 0;
-  border-color: @base0D;
+
 }
 
 button, textbox {
-  background-color: @base03;
+  background-color: #000000CC;
   text-color: @base07;
   padding: 5px;
 }
