@@ -1,17 +1,16 @@
 [colors]
-background = #ffeeeeee
-foreground = #162022
+background = #B3000000
+foreground = #fff
 
 [bar/bar]
 monitor =
 width = 15%
-height = 5%
+height = 4%
 offset-x = 1%
 offset-y = 10
 background = ${colors.background}
 foreground = ${colors.foreground}
 line-size = 2
-radius = 4
 spacing = 3
 padding-right = 4
 module-margin-left = 0
@@ -49,12 +48,12 @@ format = <label-state> <label-mode>
 ws-icon-0 = I;
 ws-icon-1 = II;
 ws-icon-2 = III;
-ws-icon-3 = IV;
-ws-icon-4 = V;
+ws-icon-3 = IV;
+ws-icon-4 = V;
 ws-icon-default = 
 
 label-focused = %icon%
-label-focused-underline= #a83f3f
+label-focused-underline= #FF3900
 label-focused-padding = 4
 
 label-occupied = %icon%
@@ -114,7 +113,7 @@ time = %H:%M
 date-alt = %d-%m-%Y%
 time-alt = 
 
-format =  <label>
+format = <label>
 label = %date% %time%
 
 
