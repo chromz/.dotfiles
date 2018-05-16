@@ -3,8 +3,8 @@ background = #B3000000
 foreground = #fff
 
 [bar/bar]
-monitor =
-width = 15%
+monitor = ${env:MONITOR:}
+width = 98%
 height = 4%
 offset-x = 1%
 offset-y = 10
@@ -22,35 +22,40 @@ font-2 = Font Awesome 5 Free:style=Regular:pixelsize=10;3
 font-3 = Font Awesome 5 Brands:pixelsize=10;3
 font-4 = Wuncon Siji:pixelsize=10
 
-
-[bar/top-left]
+[bar/single]
 inherit = bar/bar
 modules-left = bspwm
+modules-center = xwindow date
+modules-right = pulseaudio battery wlan ether
 
-[bar/top-center]
+;[bar/top-left]
+;inherit = bar/bar
+;modules-left = bspwm
+;[bar/top-center]
+;inherit = bar/bar
+;width = 36%;
+;offset-x = 32%
+;modules-center = xwindow
+;modules-right = date
 
-inherit = bar/bar
-width = 36%;
-offset-x = 32%
-modules-center = xwindow
-modules-right = date
-
-[bar/top-right]
-inherit = bar/bar
-width = 15%
-offset-x = 84%
-modules-right = pulseaudio wlan
+;[bar/top-right]
+;inherit = bar/bar
+;width = 25%
+;offset-x = 73%
+;modules-right = pulseaudio battery wlan ether
 
 [module/bspwm]
 type = internal/bspwm
 format = <label-state> <label-mode>
 
-ws-icon-0 = I;
+ws-icon-0 = I;
 ws-icon-1 = II;
 ws-icon-2 = III;
-ws-icon-3 = IV;
+ws-icon-3 = IV;
 ws-icon-4 = V;
-ws-icon-default = 
+ws-icon-5 = VI;
+ws-icon-6 = VII;
+ws-icon-default = 
 
 label-focused = %icon%
 label-focused-underline= #FF3900
@@ -189,11 +194,11 @@ ramp-signal-foreground = ${bar/bar.foreground}
 
 [module/ether]
 type = internal/network
-interface = eno1 
+interface = enp2s0
 interval = 3.0
 format-connected =  <label-connected>
 
-format-connected-underline = #ddd
+format-connected-underline = #000
 format-disconnected =
 
 [module/cpu]

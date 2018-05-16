@@ -7,9 +7,13 @@ killall -q polybar
 while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 
 # Launch bar1 and bar2
-polybar top-left &
-polybar top-center &
-polybar top-right &
+if type "xrandr"; then
+  for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
+    MONITOR=$m polybar --reload single &
+  done
+else
+  polybar --reload single &
+fi
 
 
 echo "Bars launched..."
