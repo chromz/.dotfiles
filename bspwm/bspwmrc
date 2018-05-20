@@ -2,7 +2,7 @@
 
 sxhkd &
 
-bspc monitor -d I II III IV V
+bspc monitor -d I II III IV V VI VII
 
 bspc config border_width         0
 bspc config window_gap          12
