@@ -1,5 +1,6 @@
 " Set line numbers
 set number
+set encoding=UTF-8
 
 call plug#begin('~/.vim/plugged')
 
@@ -12,6 +13,8 @@ Plug 'tpope/vim-sleuth'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'flazz/vim-colorschemes'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'ryanoasis/vim-devicons'
+
 call plug#end()
 
 " Fonts
@@ -19,6 +22,12 @@ set guifont=Inconsolata\ for\ Powerline\ 12
 " ctrl p
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
+
+
+" NERDTree
+let g:NERDTreeChDirMode = 2
+let NERDTreeQuitOnOpen=1
+let g:NERDTreeWinSize=31
 
 
 " Remove toolbar
