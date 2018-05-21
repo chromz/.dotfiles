@@ -20,6 +20,7 @@ set guifont=Inconsolata\ for\ Powerline\ 12
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 
+
 " Remove toolbar
 set guioptions-=T  
 " Remove menu bar
@@ -27,8 +28,10 @@ set guioptions-=m  "remove menu bar
 " Theme
 colorscheme vimspectrgrey-light 
 set background=light
-map <silent> <C-n> :NERDTreeMirror<CR>
+map <silent> <C-n> :NERDTreeToggle<CR>
 
 " Airline
 let g:airline_powerline_fonts = 1
 let g:airline_theme='papercolor'
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
