@@ -141,3 +141,9 @@ XF86MonBrightnessUp
 # Brightness goes down
 XF86MonBrightnessDown
     backlightScript -d
+
+# Screenshot
+Print
+    maim ~/Pictures/$(date +%s).png
+shift + Print
+    maim -s ~/Pictures/$(date +%s).png 
