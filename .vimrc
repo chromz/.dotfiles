@@ -17,6 +17,10 @@ Plug 'ryanoasis/vim-devicons'
 
 call plug#end()
 
+
+" Buffers
+set hidden
+
 " Fonts
 set guifont=Inconsolata\ for\ Powerline\ 12
 " ctrl p
