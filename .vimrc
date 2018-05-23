@@ -14,8 +14,14 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'flazz/vim-colorschemes'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'ryanoasis/vim-devicons'
+Plug 'w0rp/ale'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-fugitive'
 
 call plug#end()
+
+
+
 
 
 " Buffers
@@ -26,11 +32,13 @@ set guifont=Inconsolata\ for\ Powerline\ 12
 " ctrl p
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git\|vendors'
 
 
 " NERDTree
 let g:NERDTreeChDirMode = 2
 let NERDTreeQuitOnOpen = 1
+let NERDTreeMinimalUI=1
 
 " Remove toolbar
 set guioptions-=T  
