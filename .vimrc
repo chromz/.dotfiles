@@ -20,7 +20,6 @@ Plug 'tpope/vim-fugitive'
 
 call plug#end()
 
-" Cursor on scroll
 
 " YCM
 set completeopt-=preview
@@ -59,3 +58,10 @@ let g:airline_powerline_fonts = 1
 let g:airline_theme='papercolor'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#formatter = 'unique_tail'
+
+
+" Vim search
+set incsearch
+set hlsearch
+hi Search guibg=LightBlue
+nnoremap <esc> :noh<return><esc>
