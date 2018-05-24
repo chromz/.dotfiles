@@ -20,15 +20,20 @@ Plug 'tpope/vim-fugitive'
 
 call plug#end()
 
+" Cursor on scroll
+
+" YCM
+set completeopt-=preview
 
 
-
-
+" Save session
 " Buffers
 set hidden
 
 " Fonts
-set guifont=Inconsolata\ for\ Powerline\ 12
+set guifont=Roboto\ Mono\ Medium\ for\ Powerline\ 11
+
+
 " ctrl p
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
@@ -45,7 +50,7 @@ set guioptions-=T
 " Remove menu bar
 set guioptions-=m  "remove menu bar
 " Theme
-colorscheme vimspectrgrey-light 
+colorscheme PaperColor
 set background=light
 map <silent> <C-n> :NERDTreeToggle<CR>
 
