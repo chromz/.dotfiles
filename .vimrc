@@ -23,6 +23,10 @@ call plug#end()
 
 " Identation
 let g:indentLine_char = '┆'
+let g:indentLine_first_char = '┆'
+let g:indentLine_showFirstIndentLevel = 1
+set list lcs=tab:\┆\ 
+set list
 
 " YCM
 set completeopt-=preview
@@ -34,8 +38,12 @@ set hidden
 
 " Fonts
 " set guifont=Roboto\ Mono\ Medium\ for\ Powerline\ 11
-set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 10
+" set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 10
+set guifont=DejaVuSansMono\ Nerd\ Font\ 10
 
+" ALE
+let g:ale_sign_error = ''
+let g:ale_sign_warning = ''
 
 " ctrl p
 let g:ctrlp_map = '<c-p>'
