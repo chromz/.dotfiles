@@ -1,6 +1,6 @@
 " Set line numbers
 set number
-set encoding=UTF-8
+set encoding=utf-8
 
 call plug#begin('~/.vim/plugged')
 
@@ -11,15 +11,18 @@ Plug 'nightsense/vimspectr'
 Plug 'mxw/vim-jsx'
 Plug 'tpope/vim-sleuth'
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'flazz/vim-colorschemes'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'ryanoasis/vim-devicons'
 Plug 'w0rp/ale'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
+Plug 'morhetz/gruvbox'
+Plug 'Yggdroot/indentLine'
 
 call plug#end()
 
+" Identation
+let g:indentLine_char = '┆'
 
 " YCM
 set completeopt-=preview
@@ -30,7 +33,8 @@ set completeopt-=preview
 set hidden
 
 " Fonts
-set guifont=Roboto\ Mono\ Medium\ for\ Powerline\ 11
+" set guifont=Roboto\ Mono\ Medium\ for\ Powerline\ 11
+set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 10
 
 
 " ctrl p
@@ -44,18 +48,21 @@ let g:NERDTreeChDirMode = 2
 let NERDTreeQuitOnOpen = 1
 let NERDTreeMinimalUI=1
 
-" Remove toolbar
+" gVim options
 set guioptions-=T  
+set guioptions-=L
+set guioptions-=r
+
 " Remove menu bar
-set guioptions-=m  "remove menu bar
+set guioptions-=m 
 " Theme
-colorscheme PaperColor
-set background=light
+colorscheme gruvbox
+set background=dark
 map <silent> <C-n> :NERDTreeToggle<CR>
 
 " Airline
 let g:airline_powerline_fonts = 1
-let g:airline_theme='papercolor'
+let g:airline_theme='gruvbox'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#formatter = 'unique_tail'
 
