@@ -15,7 +15,7 @@
   base04: #B2CCD6;
   base05: #EEFFFF;
   base06: #EEFFFF;
-  base07: #FFFFFF;
+  base07: #FBF1C7;
   base08: #F07178;
   base09: #F78C6C;
   base0A: #FFCB6B;
@@ -30,13 +30,13 @@
   spacing: 0;
   background-color: transparent;
 
-  font: "Roboto Mono 13";
+  font: "DejaVu Sans Mono for Powerline 13";
 }
 
 window {
   transparency: "real";
   /*fullscreen: true;*/
-  background-color: #000000CC; /*base00 + CC (80% opacity)*/
+  background-color: #282828CC; /*base00 + CC (80% opacity)*/
 }
 
 mainbox {
@@ -52,14 +52,14 @@ inputbar {
 }
 
 prompt {
-  text-color: #ffffff;
+  text-color: #fbf1c7;
 }
 
 textbox-prompt-colon {
   expand: false;
   str: ":";
   margin: 0 1ch 0 0;
-  text-color: #FF3900;
+  text-color: #A89984;
 }
 
 entry {
@@ -101,7 +101,7 @@ element normal {
 }
 
 element selected {
-  background-color: #FF3900;
+  background-color: #A89984;
 }
 
 element alternate {

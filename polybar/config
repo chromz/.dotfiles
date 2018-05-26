@@ -1,6 +1,6 @@
 [colors]
 background = #B3282828
-foreground = #fff
+foreground = #fbf1c7
 
 [bar/bar]
 monitor = ${env:MONITOR:}
@@ -58,7 +58,7 @@ ws-icon-6 = VII;
 ws-icon-default = 
 
 label-focused = %icon%
-label-focused-underline= #FF3900
+label-focused-underline= #A89984
 label-focused-padding = 4
 
 label-occupied = %icon%
