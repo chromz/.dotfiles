@@ -26,6 +26,10 @@ call plug#end()
 if executable('ag')
   let g:ackprg = 'ag --vimgrep'
 endif
+
+cnoreabbrev Ack Ack!
+nnoremap <Leader>a :Ack!<Space>
+
 " let g:ackprg = 'ag --nogroup --nocolor --column'
 
 " Identation
