@@ -18,8 +18,12 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
 Plug 'morhetz/gruvbox'
 Plug 'Yggdroot/indentLine'
+Plug 'mileszs/ack.vim'
 
 call plug#end()
+
+" Silver searcher
+let g:ackprg = 'ag --nogroup --nocolor --column'
 
 " Identation
 let g:indentLine_char = '┆'
