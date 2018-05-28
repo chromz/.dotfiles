@@ -89,5 +89,6 @@ let g:airline#extensions#tabline#formatter = 'unique_tail'
 " Vim search
 set incsearch
 set hlsearch
-hi Search guibg=LightBlue
+hi Search guibg=#282828
+hi Search guifg=#fbf1c7
 nnoremap <esc> :noh<return><esc>
