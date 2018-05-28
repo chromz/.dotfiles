@@ -23,8 +23,8 @@ Plug 'mileszs/ack.vim'
 call plug#end()
 
 " Silver searcher
-if executable('ag')
-  let g:ackprg = 'ag --vimgrep'
+if executable('rg')
+  let g:ackprg = 'rg --vimgrep'
 endif
 
 cnoreabbrev Ack Ack!
