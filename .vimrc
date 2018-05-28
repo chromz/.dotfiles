@@ -23,7 +23,10 @@ Plug 'mileszs/ack.vim'
 call plug#end()
 
 " Silver searcher
-let g:ackprg = 'ag --nogroup --nocolor --column'
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
+" let g:ackprg = 'ag --nogroup --nocolor --column'
 
 " Identation
 let g:indentLine_char = '┆'
