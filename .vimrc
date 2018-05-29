@@ -13,7 +13,7 @@ Plug 'tpope/vim-sleuth'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'ryanoasis/vim-devicons'
-Plug 'w0rp/ale'
+Plug 'vim-syntastic/syntastic'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
 Plug 'morhetz/gruvbox'
@@ -53,9 +53,15 @@ set hidden
 " set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 10
 set guifont=DejaVuSansMono\ Nerd\ Font\ 10
 
-" ALE
-let g:ale_sign_error = ''
-let g:ale_sign_warning = ''
+" Syntastic
+
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_warning_symbol = ''
+let g:syntastic_error_symbol = ''
+
+
 
 " ctrl p
 let g:ctrlp_map = '<c-p>'
