@@ -19,6 +19,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'morhetz/gruvbox'
 Plug 'Yggdroot/indentLine'
 Plug 'mileszs/ack.vim'
+Plug 'tpope/vim-commentary'
 
 call plug#end()
 
