@@ -20,11 +20,13 @@ font-0 = Noto Sans:size=8;0
 font-1 = Font Awesome 5 Free:style=Solid:pixelsize=10;3
 font-2 = Font Awesome 5 Free:style=Regular:pixelsize=10;3
 font-3 = Font Awesome 5 Brands:pixelsize=10;3
-font-4 = Wuncon Siji:pixelsize=10
+font-4 = DejaVuSansMono Nerd Font:pixelsize=10
+font-5 = Wuncon Siji:pixelsize=10
 
 [bar/single]
 inherit = bar/bar
 modules-left = bspwm
+tray-position = right
 modules-center = xwindow date
 modules-right = pulseaudio battery wlan ether
 
@@ -55,7 +57,7 @@ ws-icon-3 = IV;
 ws-icon-4 = V;
 ws-icon-5 = VI;
 ws-icon-6 = VII;
-ws-icon-default = 
+ws-icon-default = 
 
 label-focused = %icon%
 label-focused-underline= #A89984
@@ -85,12 +87,13 @@ type = internal/pulseaudio
 enable-scroll = false
 format-volume = <ramp-volume> <label-volume>
 
-label-muted =  muted
+label-muted =  muted
 label-muted-foreground = #66
 
-ramp-volume-0 = 
-ramp-volume-1 = 
-ramp-volume-2 = 
+ramp-volume-0 = 奄
+ramp-volume-1 = 奔
+ramp-volume-2 = 墳
+ramp-volume-3 = 
 
 bar-volume-width = 10
 bar-volume-foreground-0 = #55aa55
@@ -143,33 +146,30 @@ label-discharging = Discharging %percentage%%
 label-full = Fully charged
 
 ; Only applies if <ramp-capacity> is used
-ramp-capacity-0 = 
-ramp-capacity-1 = 
-ramp-capacity-2 = 
-ramp-capacity-3 = 
-ramp-capacity-4 = 
-ramp-capacity-5 = 
-ramp-capacity-6 = 
-ramp-capacity-7 = 
-ramp-capacity-8 = 
-ramp-capacity-9 = 
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+ramp-capacity-5 = 
+ramp-capacity-6 = 
+ramp-capacity-7 = 
+ramp-capacity-8 = 
+ramp-capacity-9 = 
 
 ; Only applies if <bar-capacity> is used
 bar-capacity-width = 10
 
 ; Only applies if <animation-charging> is used
-animation-charging-0 = 
-animation-charging-1 = 
-animation-charging-2 = 
-animation-charging-3 = 
-animation-charging-4 = 
-animation-charging-5 = 
-animation-charging-6 = 
-animation-charging-7 = 
-animation-charging-8 = 
-animation-charging-9 = 
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
+animation-charging-5 = 
+animation-charging-6 = 
 ; Framerate in milliseconds
-animation-charging-framerate = 750
+animation-charging-framerate = 550
 
 [module/wlan]
 type = internal/network
@@ -177,28 +177,24 @@ interface = wlp3s0
 interval = 3.0
 
 format-connected = <ramp-signal> <label-connected>
-label-connected = %essid%
+label-connected = %essid% %local_ip%
 
 format-disconnected =
 ;format-disconnected = <label-disconnected>
-;format-disconnected-underline = ${self.format-connected-underline}
+;format-disconnected-underline = ${colors.foreground}
 ;label-disconnected = %ifname% disconnected
 ;label-disconnected-foreground = ${colors.foreground-alt}
 
-ramp-signal-0 = 
-ramp-signal-1 = 
-ramp-signal-2 = 
-ramp-signal-3 = 
-ramp-signal-4 = 
+ramp-signal-0 = 直
 ramp-signal-foreground = ${bar/bar.foreground}
 
 [module/ether]
 type = internal/network
 interface = enp2s0
 interval = 3.0
-format-connected =  <label-connected>
+format-connected =  <label-connected>
 
-format-connected-underline = #000
+format-connected-underline = ${colors.foreground}
 format-disconnected =
 
 [module/cpu]
