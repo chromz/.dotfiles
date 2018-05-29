@@ -17,7 +17,6 @@ Plug 'vim-syntastic/syntastic'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
 Plug 'morhetz/gruvbox'
-Plug 'Yggdroot/indentLine'
 Plug 'mileszs/ack.vim'
 Plug 'tpope/vim-commentary'
 
@@ -33,12 +32,6 @@ nnoremap <Leader>a :Ack!<Space>
 
 " let g:ackprg = 'ag --nogroup --nocolor --column'
 
-" Identation
-let g:indentLine_char = '┆'
-let g:indentLine_first_char = '┆'
-let g:indentLine_showFirstIndentLevel = 1
-set list lcs=tab:\┆\ 
-set list
 
 " YCM
 set completeopt-=preview
