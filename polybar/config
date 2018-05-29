@@ -17,11 +17,7 @@ module-margin-left = 0
 module-margin-right = 6
 
 font-0 = Noto Sans:size=8;0
-font-1 = Font Awesome 5 Free:style=Solid:pixelsize=10;3
-font-2 = Font Awesome 5 Free:style=Regular:pixelsize=10;3
-font-3 = Font Awesome 5 Brands:pixelsize=10;3
-font-4 = DejaVuSansMono Nerd Font:pixelsize=10
-font-5 = Wuncon Siji:pixelsize=10
+font-1 = DejaVuSansMono Nerd Font:pixelsize=10
 
 [bar/single]
 inherit = bar/bar
