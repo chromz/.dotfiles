@@ -7,18 +7,18 @@ call plug#begin('~/.vim/plugged')
 Plug 'scrooloose/nerdtree'
 Plug 'bling/vim-airline'
 Plug 'valloric/youcompleteme'
-Plug 'nightsense/vimspectr'
-Plug 'mxw/vim-jsx'
 Plug 'tpope/vim-sleuth'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'ryanoasis/vim-devicons'
-Plug 'vim-syntastic/syntastic'
+Plug 'w0rp/ale'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
 Plug 'morhetz/gruvbox'
 Plug 'mileszs/ack.vim'
 Plug 'tpope/vim-commentary'
+Plug 'jiangmiao/auto-pairs'
+Plug 'Konfekt/FastFold'
 
 call plug#end()
 
@@ -46,13 +46,10 @@ set hidden
 " set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 10
 set guifont=DejaVuSansMono\ Nerd\ Font\ 10
 
-" Syntastic
+" Ale
 
-let g:syntastic_auto_loc_list = 0
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_warning_symbol = ''
-let g:syntastic_error_symbol = ''
+let g:ale_sign_warning = ''
+let g:ale_sign_error = ''
 
 
 
