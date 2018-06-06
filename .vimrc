@@ -18,11 +18,10 @@ Plug 'morhetz/gruvbox'
 Plug 'mileszs/ack.vim'
 Plug 'tpope/vim-commentary'
 Plug 'jiangmiao/auto-pairs'
-Plug 'Konfekt/FastFold'
 
 call plug#end()
 
-" Silver searcher
+" Rip grep 
 if executable('rg')
   let g:ackprg = 'rg --vimgrep'
 endif
@@ -32,6 +31,8 @@ nnoremap <Leader>a :Ack!<Space>
 
 " let g:ackprg = 'ag --nogroup --nocolor --column'
 
+
+set cursorline
 
 " YCM
 set completeopt-=preview
