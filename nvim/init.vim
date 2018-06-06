@@ -6,7 +6,7 @@ call plug#begin('~/.local/share/nvim/plugged')
 
 Plug 'scrooloose/nerdtree'
 Plug 'bling/vim-airline'
-Plug 'valloric/youcompleteme'
+Plug 'Shougo/deoplete.nvim'
 Plug 'tpope/vim-sleuth'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'vim-airline/vim-airline-themes'
@@ -24,6 +24,14 @@ call plug#end()
 if executable('rg')
   let g:ackprg = 'rg --vimgrep'
 endif
+
+" Tab autocompletion
+let g:deoplete#enable_at_startup = 1
+" Let <Tab> also do completion
+inoremap <silent><expr> <Tab>
+\ pumvisible() ? "\<C-n>" :
+\ deoplete#mappings#manual_complete()
+
 
 cnoreabbrev Ack Ack!
 nnoremap <Leader>a :Ack!<Space>
