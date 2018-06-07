@@ -6,7 +6,6 @@ font = DejaVuSansMono Nerd Font 10
 
 foreground      = #fbf1c7
 foreground_bold = #fbf1c7
-cursor          = #f8f8f2
 background      = rgba(40, 40, 40, 0.7)
 
 # black
