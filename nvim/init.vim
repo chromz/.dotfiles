@@ -1,4 +1,6 @@
+" True color
 set termguicolors
+
 set number
 set encoding=utf-8
 
@@ -80,7 +82,6 @@ map <silent> <C-n> :NERDTreeToggle<CR>
 " " Airline
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
-let g:airline_theme='gruvbox'
 let g:airline#extensions#tabline#formatter = 'unique_tail'
 
 
