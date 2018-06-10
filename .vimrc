@@ -1,3 +1,6 @@
+" TRUE COLOR
+set termguicolors
+
 " Set line numbers
 set number
 set encoding=utf-8
@@ -65,13 +68,6 @@ let g:NERDTreeChDirMode = 2
 let NERDTreeQuitOnOpen = 1
 let NERDTreeMinimalUI=1
 
-" gVim options
-set guioptions-=T  
-set guioptions-=L
-set guioptions-=r
-
-" Remove menu bar
-set guioptions-=m 
 " Theme
 colorscheme gruvbox
 set background=dark
