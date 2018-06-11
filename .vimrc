@@ -9,7 +9,6 @@ Plug 'scrooloose/nerdtree'
 Plug 'bling/vim-airline'
 Plug 'valloric/youcompleteme'
 Plug 'tpope/vim-sleuth'
-Plug 'Yggdroot/indentLine'
 Plug 'ctrlpvim/ctrlp.vim' 
 Plug 'vim-airline/vim-airline-themes' 
 Plug 'ryanoasis/vim-devicons' 
@@ -25,7 +24,7 @@ call plug#end()
 
 " Rip grep 
 if executable('rg')
-  let g:ackprg = 'rg --vimgrep'
+  let g:ackprg = 'rg --vimgrep --fixed-strings'
 endif
 
 cnoreabbrev Ack Ack!
@@ -33,7 +32,6 @@ nnoremap <Leader>a :Ack!<Space>
 
 " let g:ackprg = 'ag --nogroup --nocolor --column'
 
-let g:indentLine_char = '┆'
 
 set cursorline
 
@@ -48,7 +46,7 @@ set hidden
 " Fonts
 " set guifont=Roboto\ Mono\ Medium\ for\ Powerline\ 11
 " set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 10
-set guifont=DejaVuSansMono\ Nerd\ Font\ 10
+set guifont=DejaVuSansMono\ Nerd\ Font\ 9
 
 " Ale
 
