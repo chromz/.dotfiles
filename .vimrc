@@ -1,7 +1,5 @@
-" TRUE COLOR
-set termguicolors
-
 " Set line numbers
+set termguicolors
 set number
 set encoding=utf-8
 
@@ -11,9 +9,9 @@ Plug 'scrooloose/nerdtree'
 Plug 'bling/vim-airline'
 Plug 'valloric/youcompleteme'
 Plug 'tpope/vim-sleuth'
-Plug 'ctrlpvim/ctrlp.vim'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'ryanoasis/vim-devicons'
+Plug 'ctrlpvim/ctrlp.vim' 
+Plug 'vim-airline/vim-airline-themes' 
+Plug 'ryanoasis/vim-devicons' 
 Plug 'w0rp/ale'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
@@ -68,6 +66,13 @@ let g:NERDTreeChDirMode = 2
 let NERDTreeQuitOnOpen = 1
 let NERDTreeMinimalUI=1
 
+" gVim options
+set guioptions-=T  
+set guioptions-=L
+set guioptions-=r
+
+" Remove menu bar
+set guioptions-=m 
 " Theme
 colorscheme gruvbox
 set background=dark
