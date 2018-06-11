@@ -9,6 +9,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'bling/vim-airline'
 Plug 'valloric/youcompleteme'
 Plug 'tpope/vim-sleuth'
+Plug 'Yggdroot/indentLine'
 Plug 'ctrlpvim/ctrlp.vim' 
 Plug 'vim-airline/vim-airline-themes' 
 Plug 'ryanoasis/vim-devicons' 
@@ -32,6 +33,7 @@ nnoremap <Leader>a :Ack!<Space>
 
 " let g:ackprg = 'ag --nogroup --nocolor --column'
 
+let g:indentLine_char = '┆'
 
 set cursorline
 
