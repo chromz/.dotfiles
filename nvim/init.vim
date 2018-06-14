@@ -39,11 +39,14 @@ nnoremap <Leader>a :Ack!<Space>
 
 " " let g:ackprg = 'ag --nogroup --nocolor --column'
 
+" Fancy stuff
+set splitright
+set ttyfast
+set cursorline
+let g:WebDevIconsUnicodeDecorateFolderNodes = 1
+let g:DevIconsEnableFoldersOpenClose = 1
 
 
-
-" " YCM
-set completeopt-=preview
 
 
 " " Save session
