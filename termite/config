@@ -13,7 +13,7 @@ color0  = #c7c5c5
 color8  = #5f5a60
 
 # red
-color1  = #cf6a4c
+color1  = #E26E6E
 color9  = #cf6a4c
 
 # green
@@ -33,10 +33,10 @@ color5  = #4E78FF
 color13 = #C7C5C5
 
 # cyan
-color6  = #afc4db
-color14 = #afc4db
+color6  = #5C8A6B
+color14 = #5C8A6B
 
 # white
-color7  = #C7C5C5
+color7  = #0788AE
 color15 = #C7C5C5
 
