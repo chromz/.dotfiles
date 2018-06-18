@@ -1,10 +1,10 @@
 [colors]
-background = #B3282828
-foreground = #fbf1c7
+background = #B3EBEBE9
+foreground = #464B50
+underline = #464B50
 
 [bar/bar]
 monitor = ${env:MONITOR:}
-width = 98%
 height = 4%
 offset-x = 1%
 offset-y = 10
@@ -19,28 +19,24 @@ module-margin-right = 6
 font-0 = Noto Sans:size=8;0
 font-1 = DejaVuSansMono Nerd Font:pixelsize=10
 
-[bar/single]
+[bar/top-left]
 inherit = bar/bar
+width =  14%
 modules-left = bspwm
 tray-position = right
-modules-center = xwindow date
+
+[bar/top-center]
+inherit = bar/bar
+width = 21%;
+offset-x = 40%
+modules-center = xwindow
+modules-right = date
+
+[bar/top-right]
+inherit = bar/bar
+width = 5%
+offset-x = 94%
 modules-right = pulseaudio battery wlan ether
-
-;[bar/top-left]
-;inherit = bar/bar
-;modules-left = bspwm
-;[bar/top-center]
-;inherit = bar/bar
-;width = 36%;
-;offset-x = 32%
-;modules-center = xwindow
-;modules-right = date
-
-;[bar/top-right]
-;inherit = bar/bar
-;width = 25%
-;offset-x = 73%
-;modules-right = pulseaudio battery wlan ether
 
 [module/bspwm]
 type = internal/bspwm
@@ -56,7 +52,7 @@ ws-icon-6 = VII;
 ws-icon-default = 
 
 label-focused = %icon%
-label-focused-underline= #A89984
+label-focused-underline= ${colors.underline}
 label-focused-padding = 4
 
 label-occupied = %icon%
@@ -172,8 +168,7 @@ type = internal/network
 interface = wlp3s0
 interval = 3.0
 
-format-connected = <ramp-signal> <label-connected>
-label-connected = %essid% %local_ip%
+format-connected = <ramp-signal> 
 
 format-disconnected =
 ;format-disconnected = <label-disconnected>
@@ -186,11 +181,10 @@ ramp-signal-foreground = ${bar/bar.foreground}
 
 [module/ether]
 type = internal/network
-interface = enp2s0
+interface = eno1
 interval = 3.0
-format-connected =  <label-connected>
+format-connected =  
 
-format-connected-underline = ${colors.foreground}
 format-disconnected =
 
 [module/cpu]

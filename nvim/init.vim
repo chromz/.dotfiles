@@ -16,7 +16,8 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'w0rp/ale'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
-Plug 'morhetz/gruvbox'
+Plug 'rakr/vim-one'
+Plug 'NLKNguyen/papercolor-theme'
 Plug 'mileszs/ack.vim'
 Plug 'tpope/vim-commentary'
 Plug 'jiangmiao/auto-pairs'
@@ -78,8 +79,8 @@ let NERDTreeMinimalUI=1
 
 " " Theme
 
-colorscheme gruvbox
-set background=dark
+colorscheme PaperColor
+set background=light
 map <silent> <C-n> :NERDTreeToggle<CR>
 
 " " Airline
@@ -88,9 +89,12 @@ let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#formatter = 'unique_tail'
 
 
+
 " " Vim search
 set incsearch
 set hlsearch
 hi Search guibg=#282828
 hi Search guifg=#fbf1c7
 nnoremap <esc> :noh<return><esc>
+set mouse=a
+hi Normal guibg=NONE ctermbg=NONE

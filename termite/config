@@ -1,41 +1,42 @@
 [options]
-font = DejaVuSansMono Nerd Font 10
+font = DejaVuSansMono Nerd Font 9 
 
 [colors]
 
-
-foreground      = #fbf1c7
-foreground_bold = #fbf1c7
-background      = rgba(40, 40, 40, 0.7)
+# special
+foreground      = #464b50
+foreground_bold = #464b50
+background      = #ebebe9
 
 # black
-color0  = #272822
-color8  = #75715e
+color0  = #c7c5c5
+color8  = #5f5a60
 
 # red
-color1  = #f92672
-color9  = #f92672
+color1  = #cf6a4c
+color9  = #cf6a4c
 
 # green
-color2  = #a6e22e
-color10 = #a6e22e
+color2  = #8f9d6a
+color10 = #8f9d6a
 
 # yellow
-color3  = #f4bf75
-color11 = #f4bf75
+color3  = #464b50
+color11 = #464b50
 
 # blue
-color4  = #66d9ef
-color12 = #66d9ef
+color4  = #5d5e60
+color12 = #5d5e60
 
 # magenta
-color5  = #ae81ff
-color13 = #ae81ff
+color5  = #4E78FF
+color13 = #C7C5C5
 
 # cyan
-color6  = #a1efe4
-color14 = #a1efe4
+color6  = #afc4db
+color14 = #afc4db
 
 # white
-color7  = #f8f8f2
-color15 = #f9f8f5
+color7  = #C7C5C5
+color15 = #C7C5C5
+

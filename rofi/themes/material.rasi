@@ -15,7 +15,7 @@
   base04: #B2CCD6;
   base05: #EEFFFF;
   base06: #EEFFFF;
-  base07: #FBF1C7;
+  base07: #464b50;
   base08: #F07178;
   base09: #F78C6C;
   base0A: #FFCB6B;
@@ -36,7 +36,7 @@
 window {
   transparency: "real";
   /*fullscreen: true;*/
-  background-color: #282828CC; /*base00 + CC (80% opacity)*/
+  background-color: #ebebe9CC; /*base00 + CC (80% opacity)*/
 }
 
 mainbox {
@@ -52,7 +52,7 @@ inputbar {
 }
 
 prompt {
-  text-color: #fbf1c7;
+  text-color: #464b50;
 }
 
 textbox-prompt-colon {
@@ -101,7 +101,7 @@ element normal {
 }
 
 element selected {
-  background-color: #A89984;
+  background-color: #C7C5C5;
 }
 
 element alternate {
