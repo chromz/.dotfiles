@@ -14,10 +14,11 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'ryanoasis/vim-devicons'
 Plug 'w0rp/ale'
+Plug 'cseelus/vim-colors-lucid'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
-Plug 'rakr/vim-one'
-Plug 'NLKNguyen/papercolor-theme'
+Plug 'Badacadabra/vim-archery'
+Plug 'whatyouhide/vim-gotham'
 Plug 'mileszs/ack.vim'
 Plug 'tpope/vim-commentary'
 Plug 'jiangmiao/auto-pairs'
@@ -79,14 +80,15 @@ let NERDTreeMinimalUI=1
 
 " " Theme
 
-colorscheme PaperColor
-set background=light
+colorscheme gotham
+set background=dark
 map <silent> <C-n> :NERDTreeToggle<CR>
 
 " " Airline
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#formatter = 'unique_tail'
+
 
 
 
@@ -97,4 +99,3 @@ hi Search guibg=#282828
 hi Search guifg=#fbf1c7
 nnoremap <esc> :noh<return><esc>
 set mouse=a
-hi Normal guibg=NONE ctermbg=NONE
