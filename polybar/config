@@ -1,15 +1,18 @@
 [colors]
 background = #EBEBE9
 foreground = #464B50
-underline = #464B50
+# underline = #464B50
+underline = #EBEBE9
+background-dark = #080D0C
+foreground-dark = #EBEBE9 
 
 [bar/bar]
 monitor = ${env:MONITOR:}
 height = 4%
 offset-x = 1%
 offset-y = 10
-background = ${colors.background}
-foreground = ${colors.foreground}
+background = ${colors.background-dark}
+foreground = ${colors.foreground-dark}
 line-size = 2
 spacing = 3
 padding-right = 4
