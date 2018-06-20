@@ -1,18 +1,20 @@
 [colors]
-background = #EBEBE9
-foreground = #464B50
+transparent = #00000000
+color0 = #EBEBE9
+color1 = #464B50
 # underline = #464B50
 underline = #EBEBE9
-background-dark = #080D0C
-foreground-dark = #EBEBE9 
+color2 = #080D0C
+
 
 [bar/bar]
 monitor = ${env:MONITOR:}
+width = 98%
 height = 4%
 offset-x = 1%
 offset-y = 10
-background = ${colors.background-dark}
-foreground = ${colors.foreground-dark}
+background = ${colors.transparent}
+foreground = ${colors.color0}
 line-size = 2
 spacing = 3
 padding-right = 4
@@ -22,24 +24,13 @@ module-margin-right = 6
 font-0 = Noto Sans:size=8;0
 font-1 = DejaVuSansMono Nerd Font:pixelsize=10
 
-[bar/top-left]
+[bar/top]
 inherit = bar/bar
-width =  14%
 modules-left = bspwm
+modules-center = xwindow 
+modules-right = date pulseaudio battery wlan ether
 tray-position = right
 
-[bar/top-center]
-inherit = bar/bar
-width = 21%;
-offset-x = 40%
-modules-center = xwindow
-modules-right = date
-
-[bar/top-right]
-inherit = bar/bar
-width = 5.5%
-offset-x = 93.5%
-modules-right = pulseaudio battery wlan ether
 
 [module/bspwm]
 type = internal/bspwm
@@ -56,16 +47,22 @@ ws-icon-default = 
 
 label-focused = %icon%
 label-focused-underline= ${colors.underline}
+label-focused-background = ${colors.color2}
 label-focused-padding = 4
 
 label-occupied = %icon%
 label-occupied-padding = 4
+label-occupied-foreground = ${colors.color0}
+label-occupied-background = ${colors.color2}
 
 label-urgent = %icon%
 label-urgent-padding = 4
+label-urgent-foreground = ${colors.color0}
+label-urgent-background = ${colors.color2}
 
 label-empty = %icon%
-label-empty-foreground = ${bar/bar.foreground}
+label-empty-foreground = ${colors.color0}
+label-empty-background = ${colors.color2}
 label-empty-padding = 4
 
 
@@ -74,6 +71,8 @@ type = internal/xwindow
 label =  %title:0:35:...%
 label-maxlen = 40
 label-padding = 4
+format-background = ${colors.color0}
+format-foreground = ${colors.color2}
 
 
 [module/pulseaudio]
@@ -81,6 +80,9 @@ type = internal/pulseaudio
 
 enable-scroll = false
 format-volume = <ramp-volume> <label-volume>
+format-volume-background = ${colors.color0}
+format-volume-foreground = ${colors.color1}
+format-volume-padding = 4
 
 label-muted =  muted
 label-muted-foreground = #66
@@ -117,6 +119,9 @@ date-alt = %d-%m-%Y%
 time-alt = 
 
 format = <label>
+format-background = ${colors.color2}
+format-foreground = ${colors.color0}
+format-padding = 4
 label = %date% %time%
 
 
@@ -131,12 +136,18 @@ poll-interval = 5
 time-format = %H:%M
 
 format-charging = <animation-charging> <label-charging>
+format-charging-background = ${colors.color2}
+format-charging-foreground = ${colors.color0}
+format-charging-padding = 4
 
 format-discharging = <ramp-capacity> <label-discharging>
+format-discharging-background = ${colors.color2}
+format-discharging-foreground = ${colors.color0}
+format-discharging-padding = 4
 
-label-charging = Charging %percentage%%
+label-charging = %percentage%%
 
-label-discharging = Discharging %percentage%%
+label-discharging = %percentage%%
 
 label-full = Fully charged
 

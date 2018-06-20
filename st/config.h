@@ -5,8 +5,8 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "DejaVuSansMono Nerd Font:pixelsize=12:antialias=true:autohint=true";
-static int borderpx = 2;
+static char *font = "FuraMono Nerd Font:size=9:antialias=true:autohint=true";
+static int borderpx = 0;
 
 /*
  * What program is execed by st depends of these precedence rules:
@@ -39,7 +39,7 @@ static unsigned int doubleclicktimeout = 300;
 static unsigned int tripleclicktimeout = 600;
 
 /* alt screens */
-int allowaltscreen = 1;
+int allowaltscreen = 0;
 
 /* frames per second st should at maximum draw to the screen */
 static unsigned int xfps = 120;
@@ -109,8 +109,8 @@ static const char *colorname[] = {
 	/* more colors can be added after 255 to use with DefaultXX */
 
 	/* Bg color */
-	"#fbf1c7",
-	"#282828",
+	"#ebebe9",
+	"#080d0c",
 
 };
 
@@ -119,7 +119,7 @@ static const char *colorname[] = {
  * Default colors (colorname index)
  * foreground, background, cursor, reverse cursor
  */
-unsigned int alpha = 178;
+unsigned int alpha = 255;
 unsigned int defaultfg = 256;
 unsigned int defaultbg = 257;
 static unsigned int defaultcs = 256;
