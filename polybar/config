@@ -183,6 +183,9 @@ interface = wlp3s0
 interval = 3.0
 
 format-connected = <ramp-signal> 
+format-connected-background = ${colors.color2}
+format-connected-foreground = ${colors.color0}
+format-connected-padding = 4
 
 format-disconnected =
 ;format-disconnected = <label-disconnected>
@@ -191,13 +194,15 @@ format-disconnected =
 ;label-disconnected-foreground = ${colors.foreground-alt}
 
 ramp-signal-0 = 直
-ramp-signal-foreground = ${bar/bar.foreground}
+ramp-signal-foreground = ${colors.color0}
 
 [module/ether]
 type = internal/network
 interface = eno1
 interval = 3.0
 format-connected =  
+format-connected-background = ${colors.color2}
+format-connected-foreground = ${colors.color0}
 
 format-disconnected =
 
