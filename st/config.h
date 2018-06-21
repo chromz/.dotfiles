@@ -5,7 +5,7 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "FuraMono Nerd Font:size=9:antialias=true:autohint=true";
+static char *font = "DejaVuSansMono Nerd Font:size=9:antialias=true:autohint=true";
 static int borderpx = 0;
 
 /*
@@ -85,24 +85,24 @@ unsigned int tabspaces = 8;
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
 	/* 8 normal colors */
-	"#272822",
-	"#f92672",
-	"#a6e22e",
+	"#2D4C4A",
+	"#e34d4d",
+	"#A4B21D",
 	"#f4bf75",
-	"#66d9ef",
-	"#ae81ff",
-	"#a1efe4",
-	"#f8f8f2",
+	"#CED0CB",
+	"#7a3c8f",
+	"#3d8d83",
+	"#9ea9b5",
 
 	/* 8 bright colors */
-	"#75715e",
-	"#f92672",
-	"#a6e22e",
-	"#f4bf75",
-	"#66d9ef",
-	"#ae81ff",
-	"#a1efe4",
-	"#f9f8f5",
+	"#d0d0d0",
+	"#e33a3a",
+	"#adba30",
+	"#129EA2",
+	"#47988e",
+	"#9a2abb",
+	"#49beae",
+	"#dfe3e0",
 
 	[255] = 0,
 
