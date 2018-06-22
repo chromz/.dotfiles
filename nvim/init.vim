@@ -42,6 +42,7 @@ nnoremap <Leader>a :Ack!<Space>
 " " let g:ackprg = 'ag --nogroup --nocolor --column'
 
 " Fancy stuff
+set clipboard=unnamedplus
 set splitright
 set ttyfast
 set cursorline
@@ -49,16 +50,15 @@ let g:WebDevIconsUnicodeDecorateFolderNodes = 1
 let g:DevIconsEnableFoldersOpenClose = 1
 
 
+set list
+set listchars=eol:¬
+
+
 
 
 " " Save session
 " " Buffers
 set hidden
-
-" " Fonts
-" " set guifont=Roboto\ Mono\ Medium\ for\ Powerline\ 11
-" " set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 10
-" set guifont=DejaVuSansMono\ Nerd\ Font\ 10
 
 " " Ale
 
