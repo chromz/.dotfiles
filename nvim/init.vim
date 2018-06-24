@@ -20,9 +20,11 @@ Plug 'tpope/vim-fugitive'
 Plug 'Badacadabra/vim-archery'
 Plug 'whatyouhide/vim-gotham'
 Plug 'mileszs/ack.vim'
+Plug 'rafi/awesome-vim-colorschemes'
 Plug 'tpope/vim-commentary'
 Plug 'jiangmiao/auto-pairs'
-
+Plug 'mattn/emmet-vim'
+Plug 'pangloss/vim-javascript'
 call plug#end()
 
 if executable('rg')
@@ -43,15 +45,13 @@ nnoremap <Leader>a :Ack!<Space>
 
 " Fancy stuff
 set clipboard=unnamedplus
-set splitright
-set ttyfast
 set cursorline
 let g:WebDevIconsUnicodeDecorateFolderNodes = 1
 let g:DevIconsEnableFoldersOpenClose = 1
 
 
 set list
-set listchars=eol:¬
+set listchars=eol:¬,nbsp:·,space:·,trail:·
 
 
 
@@ -80,8 +80,8 @@ let NERDTreeMinimalUI=1
 
 " " Theme
 
-colorscheme gotham
-set background=dark
+colorscheme one
+set background=light
 map <silent> <C-n> :NERDTreeToggle<CR>
 
 " " Airline
