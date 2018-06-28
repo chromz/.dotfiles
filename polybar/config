@@ -18,8 +18,6 @@ foreground = ${colors.color0}
 line-size = 2
 spacing = 3
 padding-right = 4
-module-margin-left = 0
-module-margin-right = 6
 
 font-0 = Noto Sans:size=8;0
 font-1 = DejaVuSansMono Nerd Font:pixelsize=10
@@ -28,8 +26,16 @@ font-1 = DejaVuSansMono Nerd Font:pixelsize=10
 inherit = bar/bar
 modules-left = bspwm
 modules-center = xwindow 
-modules-right = date pulseaudio battery wlan ether
+modules-right = date pulseaudio spacer battery wlan ether
 tray-position = right
+
+
+[module/spacer]
+type = custom/text
+content = .
+content-margin = 20
+content-foreground = ${colors.transparent}
+content-background = ${colors.transparent}
 
 
 [module/bspwm]
@@ -68,11 +74,11 @@ label-empty-padding = 4
 
 [module/xwindow]
 type = internal/xwindow
-label =  %title:0:35:...%
-label-maxlen = 40
+label =  %title:0:70:...%
+label-maxlen = 70
 label-padding = 4
 format-background = ${colors.color0}
-format-foreground = ${colors.color2}
+format-foreground = ${colors.color1}
 
 
 [module/pulseaudio]
@@ -85,7 +91,9 @@ format-volume-foreground = ${colors.color1}
 format-volume-padding = 4
 
 label-muted =  muted
-label-muted-foreground = #66
+label-muted-background = ${colors.color0}
+label-muted-foreground = ${colors.color1}
+label-muted-padding = 4
 
 ramp-volume-0 = 奄
 ramp-volume-1 = 奔
@@ -187,11 +195,10 @@ format-connected-background = ${colors.color2}
 format-connected-foreground = ${colors.color0}
 format-connected-padding = 4
 
-format-disconnected =
-;format-disconnected = <label-disconnected>
-;format-disconnected-underline = ${colors.foreground}
-;label-disconnected = %ifname% disconnected
-;label-disconnected-foreground = ${colors.foreground-alt}
+format-disconnected = 睊
+format-disconnected-background = ${colors.color0}
+format-disconnected-foreground = ${colors.color1}
+format-disconnected-padding = 4
 
 ramp-signal-0 = 直
 ramp-signal-foreground = ${colors.color0}
@@ -200,11 +207,15 @@ ramp-signal-foreground = ${colors.color0}
 type = internal/network
 interface = eno1
 interval = 3.0
-format-connected =  
+format-connected = 
 format-connected-background = ${colors.color2}
 format-connected-foreground = ${colors.color0}
+format-connected-padding = 5
 
-format-disconnected =
+format-disconnected = 
+format-disconnected-background = ${colors.color2}
+format-disconnected-foreground = ${colors.color0}
+format-disconnected-padding = 5
 
 [module/cpu]
 type = internal/cpu
