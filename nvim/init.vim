@@ -25,6 +25,9 @@ Plug 'tpope/vim-commentary'
 Plug 'jiangmiao/auto-pairs'
 Plug 'mattn/emmet-vim'
 Plug 'pangloss/vim-javascript'
+Plug 'gregsexton/MatchTag'
+Plug 'alvan/vim-closetag'
+
 call plug#end()
 
 if executable('rg')
@@ -46,12 +49,14 @@ nnoremap <Leader>a :Ack!<Space>
 " Fancy stuff
 set clipboard=unnamedplus
 set cursorline
+set colorcolumn=80
 let g:WebDevIconsUnicodeDecorateFolderNodes = 1
 let g:DevIconsEnableFoldersOpenClose = 1
 
 
+
 set list
-set listchars=eol:¬,nbsp:·,space:·,trail:·
+set listchars=eol:¬,nbsp:␣,trail:·
 
 
 
@@ -64,7 +69,8 @@ set hidden
 
 let g:ale_sign_warning = ''
 let g:ale_sign_error = ''
-
+let g:ale_max_signs = 30
+let g:ale_echo_delay = 1000
 
 
 " " ctrl p
@@ -81,7 +87,7 @@ let NERDTreeMinimalUI=1
 " " Theme
 
 colorscheme one
-set background=light
+set background=dark
 map <silent> <C-n> :NERDTreeToggle<CR>
 
 " " Airline
