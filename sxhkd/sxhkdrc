@@ -4,7 +4,7 @@
 
 # terminal emulator
 super + Return
-	st -e tmux
+	termite -e tmux
 
 # program launcher
 super + space
