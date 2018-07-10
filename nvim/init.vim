@@ -66,11 +66,9 @@ set listchars=eol:¬,nbsp:␣,trail:·
 set hidden
 
 " " Ale
-
-let g:ale_sign_warning = ''
-let g:ale_sign_error = ''
-let g:ale_max_signs = 30
-let g:ale_echo_delay = 1000
+let g:ale_sign_warning = ''
+let g:ale_sign_error = ''
+let g:ale_lint_delay = 1000
 
 
 " " ctrl p
