@@ -1,10 +1,10 @@
 [colors]
 transparent = #00000000
-color0 = #EBEBE9
+color0 = #9CC57E
 color1 = #464B50
 # underline = #464B50
-underline = #EBEBE9
-color2 = #080D0C
+underline = #9CC57E
+color2 = #282c34
 
 
 [bar/bar]
@@ -29,14 +29,12 @@ modules-center = xwindow
 modules-right = date pulseaudio spacer battery wlan ether
 tray-position = right
 
-
 [module/spacer]
 type = custom/text
 content = .
 content-margin = 20
 content-foreground = ${colors.transparent}
 content-background = ${colors.transparent}
-
 
 [module/bspwm]
 type = internal/bspwm
@@ -74,8 +72,8 @@ label-empty-padding = 4
 
 [module/xwindow]
 type = internal/xwindow
-label =  %title:0:70:...%
-label-maxlen = 70
+label =  %title:0:35:...%
+label-maxlen = 40
 label-padding = 4
 format-background = ${colors.color0}
 format-foreground = ${colors.color1}
@@ -91,8 +89,8 @@ format-volume-foreground = ${colors.color1}
 format-volume-padding = 4
 
 label-muted =  muted
-label-muted-background = ${colors.color0}
 label-muted-foreground = ${colors.color1}
+label-muted-background = ${colors.color0}
 label-muted-padding = 4
 
 ramp-volume-0 = 奄
@@ -158,6 +156,9 @@ label-charging = %percentage%%
 label-discharging = %percentage%%
 
 label-full = Fully charged
+label-full-background = ${colors.color2}
+label-full-foreground = ${colors.color0}
+label-full-padding = 4
 
 ; Only applies if <ramp-capacity> is used
 ramp-capacity-0 = 
@@ -191,8 +192,8 @@ interface = wlp3s0
 interval = 3.0
 
 format-connected = <ramp-signal> 
-format-connected-background = ${colors.color2}
-format-connected-foreground = ${colors.color0}
+format-connected-background = ${colors.color0}
+format-connected-foreground = ${colors.color1}
 format-connected-padding = 4
 
 format-disconnected = 睊
@@ -201,21 +202,22 @@ format-disconnected-foreground = ${colors.color1}
 format-disconnected-padding = 4
 
 ramp-signal-0 = 直
-ramp-signal-foreground = ${colors.color0}
+ramp-signal-foreground = ${colors.color1}
 
 [module/ether]
 type = internal/network
-interface = eno1
+interface = enp2s0
 interval = 3.0
 format-connected = 
-format-connected-background = ${colors.color2}
-format-connected-foreground = ${colors.color0}
+format-connected-background = ${colors.color0}
+format-connected-foreground = ${colors.color1}
 format-connected-padding = 5
 
 format-disconnected = 
-format-disconnected-background = ${colors.color2}
-format-disconnected-foreground = ${colors.color0}
+format-disconnected-background = ${colors.color0}
+format-disconnected-foreground = ${colors.color1}
 format-disconnected-padding = 5
+
 
 [module/cpu]
 type = internal/cpu

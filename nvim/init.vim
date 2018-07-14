@@ -54,11 +54,7 @@ let g:WebDevIconsUnicodeDecorateFolderNodes = 1
 let g:DevIconsEnableFoldersOpenClose = 1
 
 
-
-set list
-set listchars=eol:¬,nbsp:␣,trail:·
-
-
+set list lcs=eol:¬,nbsp:␣,trail:·,tab:\┆\ 
 
 
 " " Save session
