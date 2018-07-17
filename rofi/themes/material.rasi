@@ -15,7 +15,7 @@
   base04: #B2CCD6;
   base05: #EEFFFF;
   base06: #EEFFFF;
-  base07: #ebebe9;
+  base07: #9CC57E;
   base08: #F07178;
   base09: #F78C6C;
   base0A: #FFCB6B;
@@ -36,7 +36,7 @@
 window {
   transparency: "real";
   /*fullscreen: true;*/
-  background-color: #080d0cCC; /*base00 + CC (80% opacity)*/
+  background-color: #282c34CC; /*base00 + CC (80% opacity)*/
 }
 
 mainbox {
