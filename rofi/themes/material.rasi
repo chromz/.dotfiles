@@ -59,7 +59,7 @@ textbox-prompt-colon {
   expand: false;
   str: ":";
   margin: 0 1ch 0 0;
-  text-color: #A89984;
+  text-color: @base07;
 }
 
 entry {
@@ -101,16 +101,21 @@ element normal {
 }
 
 element selected {
-  background-color: #47988e;
+  background-color: @base07;
 }
 
 element alternate {
   /*background-color: @base03;*/
 }
 
-element normal normal, element selected normal, element alternate normal {
+element normal normal, element alternate normal {
   text-color: @base07;
 }
+
+element selected normal {
+  text-color: #282c34;
+}
+
 
 element normal urgent, element selected urgent, element alternate urgent {
   text-color: @base0F;
