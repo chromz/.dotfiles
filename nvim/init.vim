@@ -12,7 +12,7 @@ Plug 'Shougo/deoplete.nvim'
 Plug 'tpope/vim-sleuth'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'ryanoasis/vim-devicons'
+" Plug 'ryanoasis/vim-devicons'
 Plug 'w0rp/ale'
 Plug 'cseelus/vim-colors-lucid'
 Plug 'tpope/vim-surround'
@@ -31,7 +31,7 @@ Plug 'alvan/vim-closetag'
 call plug#end()
 
 if executable('rg')
-  let g:ackprg = 'rg --vimgrep'
+  let g:ackprg = 'rg --vimgrep -F'
 endif
 
 " deoplete 
@@ -50,11 +50,12 @@ nnoremap <Leader>a :Ack!<Space>
 set clipboard=unnamedplus
 set cursorline
 set colorcolumn=80
-let g:WebDevIconsUnicodeDecorateFolderNodes = 1
-let g:DevIconsEnableFoldersOpenClose = 1
+" let g:WebDevIconsUnicodeDecorateFolderNodes = 1
+" let g:DevIconsEnableFoldersOpenClose = 1
+command! Bd :bp|:bd#
 
 
-set list lcs=eol:¬,nbsp:␣,trail:·,tab:\┆\ 
+set list lcs=nbsp:␣,trail:·,tab:\┆\ 
 
 
 " " Save session
@@ -80,7 +81,7 @@ let NERDTreeMinimalUI=1
 
 " " Theme
 
-colorscheme one
+colorscheme OceanicNext
 set background=dark
 map <silent> <C-n> :NERDTreeToggle<CR>
 
@@ -95,7 +96,5 @@ let g:airline#extensions#tabline#formatter = 'unique_tail'
 " " Vim search
 set incsearch
 set hlsearch
-hi Search guibg=#282828
-hi Search guifg=#fbf1c7
 nnoremap <esc> :noh<return><esc>
 set mouse=a
