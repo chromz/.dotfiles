@@ -7,12 +7,13 @@ set encoding=utf-8
 call plug#begin('~/.local/share/nvim/plugged')
 
 Plug 'scrooloose/nerdtree'
-Plug 'bling/vim-airline'
 Plug 'Shougo/deoplete.nvim'
 Plug 'tpope/vim-sleuth'
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'vim-airline/vim-airline-themes'
 " Plug 'ryanoasis/vim-devicons'
+Plug 'arcticicestudio/nord-vim'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'w0rp/ale'
 Plug 'cseelus/vim-colors-lucid'
 Plug 'tpope/vim-surround'
@@ -20,7 +21,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'Badacadabra/vim-archery'
 Plug 'whatyouhide/vim-gotham'
 Plug 'mileszs/ack.vim'
-Plug 'rafi/awesome-vim-colorschemes'
+" Plug 'rafi/awesome-vim-colorschemes'
 Plug 'tpope/vim-commentary'
 Plug 'jiangmiao/auto-pairs'
 Plug 'mattn/emmet-vim'
@@ -81,7 +82,7 @@ let NERDTreeMinimalUI=1
 
 " " Theme
 
-colorscheme OceanicNext
+colorscheme nord
 set background=dark
 map <silent> <C-n> :NERDTreeToggle<CR>
 
