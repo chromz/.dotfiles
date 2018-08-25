@@ -1,82 +1,115 @@
 [colors]
 transparent = #00000000
-color0 = #9CC57E
+color0 = #e0c872
 color1 = #464B50
 # underline = #464B50
-underline = #9CC57E
-color2 = #282c34
+underline = #e0c872
+color2 = #99282c34
 
 
 [bar/bar]
 monitor = ${env:MONITOR:}
-width = 98%
-height = 4%
-offset-x = 1%
-offset-y = 10
-background = ${colors.transparent}
+width = 99.5%
+height = 30px
+offset-x = 0.25%
+offset-y = 4px
+background = ${colors.color2}
 foreground = ${colors.color0}
 line-size = 2
-spacing = 3
-padding-right = 4
+spacing = 0
+padding-right = 0
+radius = 5
 
-font-0 = Noto Sans:size=8;0
-font-1 = DejaVuSansMono Nerd Font:pixelsize=10
+font-0 = DankMono Nerd Font:size=9
 
 [bar/top]
 inherit = bar/bar
 modules-left = bspwm
 modules-center = xwindow 
-modules-right = date pulseaudio spacer battery wlan ether
+modules-right = date pulseaudio battery wlan ether
 tray-position = right
 
 [module/spacer]
 type = custom/text
 content = .
-content-margin = 20
-content-foreground = ${colors.transparent}
-content-background = ${colors.transparent}
+content-margin = 2
+content-foreground = ${colors.color2}
+content-background = ${colors.color2}
 
 [module/bspwm]
 type = internal/bspwm
 format = <label-state> <label-mode>
 
 ws-icon-0 = I;
-ws-icon-1 = II;
-ws-icon-2 = III;
-ws-icon-3 = IV;
+ws-icon-1 = II;
+ws-icon-2 = III;
+ws-icon-3 = IV;
 ws-icon-4 = V;
-ws-icon-5 = VI;
+ws-icon-5 = VI;
 ws-icon-6 = VII;
 ws-icon-default = 
 
 label-focused = %icon%
 label-focused-underline= ${colors.underline}
 label-focused-background = ${colors.color2}
-label-focused-padding = 4
+label-focused-padding = 2
 
 label-occupied = %icon%
-label-occupied-padding = 4
+label-occupied-padding = 2
 label-occupied-foreground = ${colors.color0}
 label-occupied-background = ${colors.color2}
 
 label-urgent = %icon%
-label-urgent-padding = 4
+label-urgent-padding = 2
 label-urgent-foreground = ${colors.color0}
 label-urgent-background = ${colors.color2}
 
 label-empty = %icon%
 label-empty-foreground = ${colors.color0}
 label-empty-background = ${colors.color2}
-label-empty-padding = 4
+label-empty-padding = 2
+
+[module/xworkspaces]
+type = internal/xworkspaces
+format = <label-state>
+
+icon-0 = I;
+icon-1 = II;
+icon-2 = III;
+icon-3 = IV;
+icon-4 = V;
+icon-5 = VI;
+icon-6 = VII;
+icon-default = 
+
+label-active= %icon%
+label-active-underline= ${colors.underline}
+label-active-background = ${colors.color2}
+label-active-padding = 2
+
+label-occupied = %icon%
+label-occupied-padding = 2
+label-occupied-foreground = ${colors.color0}
+label-occupied-background = ${colors.color2}
+
+label-urgent = %icon%
+label-urgent-padding = 2
+label-urgent-foreground = ${colors.color0}
+label-urgent-background = ${colors.color2}
+
+label-empty = %icon%
+label-empty-foreground = ${colors.color0}
+label-empty-background = ${colors.color2}
+label-empty-padding = 2
 
 
 [module/xwindow]
 type = internal/xwindow
-label =  %title:0:35:...%
-label-maxlen = 40
-label-padding = 4
-format-background = ${colors.color0}
-format-foreground = ${colors.color1}
+label =  %title:0:80:...%
+label-maxlen = 80
+label-padding = 2
+format-background = ${colors.color2}
+format-foreground = ${colors.color0}
 
 
 [module/pulseaudio]
@@ -84,14 +117,14 @@ type = internal/pulseaudio
 
 enable-scroll = false
 format-volume = <ramp-volume> <label-volume>
-format-volume-background = ${colors.color0}
-format-volume-foreground = ${colors.color1}
-format-volume-padding = 4
+format-volume-background = ${colors.color2}
+format-volume-foreground = ${colors.color0}
+format-volume-padding = 2
 
 label-muted =  muted
-label-muted-foreground = ${colors.color1}
-label-muted-background = ${colors.color0}
-label-muted-padding = 4
+label-muted-background = ${colors.color2}
+label-muted-foreground = ${colors.color0}
+label-muted-padding = 2
 
 ramp-volume-0 = 奄
 ramp-volume-1 = 奔
@@ -127,7 +160,7 @@ time-alt =
 format = <label>
 format-background = ${colors.color2}
 format-foreground = ${colors.color0}
-format-padding = 4
+format-padding = 2
 label = %date% %time%
 
 
@@ -144,12 +177,12 @@ time-format = %H:%M
 format-charging = <animation-charging> <label-charging>
 format-charging-background = ${colors.color2}
 format-charging-foreground = ${colors.color0}
-format-charging-padding = 4
+format-charging-padding = 2
 
 format-discharging = <ramp-capacity> <label-discharging>
 format-discharging-background = ${colors.color2}
 format-discharging-foreground = ${colors.color0}
-format-discharging-padding = 4
+format-discharging-padding = 2
 
 label-charging = %percentage%%
 
@@ -158,7 +191,7 @@ label-discharging = %percentage%%
 label-full = Fully charged
 label-full-background = ${colors.color2}
 label-full-foreground = ${colors.color0}
-label-full-padding = 4
+label-full-padding = 2
 
 ; Only applies if <ramp-capacity> is used
 ramp-capacity-0 = 
@@ -192,31 +225,31 @@ interface = wlp3s0
 interval = 3.0
 
 format-connected = <ramp-signal> 
-format-connected-background = ${colors.color0}
-format-connected-foreground = ${colors.color1}
-format-connected-padding = 4
+format-connected-background = ${colors.color2}
+format-connected-foreground = ${colors.color0}
+format-connected-padding = 2
 
 format-disconnected = 睊
-format-disconnected-background = ${colors.color0}
-format-disconnected-foreground = ${colors.color1}
-format-disconnected-padding = 4
+format-disconnected-background = ${colors.color2}
+format-disconnected-foreground = ${colors.color0}
+format-disconnected-padding = 2
 
 ramp-signal-0 = 直
-ramp-signal-foreground = ${colors.color1}
+ramp-signal-foreground = ${colors.color0}
 
 [module/ether]
 type = internal/network
 interface = enp2s0
 interval = 3.0
 format-connected = 
-format-connected-background = ${colors.color0}
-format-connected-foreground = ${colors.color1}
-format-connected-padding = 5
+format-connected-background = ${colors.color2}
+format-connected-foreground = ${colors.color0}
+format-connected-padding = 2
 
 format-disconnected = 
-format-disconnected-background = ${colors.color0}
-format-disconnected-foreground = ${colors.color1}
-format-disconnected-padding = 5
+format-disconnected-background = ${colors.color2}
+format-disconnected-foreground = ${colors.color0}
+format-disconnected-padding = 2
 
 
 [module/cpu]
