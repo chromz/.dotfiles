@@ -22,7 +22,7 @@ prepare() {
   cd $srcdir/$pkgname-$pkgver
   # skip terminfo which conflicts with nsurses
   sed -i '/tic /d' Makefile
-  cp $HOME/Documents/dotfiles/st/config.h config.h
+  cp $HOME/dotfiles/st/config.h config.h
   patch -Np1 -i  $srcdir/$pkgname-alpha-$pkgver.diff
   patch -Np1 -i $srcdir/st-vertcenter-20180320-6ac8c8a.diff
 }
