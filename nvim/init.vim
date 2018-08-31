@@ -99,7 +99,7 @@ let g:airline#extensions#tabline#formatter = 'unique_tail'
 " " Vim search
 set incsearch
 set hlsearch
-nnoremap <esc> :noh<return><esc>
+nnoremap <c-c> :noh<return><esc>
 set mouse=a
 hi Comment cterm=italic
 hi Comment gui=italic
