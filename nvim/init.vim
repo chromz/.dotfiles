@@ -72,7 +72,8 @@ let g:ale_lint_delay = 1000
 
 
 " " FZF
-nnoremap <c-p> :FZF <CR>
+let $FZF_DEFAULT_COMMAND = 'rg --files'
+nnoremap <C-p> :FZF <CR>
 let g:fzf_layout = { 'down': '~20%' }
 
 
