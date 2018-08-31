@@ -21,7 +21,6 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
 Plug 'Badacadabra/vim-archery'
 Plug 'whatyouhide/vim-gotham'
-Plug 'mileszs/ack.vim'
 " Plug 'rafi/awesome-vim-colorschemes'
 Plug 'tpope/vim-commentary'
 Plug 'jiangmiao/auto-pairs'
@@ -73,7 +72,7 @@ let g:ale_lint_delay = 1000
 
 " " FZF
 let $FZF_DEFAULT_COMMAND = 'rg --files'
-nnoremap <C-p> :FZF <CR>
+nnoremap <C-p> :Files <CR>
 let g:fzf_layout = { 'down': '~20%' }
 
 
