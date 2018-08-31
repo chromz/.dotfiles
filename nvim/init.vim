@@ -9,9 +9,10 @@ call plug#begin('~/.local/share/nvim/plugged')
 Plug 'scrooloose/nerdtree'
 Plug 'Shougo/deoplete.nvim'
 Plug 'tpope/vim-sleuth'
-Plug 'ctrlpvim/ctrlp.vim'
+Plug 'morhetz/gruvbox'
 " Plug 'ryanoasis/vim-devicons'
-Plug 'arcticicestudio/nord-vim'
+Plug '/usr/bin/fzf'
+Plug 'junegunn/fzf.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'w0rp/ale'
@@ -48,7 +49,8 @@ nnoremap <Leader>a :Ack!<Space>
 " " let g:ackprg = 'ag --nogroup --nocolor --column'
 
 " Fancy stuff
-set clipboard=unnamedplus
+
+
 set cursorline
 set colorcolumn=80
 " let g:WebDevIconsUnicodeDecorateFolderNodes = 1
@@ -69,10 +71,9 @@ let g:ale_sign_error = ''
 let g:ale_lint_delay = 1000
 
 
-" " ctrl p
-let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlP'
-let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git\|vendors'
+" " FZF
+nnoremap <c-p> :FZF <CR>
+let g:fzf_layout = { 'down': '~20%' }
 
 
 " " NERDTree
@@ -82,7 +83,7 @@ let NERDTreeMinimalUI=1
 
 " " Theme
 
-colorscheme nord
+colorscheme gruvbox
 set background=dark
 map <silent> <C-n> :NERDTreeToggle<CR>
 
@@ -99,3 +100,5 @@ set incsearch
 set hlsearch
 nnoremap <esc> :noh<return><esc>
 set mouse=a
+hi Comment cterm=italic
+hi Comment gui=italic
