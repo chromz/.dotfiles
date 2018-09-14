@@ -1,0 +1,1 @@
+KERNEL=="card0", SUBSYSTEM=="drm", ACTION=="change", ENV{DISPLAY}=":0", ENV{XAUTHORITY}="/home/chromze/.Xauthority", RUN+="/bin/su chromze -c /usr/local/bin/monitor-hotplug.sh" 

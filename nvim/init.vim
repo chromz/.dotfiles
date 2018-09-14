@@ -42,8 +42,7 @@ inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 
 set cursorline
 
-cnoreabbrev Ack Ack!
-nnoremap <Leader>a :Ack!<Space>
+nnoremap <Leader>a :Rg <Space>
 
 " " let g:ackprg = 'ag --nogroup --nocolor --column'
 
