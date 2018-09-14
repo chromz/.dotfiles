@@ -5,7 +5,7 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "DankMono Nerd Font:size=10:antialias=true:autohint=true";
+static char *font = "DejaVuSansMono Nerd Font:size=9:antialias=true:autohint=true";
 static int borderpx = 2;
 
 /*

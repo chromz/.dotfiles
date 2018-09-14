@@ -15,7 +15,7 @@
   base04: #B2CCD6;
   base05: #EEFFFF;
   base06: #EEFFFF;
-  base07: #DDCC49;
+  base07: #FFFFFF;
   base08: #F07178;
   base09: #F78C6C;
   base0A: #FFCB6B;
@@ -30,7 +30,7 @@
   spacing: 0;
   background-color: transparent;
 
-  font: "DankMono Nerd Font 13";
+  font: "DejaVuSansMono Nerd Font 12";
 }
 
 window {
