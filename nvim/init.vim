@@ -15,9 +15,9 @@ Plug 'romainl/flattened'
 Plug '/usr/bin/fzf'
 Plug 'ayu-theme/ayu-vim'
 Plug 'junegunn/fzf.vim'
-" Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline'
 " Plug 'Yggdroot/indentLine'
-" Plug 'vim-airline/vim-airline-themes'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'w0rp/ale'
 Plug 'cseelus/vim-colors-lucid'
 Plug 'tpope/vim-surround'
@@ -77,6 +77,9 @@ let g:ale_sign_error = ''
 let g:ale_statusline_format = ['X %d', '? %d', '']
 let g:ale_echo_msg_format = '%linter%: %s'
 " let g:ale_lint_delay = 1000
+let g:ale_linters = {
+\   'c': ['clangtidy'],
+\}
 
 
 " " FZF
@@ -99,9 +102,9 @@ colorscheme ayu
 map <silent> <C-n> :NERDTreeToggle<CR>
 
 " " Airline
-" let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#enabled = 1
 " let g:airline_powerline_fonts = 1
-" let g:airline#extensions#tabline#formatter = 'unique_tail'
+let g:airline#extensions#tabline#formatter = 'unique_tail'
 
 
 
