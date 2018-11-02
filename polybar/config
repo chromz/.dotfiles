@@ -28,7 +28,6 @@ modules-left = bspwm
 modules-center = xwindow 
 modules-right = date pulseaudio battery wlan ether
 tray-position = right
-override-redirect = true
 wm-restack = bspwm
 
 [module/spacer]

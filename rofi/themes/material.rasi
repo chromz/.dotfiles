@@ -30,20 +30,20 @@
   spacing: 0;
   background-color: transparent;
 
-  font: "DejaVuSansMono Nerd Font 12";
+  font: "DankMono Nerd Font 13";
 }
 
 window {
   transparency: "real";
   /*fullscreen: true;*/
-  background-color: #282c34CC; /*base00 + CC (80% opacity)*/
+  background-color: #282c34AF; /*base00 + CC (80% opacity)*/
 }
 
 mainbox {
   children: [inputbar, message, sidebar, listview];
   spacing: 30px;
-  /*margin: 20%;*/
-  padding: 30px 0;
+  margin: 30%;
+  /* padding: 10%; */
 }
 
 inputbar {
@@ -101,7 +101,7 @@ element normal {
 }
 
 element selected {
-  background-color: @base07;
+  /* background-color: @base07; */
 }
 
 element alternate {
@@ -113,7 +113,7 @@ element normal normal, element alternate normal {
 }
 
 element selected normal {
-  text-color: #282c34;
+  text-color: #359ED0;
 }
 
 

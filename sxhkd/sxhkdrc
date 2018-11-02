@@ -8,7 +8,7 @@ super + Return
 
 # program launcher
 super + space
-	rofi -modi drun -show drun -show-icons
+	rofi -modi drun -show drun -fullscreen -padding 10
 
 # make sxhkd reload its configuration files:
 super + Escape
@@ -82,7 +82,7 @@ super + {o,i}
 
 # focus or send to the given desktop
 super + {_,shift + }{1-9,0}
-	bspc {desktop -f,node -d} '{I,II,III,IV,V,VI,VII,VIII,IX,X}'
+	bspc {desktop -f,node -d} '^{1-9,10}'
 
 #
 # preselect
