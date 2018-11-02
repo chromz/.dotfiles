@@ -1,10 +1,13 @@
 [colors]
 transparent = #00000000
-color0 = #FFFFFF
+color0 = #FBF1C7
 color1 = #464B50
 # underline = #464B50
-underline = #FFFFFF
-color2 = #99282c34
+underline = #A89984
+color2 = #FF282828
+color3= #A89984
+color4= #FF282828
+color5= #504945
 
 
 [bar/bar]
@@ -20,13 +23,14 @@ spacing = 0
 padding-right = 0
 radius = 0
 
-font-0 = DankMono Nerd Font:size=9
+font-0 = DankMono Nerd Font:size=9;1
+font-1 = DankMono Nerd Font:size=30;2
 
 [bar/top]
 inherit = bar/bar
-modules-left = bspwm
+modules-left = bspwm arrowspacerright1
 modules-center = xwindow 
-modules-right = date pulseaudio battery wlan ether
+modules-right = arrowspacerleft1 date arrowspacerleft2 pulseaudio battery arrowspacerleft3 wlan ether
 tray-position = right
 wm-restack = bspwm
 
@@ -52,22 +56,22 @@ ws-icon-default = 
 
 label-focused = %icon%
 label-focused-underline= ${colors.underline}
-label-focused-background = ${colors.color2}
+label-focused-background = ${colors.color5}
 label-focused-padding = 2
 
 label-occupied = %icon%
 label-occupied-padding = 2
 label-occupied-foreground = ${colors.color0}
-label-occupied-background = ${colors.color2}
+label-occupied-background = ${colors.color5}
 
 label-urgent = %icon%
 label-urgent-padding = 2
 label-urgent-foreground = ${colors.color0}
-label-urgent-background = ${colors.color2}
+label-urgent-background = ${colors.color5}
 
 label-empty = %icon%
 label-empty-foreground = ${colors.color0}
-label-empty-background = ${colors.color2}
+label-empty-background = ${colors.color5}
 label-empty-padding = 2
 
 [module/xworkspaces]
@@ -103,6 +107,30 @@ label-empty-foreground = ${colors.color0}
 label-empty-background = ${colors.color2}
 label-empty-padding = 2
 
+[module/arrowspacerleft1]
+type = custom/text
+content = %{T2}%{T-}
+content-foreground = ${colors.color2}
+content-background = ${colors.color3}
+
+[module/arrowspacerleft2]
+type = custom/text
+content = %{T2}%{T-}
+content-foreground = ${colors.color3}
+content-background = ${colors.color4}
+
+[module/arrowspacerleft3]
+type = custom/text
+content = %{T2}%{T-}
+content-foreground = ${colors.color4}
+content-background = ${colors.color3}
+
+[module/arrowspacerright1]
+type = custom/text
+content = %{T2}%{T-}
+content-foreground = ${colors.color2}
+content-background = ${colors.color5}
+
 
 [module/xwindow]
 type = internal/xwindow
@@ -118,12 +146,12 @@ type = internal/pulseaudio
 
 enable-scroll = false
 format-volume = <ramp-volume> <label-volume>
-format-volume-background = ${colors.color2}
+format-volume-background = ${colors.color4}
 format-volume-foreground = ${colors.color0}
 format-volume-padding = 2
 
 label-muted =  muted
-label-muted-background = ${colors.color2}
+label-muted-background = ${colors.color4}
 label-muted-foreground = ${colors.color0}
 label-muted-padding = 2
 
@@ -159,8 +187,8 @@ date-alt = %d-%m-%Y%
 time-alt = 
 
 format = <label>
-format-background = ${colors.color2}
-format-foreground = ${colors.color0}
+format-background = ${colors.color3}
+format-foreground = ${colors.color2}
 format-padding = 2
 label = %date% %time%
 
@@ -226,13 +254,13 @@ interface = wlp3s0
 interval = 3.0
 
 format-connected = <ramp-signal> 
-format-connected-background = ${colors.color2}
-format-connected-foreground = ${colors.color0}
+format-connected-background = ${colors.color3}
+format-connected-foreground = ${colors.color2}
 format-connected-padding = 2
 
 format-disconnected = 睊
-format-disconnected-background = ${colors.color2}
-format-disconnected-foreground = ${colors.color0}
+format-disconnected-background = ${colors.color3}
+format-disconnected-foreground = ${colors.color2}
 format-disconnected-padding = 2
 
 ramp-signal-0 = 直
@@ -240,16 +268,16 @@ ramp-signal-foreground = ${colors.color0}
 
 [module/ether]
 type = internal/network
-interface = enp2s0
+interface = eno1
 interval = 3.0
 format-connected = 
-format-connected-background = ${colors.color2}
-format-connected-foreground = ${colors.color0}
+format-connected-background = ${colors.color3}
+format-connected-foreground = ${colors.color2}
 format-connected-padding = 2
 
 format-disconnected = 
-format-disconnected-background = ${colors.color2}
-format-disconnected-foreground = ${colors.color0}
+format-disconnected-background = ${colors.color3}
+format-disconnected-foreground = ${colors.color2}
 format-disconnected-padding = 2
 
 

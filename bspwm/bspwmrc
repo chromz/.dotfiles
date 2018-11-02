@@ -4,19 +4,17 @@ sxhkd &
 
 bspc monitor -d I II III IV V VI VII
 bspc config border_width        1
-bspc config normal_border_color "#BFAEAC"
-bspc config active_border_color "#BFAEAC"
-bspc config focused_border_color "#F27E6F"
-bspc config urgent_border_color "#9CC57E"
-bspc config presel_border_color "#9CC57E"
-bspc rule -a '*:libreoffice' state=tiled
-bspc rule -a '*:soffice' state=tiled
+bspc config normal_border_color "#282828"
+bspc config active_border_color "#282828"
+bspc config focused_border_color "#FBF1C7"
+bspc config urgent_border_color "#282828"
+bspc config presel_border_color "#282828"
 # bspc rule -a Termite border_width=10
 
-bspc config window_gap          12
+bspc config window_gap          4
 
 bspc config split_ratio          0.52
-bspc config borderless_monocle   true
+bspc config borderless_monocle   false
 bspc config gapless_monocle      false
 
 bspc config focus_follows_pointer true
