@@ -2,40 +2,42 @@
 font = DejaVuSansMono Nerd Font 9 
 
 [colors]
+# hard contrast: background = #1d2021
+background = #A8282828
+# soft contrast: background = #32302f
+foreground = #ebdbb2
+foreground_bold = #ebdbb2
 
-# special
-foreground      = #ebebe9
-foreground_bold = #ebebe9
-background      = rgba(8, 13, 12, 0.7)
+# dark0 + gray
+color0 = #282828
+color8 = #928374
 
-# black
-color0  = #2D4C4A
-color8  = #d0d0d0
+# neutral_red + bright_red
+color1 = #cc241d
+color9 = #fb4934
 
-# red
-color1  = #e34d4d
-color9  = #e33a3a
+# neutral_green + bright_green
+color2 = #98971a
+color10 = #b8bb26
 
-# green
-color2  = #A4B21D
-color10 = #adba30
+# neutral_yellow + bright_yellow
+color3 = #d79921
+color11 = #fabd2f
 
-# yellow
-color3  = #f4bf75
-color11 = #129EA2
+# neutral_blue + bright_blue
+color4 = #458588
+color12 = #83a598
 
-# blue
-color4  = #CED0CB
-color12 = #47988e
+# neutral_purple + bright_purple
+color5 = #b16286
+color13 = #d3869b
 
-# magenta
-color5  = #7a3c8f
-color13 = #9a2abb
+# neutral_aqua + faded_aqua
+color6 = #689d6a
+color14 = #8ec07c
 
-# cyan
-color6  = #3d8d83
-color14 = #49beae
+# light4 + light1
+color7 = #a89984
+color15 = #ebdbb2
 
-# white
-color7  = #9ea9b5
-color15 = #dfe3e0
+# vim: ft=dosini cms=#%s
