@@ -151,7 +151,7 @@ format-volume-foreground = ${colors.color0}
 format-volume-padding = 2
 
 label-muted =  muted
-label-muted-background = ${colors.color4}
+label-muted-background = ${colors.color2}
 label-muted-foreground = ${colors.color0}
 label-muted-padding = 2
 
