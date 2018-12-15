@@ -3,12 +3,12 @@
 sxhkd &
 
 bspc monitor -d I II III IV V VI VII
-bspc config border_width        1
-bspc config normal_border_color "#282828"
-bspc config active_border_color "#282828"
-bspc config focused_border_color "#FBF1C7"
-bspc config urgent_border_color "#282828"
-bspc config presel_border_color "#282828"
+bspc config border_width        0
+# bspc config normal_border_color "#282828"
+# bspc config active_border_color "#282828"
+# bspc config focused_border_color "#FBF1C7"
+# bspc config urgent_border_color "#282828"
+# bspc config presel_border_color "#282828"
 # bspc rule -a Termite border_width=10
 
 bspc config window_gap          4
