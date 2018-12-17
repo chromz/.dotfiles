@@ -8,6 +8,7 @@ call plug#begin('~/.local/share/nvim/plugged')
 
 Plug 'scrooloose/nerdtree'
 Plug 'Shougo/deoplete.nvim'
+Plug 'drewtempelmeyer/palenight.vim'
 Plug 'tpope/vim-sleuth'
 Plug 'morhetz/gruvbox'
 Plug 'romainl/flattened'
@@ -15,9 +16,10 @@ Plug 'romainl/flattened'
 Plug '/usr/bin/fzf'
 Plug 'ayu-theme/ayu-vim'
 Plug 'junegunn/fzf.vim'
-Plug 'vim-airline/vim-airline'
+Plug 'itchyny/lightline.vim'
+" Plug 'vim-airline/vim-airline'
 " Plug 'Yggdroot/indentLine'
-Plug 'vim-airline/vim-airline-themes'
+" Plug 'vim-airline/vim-airline-themes'
 Plug 'w0rp/ale'
 Plug 'cseelus/vim-colors-lucid'
 Plug 'tpope/vim-surround'
@@ -96,9 +98,10 @@ let g:NERDTreeDirArrowExpandable=""
 let g:NERDTreeDirArrowCollapsible=""
 " " Theme
 
- let ayucolor="mirage"
-colorscheme ayu
-" set background=dark
+set background=dark
+colorscheme palenight
+let g:palenight_terminal_italics=1
+
 map <silent> <C-n> :NERDTreeToggle<CR>
 
 " " Airline
@@ -106,6 +109,17 @@ let g:airline#extensions#tabline#enabled = 1
 " let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#formatter = 'unique_tail'
 
+
+let g:lightline = {
+      \ 'colorscheme': 'palenight',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+      \ },
+      \ 'component_function': {
+      \   'gitbranch': 'fugitive#head'
+      \ },
+      \ }
 
 
 
@@ -115,7 +129,3 @@ set hlsearch
 nnoremap <c-c> :noh<return><esc>
 set mouse=a
 hi Comment gui=italic
-hi htmlArg gui=italic guifg=#b58900
-hi xmlAttrib gui=italic guifg=#b58900
-
-
