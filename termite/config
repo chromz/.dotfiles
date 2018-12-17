@@ -1,9 +1,9 @@
 [options]
-font = DejaVuSansMono Nerd Font 9 
+font = DankMono Nerd Font  10
 
 [colors]
 # hard contrast: background = #1d2021
-background = #A8282828
+background = rgba(40, 40, 40, 0.7)
 # soft contrast: background = #32302f
 foreground = #ebdbb2
 foreground_bold = #ebdbb2
