@@ -136,11 +136,11 @@ XF86AudioMute
 
 # Brightness goes up
 XF86MonBrightnessUp
-    backlight -u
+    sudo backlight -u
 
 # Brightness goes down
 XF86MonBrightnessDown
-    backlight -d
+    sudo backlight -d
 
 XF86TouchpadToggle
     touchpadtoggle
