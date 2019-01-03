@@ -20,7 +20,7 @@
   spacing: 0;
   background-color: transparent;
 
-  font: "DejaVuSansMono Nerd Font 13";
+  font: "DankMono Nerd Font 13";
 }
 
 window {
