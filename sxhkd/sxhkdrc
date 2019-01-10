@@ -4,7 +4,7 @@
 
 # terminal emulator
 super + Return
-	st -e tmux
+	termite -e tmux
 
 # program launcher
 super + space
@@ -123,15 +123,15 @@ super + {Left,Down,Up,Right}
 
 # Raises volume
 XF86AudioRaiseVolume
-    sound -u
+    amixer set Master 5%+
 
 # Lowers volume
 XF86AudioLowerVolume
-    sound -d
+    amixer set Master 5%-
 
 # Mutes
 XF86AudioMute
-    sound -m
+    amixer set Master toggle
 
 
 # Brightness goes up
