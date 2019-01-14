@@ -30,7 +30,7 @@ font-1 = DankMono Nerd Font:size=30;2
 inherit = bar/bar
 modules-left = bspwm 
 modules-center = xwindow 
-modules-right = date alsa battery wlan ether
+modules-right = date pulseaudio battery wlan ether
 tray-position = right
 wm-restack = bspwm
 
@@ -141,8 +141,8 @@ format-background = ${colors.color2}
 format-foreground = ${colors.color0}
 
 
-[module/alsa]
-type = internal/alsa
+[module/pulseaudio]
+type = internal/pulseaudio
 
 enable-scroll = false
 format-volume = <ramp-volume> <label-volume>
