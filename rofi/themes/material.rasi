@@ -9,12 +9,12 @@
 
 * {
   
-  base07: #A89984; 
+  base07: #F8E9D5; 
   base0B: #C3E88D;
   base0D: #82AAFF;
   base0F: #FF5370;
-  background: #282828AF;
-  selected: #FBF1C7;
+  background: #3D4048AF;
+  selected: #A5C5AF;
 
 
   spacing: 0;
