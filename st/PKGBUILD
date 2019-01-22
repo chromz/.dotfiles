@@ -23,6 +23,7 @@ prepare() {
   # skip terminfo which conflicts with nsurses
   sed -i '/tic /d' Makefile
   cp $HOME/dotfiles/st/config.h config.h
+  cp $HOME/dotfiles/st/simple-terminal.desktop simple-terminal.desktop
   patch -Np1 -i  $srcdir/$pkgname-alpha-$pkgver.diff
   patch -Np1 -i $srcdir/st-vertcenter-20180320-6ac8c8a.diff
 }
@@ -37,4 +38,5 @@ package() {
   make PREFIX=/usr DESTDIR="$pkgdir" TERMINFO="$pkgdir/usr/share/terminfo" install
   install -Dm644 LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
   install -Dm644 README "$pkgdir/usr/share/doc/$pkgname/README"
+  install -Dm644 "simple-terminal.desktop" "${pkgdir}/usr/share/applications/simple-terminal.desktop"
 }
