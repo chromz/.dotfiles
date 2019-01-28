@@ -1,53 +1,73 @@
-" Set line numbers
+" True color
 set termguicolors
+
 set number
 set encoding=utf-8
 
 call plug#begin('~/.vim/plugged')
 
 Plug 'scrooloose/nerdtree'
-Plug 'bling/vim-airline'
-Plug 'valloric/youcompleteme'
+Plug 'drewtempelmeyer/palenight.vim'
 Plug 'tpope/vim-sleuth'
-Plug 'ctrlpvim/ctrlp.vim'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'ryanoasis/vim-devicons'
+" Plug 'ryanoasis/vim-devicons'
+Plug 'ajh17/VimCompletesMe'
+Plug '/usr/bin/fzf'
+Plug 'ayu-theme/ayu-vim'
+Plug 'junegunn/fzf.vim'
+Plug 'itchyny/lightline.vim'
+" Plug 'vim-airline/vim-airline'
+" Plug 'Yggdroot/indentLine'
+" Plug 'vim-airline/vim-airline-themes'
 Plug 'w0rp/ale'
 Plug 'cseelus/vim-colors-lucid'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
 Plug 'Badacadabra/vim-archery'
 Plug 'whatyouhide/vim-gotham'
-Plug 'mileszs/ack.vim'
-Plug 'rafi/awesome-vim-colorschemes'
+" Plug 'rafi/awesome-vim-colorschemes'
 Plug 'tpope/vim-commentary'
-Plug 'jiangmiao/auto-pairs'
 Plug 'mattn/emmet-vim'
 Plug 'pangloss/vim-javascript'
-Plug 'gregsexton/MatchTag'
-Plug 'alvan/vim-closetag'
 
 call plug#end()
 
-" Rip grep 
-if executable('rg')
-  let g:ackprg = 'rg --vimgrep'
-endif
-
 set cursorline
 
-cnoreabbrev Ack Ack!
-nnoremap <Leader>a :Ack!<Space>
+set guifont=DankMono\ Nerd\ Font\ 10
+set guioptions -=m
+set guioptions -=T
+nnoremap <Leader>a :Rg<Space>
+
+" Customize fzf colors to match your color scheme
+let g:fzf_colors =
+\ { 'fg':      ['fg', 'Normal'],
+  \ 'bg':      ['bg', 'Normal'],
+  \ 'hl':      ['fg', 'Comment'],
+  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+  \ 'hl+':     ['fg', 'Statement'],
+  \ 'info':    ['fg', 'PreProc'],
+  \ 'border':  ['fg', 'Ignore'],
+  \ 'prompt':  ['fg', 'Conditional'],
+  \ 'pointer': ['fg', 'Exception'],
+  \ 'marker':  ['fg', 'Keyword'],
+  \ 'spinner': ['fg', 'Label'],
+  \ 'header':  ['fg', 'Comment'] }
 
 " " let g:ackprg = 'ag --nogroup --nocolor --column'
 
 " Fancy stuff
-set guifont=DejaVuSansMono\ Nerd\ Font\ 9
-set guioptions-=m  "remove menu bar
-set guioptions-=T  "remove toolbar
-set guioptions-=r  "remove right-hand scroll bar
-set guioptions-=L  "remove left-hand scroll bar
-set clipboard=unnamedplus
+"" Indentation
+" set shiftwidth=4
+" set tabstop=4
+
+" IndentLine {{
+" let g:indentLine_char = ''
+" let g:indentLine_first_char = ''
+" let g:indentLine_showFirstIndentLevel = 1
+" let g:indentLine_setColors = 0
+" }}
+
 set cursorline
 set colorcolumn=80
 let g:WebDevIconsUnicodeDecorateFolderNodes = 1
@@ -55,7 +75,7 @@ let g:DevIconsEnableFoldersOpenClose = 1
 command! Bd :bp|:bd#
 
 
-set list lcs=eol:¬,nbsp:␣,trail:·,tab:\┆\ 
+set list lcs=nbsp:␣,trail:·,tab:\\ 
 
 
 " " Save session
@@ -65,30 +85,46 @@ set hidden
 " " Ale
 let g:ale_sign_warning = ''
 let g:ale_sign_error = ''
-let g:ale_lint_delay = 1000
+let g:ale_statusline_format = ['X %d', '? %d', '']
+let g:ale_echo_msg_format = '%linter%: %s'
+" let g:ale_lint_delay = 1000
+let g:ale_linters = {
+\   'c': ['clangtidy'],
+\}
 
 
-" " ctrl p
-let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlP'
-let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git\|vendors'
+" " FZF
+let $FZF_DEFAULT_COMMAND = 'rg --files --hidden'
+nnoremap <C-p> :Files <CR>
+let g:fzf_layout = { 'down': '~20%' }
 
 
 " " NERDTree
 let g:NERDTreeChDirMode = 2
 let NERDTreeQuitOnOpen = 1
 let NERDTreeMinimalUI=1
-
+let g:NERDTreeDirArrowExpandable=""
+let g:NERDTreeDirArrowCollapsible=""
 " " Theme
 
-colorscheme one
 set background=dark
+colorscheme palenight
+let g:palenight_terminal_italics=1
+
 map <silent> <C-n> :NERDTreeToggle<CR>
 
-" " Airline
-let g:airline#extensions#tabline#enabled = 1
-let g:airline_powerline_fonts = 1
-let g:airline#extensions#tabline#formatter = 'unique_tail'
+let g:lightline = {
+      \ 'colorscheme': 'palenight',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+      \ },
+      \ 'component_function': {
+      \   'gitbranch': 'fugitive#head'
+      \ },
+      \ }
+
+set laststatus=2
 
 
 
@@ -96,7 +132,6 @@ let g:airline#extensions#tabline#formatter = 'unique_tail'
 " " Vim search
 set incsearch
 set hlsearch
-hi Search guibg=#282828
-hi Search guifg=#fbf1c7
-nnoremap <esc> :noh<return><esc>
+nnoremap <c-c> :noh<return><esc>
 set mouse=a
+hi Comment gui=italic
