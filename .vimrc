@@ -89,7 +89,7 @@ let g:ale_statusline_format = ['X %d', '? %d', '']
 let g:ale_echo_msg_format = '%linter%: %s'
 " let g:ale_lint_delay = 1000
 let g:ale_linters = {
-\   'c': ['clangtidy'],
+\   'c': ['gcc', 'cppcheck'],
 \}
 
 
