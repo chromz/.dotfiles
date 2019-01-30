@@ -1,10 +1,10 @@
 [colors]
 transparent = #00000000
-color0 = #fbf1c7
+color0 = #fcfcfc
 color1 = #464B50
 # underline = #464B50
-underline = #A89984
-color2 = #80282828
+underline = #ef476f
+color2 = #e04c5b5c
 color3= #A89984
 color4= #282828
 color5= #504945
@@ -23,7 +23,7 @@ spacing = 0
 padding-right = 0
 radius = 0
 
-font-0 = DankMono Nerd Font:size=9;1
+font-0 = DankMono Nerd Font:size=10;1
 font-1 = DankMono Nerd Font:size=30;2
 
 [bar/top]
@@ -45,7 +45,7 @@ content-background = ${colors.color2}
 type = internal/bspwm
 format = <label-state> <label-mode>
 
-ws-icon-0 = I;
+ws-icon-0 = I;
 ws-icon-1 = II;
 ws-icon-2 = III;
 ws-icon-3 = IV;
