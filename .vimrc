@@ -65,7 +65,7 @@ let g:fzf_colors =
 " let g:indentLine_setColors = 0
 " }}
 
-set timeoutlen=200
+set timeoutlen=500
 inoremap jj <Esc>
 
 set cursorline
