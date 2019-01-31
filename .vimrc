@@ -33,9 +33,6 @@ call plug#end()
 
 set cursorline
 
-set guifont=DankMono\ Nerd\ Font\ 10
-set guioptions -=m
-set guioptions -=T
 nnoremap <Leader>a :Rg<Space>
 
 " Customize fzf colors to match your color scheme
@@ -67,6 +64,9 @@ let g:fzf_colors =
 " let g:indentLine_showFirstIndentLevel = 1
 " let g:indentLine_setColors = 0
 " }}
+
+set timeoutlen=200
+inoremap jj <Esc>
 
 set cursorline
 set colorcolumn=80
