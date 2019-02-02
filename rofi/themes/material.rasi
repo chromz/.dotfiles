@@ -9,16 +9,17 @@
 
 * {
   
-  base07: #F8E9D5; 
+  base07: #fcfcfc; 
   base0B: #C3E88D;
   base0D: #82AAFF;
   base0F: #FF5370;
-  background: #3D4048AF;
-  selected: #A5C5AF;
+  background: #0a0908AF;
+  selected: #fcfcfc;
 
 
   spacing: 0;
   background-color: transparent;
+  bgselected: #ef476f;
 
   font: "DankMono Nerd Font 13";
 }
@@ -91,7 +92,7 @@ element normal {
 }
 
 element selected {
-  /* background-color: @base07; */
+  background-color: @bgselected;
 }
 
 element alternate {
