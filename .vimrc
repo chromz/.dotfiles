@@ -10,6 +10,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'drewtempelmeyer/palenight.vim'
 Plug 'tpope/vim-sleuth'
 " Plug 'ryanoasis/vim-devicons'
+Plug 'morhetz/gruvbox'
 Plug 'ajh17/VimCompletesMe'
 Plug '/usr/bin/fzf'
 Plug 'ayu-theme/ayu-vim'
@@ -75,7 +76,7 @@ let g:DevIconsEnableFoldersOpenClose = 1
 command! Bd :bp|:bd#
 
 
-set list lcs=nbsp:␣,trail:·,tab:\\ 
+set list lcs=nbsp:␣,trail:·,tab:\\ ,space:·
 
 
 " " Save session
@@ -108,13 +109,13 @@ let g:NERDTreeDirArrowCollapsible=""
 " " Theme
 
 set background=dark
-colorscheme palenight
+colorscheme gruvbox
 let g:palenight_terminal_italics=1
 
 map <silent> <C-n> :NERDTreeToggle<CR>
 
 let g:lightline = {
-      \ 'colorscheme': 'palenight',
+      \ 'colorscheme': 'gruvbox',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
@@ -132,6 +133,8 @@ set laststatus=2
 " " Vim search
 set incsearch
 set hlsearch
-nnoremap <c-c> :noh<return><esc>
+nnoremap <CR> :noh<CR><ESC>
 set mouse=a
+set ttymouse=xterm2
 hi Comment gui=italic
+hi Normal guibg=NONE ctermbg=NONE
