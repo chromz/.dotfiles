@@ -11,7 +11,7 @@ Plug 'drewtempelmeyer/palenight.vim'
 Plug 'tpope/vim-sleuth'
 " Plug 'ryanoasis/vim-devicons'
 Plug 'morhetz/gruvbox'
-Plug 'ajh17/VimCompletesMe'
+Plug 'Valloric/YouCompleteMe'
 Plug '/usr/bin/fzf'
 Plug 'ayu-theme/ayu-vim'
 Plug 'junegunn/fzf.vim'
@@ -90,8 +90,9 @@ let g:ale_statusline_format = ['X %d', '? %d', '']
 let g:ale_echo_msg_format = '%linter%: %s'
 " let g:ale_lint_delay = 1000
 let g:ale_linters = {
-\   'c': ['gcc', 'cppcheck'],
+\   'c': ['gcc', 'cppcheck', 'clangcheck', 'clangtidy'],
 \}
+
 
 
 " " FZF
