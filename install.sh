@@ -1,6 +1,7 @@
 #/bin/bash
 mkdir ~/.config
-cp bspwm ~/.config -r
+cp .vim ~/.vim -r
+Cp bspwm ~/.config -r
 cp dunst ~/.config -r
 cp termite ~/.config -r
 cp rofi ~/.config -r
