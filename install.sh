@@ -1,7 +1,6 @@
 #/bin/bash
 mkdir ~/.config
 cp nvim ~/.config/ -r
-cp .vim/after/ftplugin ~/.config/nvim/ -r
 cp bspwm ~/.config -r
 cp dunst ~/.config -r
 cp termite ~/.config -r

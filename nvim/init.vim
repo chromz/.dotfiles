@@ -3,6 +3,7 @@ set termguicolors
 
 set number
 set encoding=utf-8
+filetype plugin indent on
 
 call plug#begin('~/.local/share/nvim/plugged')
 
@@ -10,22 +11,23 @@ Plug 'Shougo/deoplete.nvim'
 Plug 'scrooloose/nerdtree'
 Plug 'drewtempelmeyer/palenight.vim'
 Plug 'tpope/vim-sleuth'
+Plug 'matze/vim-meson'
 " Plug 'ryanoasis/vim-devicons'
 Plug 'morhetz/gruvbox'
 Plug '/usr/bin/fzf'
-Plug 'ayu-theme/ayu-vim'
+" Plug 'ayu-theme/ayu-vim'
 Plug 'junegunn/fzf.vim'
 Plug 'itchyny/lightline.vim'
-" Plug 'vim-airline/vim-airline'
-" Plug 'Yggdroot/indentLine'
-" Plug 'vim-airline/vim-airline-themes'
+" " Plug 'vim-airline/vim-airline'
+" " Plug 'Yggdroot/indentLine'
+" " Plug 'vim-airline/vim-airline-themes'
 Plug 'w0rp/ale'
-Plug 'cseelus/vim-colors-lucid'
+" Plug 'cseelus/vim-colors-lucid'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
-Plug 'Badacadabra/vim-archery'
-Plug 'whatyouhide/vim-gotham'
-" Plug 'rafi/awesome-vim-colorschemes'
+" Plug 'Badacadabra/vim-archery'
+" Plug 'whatyouhide/vim-gotham'
+" " Plug 'rafi/awesome-vim-colorschemes'
 Plug 'tpope/vim-commentary'
 Plug 'mattn/emmet-vim'
 Plug 'pangloss/vim-javascript'
@@ -36,7 +38,6 @@ call plug#end()
 let g:deoplete#enable_at_startup = 1
 inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 
-filetype plugin indent on
 
 
 set cursorline
