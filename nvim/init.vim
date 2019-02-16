@@ -36,6 +36,8 @@ call plug#end()
 let g:deoplete#enable_at_startup = 1
 inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 
+filetype plugin indent on
+
 
 set cursorline
 
