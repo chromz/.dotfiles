@@ -6,13 +6,12 @@ set encoding=utf-8
 
 call plug#begin('~/.local/share/nvim/plugged')
 
-Plug 'scrooloose/nerdtree'
 Plug 'Shougo/deoplete.nvim'
+Plug 'scrooloose/nerdtree'
 Plug 'drewtempelmeyer/palenight.vim'
 Plug 'tpope/vim-sleuth'
-Plug 'morhetz/gruvbox'
-Plug 'romainl/flattened'
 " Plug 'ryanoasis/vim-devicons'
+Plug 'morhetz/gruvbox'
 Plug '/usr/bin/fzf'
 Plug 'ayu-theme/ayu-vim'
 Plug 'junegunn/fzf.vim'
@@ -28,11 +27,8 @@ Plug 'Badacadabra/vim-archery'
 Plug 'whatyouhide/vim-gotham'
 " Plug 'rafi/awesome-vim-colorschemes'
 Plug 'tpope/vim-commentary'
-Plug 'jiangmiao/auto-pairs'
 Plug 'mattn/emmet-vim'
 Plug 'pangloss/vim-javascript'
-Plug 'gregsexton/MatchTag'
-Plug 'alvan/vim-closetag'
 
 call plug#end()
 
@@ -44,6 +40,22 @@ inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 set cursorline
 
 nnoremap <Leader>a :Rg<Space>
+
+" Customize fzf colors to match your color scheme
+let g:fzf_colors =
+\ { 'fg':      ['fg', 'Normal'],
+  \ 'bg':      ['bg', 'Normal'],
+  \ 'hl':      ['fg', 'Comment'],
+  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+  \ 'hl+':     ['fg', 'Statement'],
+  \ 'info':    ['fg', 'PreProc'],
+  \ 'border':  ['fg', 'Ignore'],
+  \ 'prompt':  ['fg', 'Conditional'],
+  \ 'pointer': ['fg', 'Exception'],
+  \ 'marker':  ['fg', 'Keyword'],
+  \ 'spinner': ['fg', 'Label'],
+  \ 'header':  ['fg', 'Comment'] }
 
 " " let g:ackprg = 'ag --nogroup --nocolor --column'
 
@@ -59,6 +71,9 @@ nnoremap <Leader>a :Rg<Space>
 " let g:indentLine_setColors = 0
 " }}
 
+set timeoutlen=500
+inoremap jj <Esc>
+
 set cursorline
 set colorcolumn=80
 let g:WebDevIconsUnicodeDecorateFolderNodes = 1
@@ -66,7 +81,7 @@ let g:DevIconsEnableFoldersOpenClose = 1
 command! Bd :bp|:bd#
 
 
-set list lcs=nbsp:␣,trail:·,tab:\\ 
+set list lcs=nbsp:␣,trail:·,tab:\\ ,space:·
 
 
 " " Save session
@@ -80,8 +95,9 @@ let g:ale_statusline_format = ['X %d', '? %d', '']
 let g:ale_echo_msg_format = '%linter%: %s'
 " let g:ale_lint_delay = 1000
 let g:ale_linters = {
-\   'c': ['clangtidy'],
+\   'c': ['gcc', 'cppcheck', 'clangcheck', 'clangtidy'],
 \}
+
 
 
 " " FZF
@@ -99,19 +115,13 @@ let g:NERDTreeDirArrowCollapsible=""
 " " Theme
 
 set background=dark
-colorscheme palenight
+colorscheme gruvbox
 let g:palenight_terminal_italics=1
 
 map <silent> <C-n> :NERDTreeToggle<CR>
 
-" " Airline
-let g:airline#extensions#tabline#enabled = 1
-" let g:airline_powerline_fonts = 1
-let g:airline#extensions#tabline#formatter = 'unique_tail'
-
-
 let g:lightline = {
-      \ 'colorscheme': 'palenight',
+      \ 'colorscheme': 'gruvbox',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
@@ -121,11 +131,15 @@ let g:lightline = {
       \ },
       \ }
 
+set laststatus=2
+
+
 
 
 " " Vim search
 set incsearch
 set hlsearch
-nnoremap <c-c> :noh<return><esc>
+nnoremap <CR> :noh<CR><ESC>
 set mouse=a
 hi Comment gui=italic
+hi Normal guibg=NONE ctermbg=NONE
