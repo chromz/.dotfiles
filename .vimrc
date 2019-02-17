@@ -9,9 +9,11 @@ call plug#begin('~/.vim/plugged')
 Plug 'scrooloose/nerdtree'
 Plug 'drewtempelmeyer/palenight.vim'
 Plug 'tpope/vim-sleuth'
+Plug 'maralla/completor.vim'
 " Plug 'ryanoasis/vim-devicons'
+Plug 'matze/vim-meson'
+Plug 'embear/vim-localvimrc'
 Plug 'morhetz/gruvbox'
-Plug 'Valloric/YouCompleteMe'
 Plug '/usr/bin/fzf'
 Plug 'ayu-theme/ayu-vim'
 Plug 'junegunn/fzf.vim'
@@ -33,6 +35,7 @@ Plug 'pangloss/vim-javascript'
 call plug#end()
 
 set cursorline
+packadd termdebug
 
 nnoremap <Leader>a :Rg<Space>
 
@@ -65,6 +68,11 @@ let g:fzf_colors =
 " let g:indentLine_showFirstIndentLevel = 1
 " let g:indentLine_setColors = 0
 " }}
+
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<cr>"
+let g:completor_clang_binary = '/usr/bin/clang'
 
 set timeoutlen=500
 inoremap jj <Esc>
