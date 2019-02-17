@@ -36,6 +36,7 @@ call plug#end()
 
 set cursorline
 packadd termdebug
+let g:localvimrc_sandbox = 0
 
 nnoremap <Leader>a :Rg<Space>
 
@@ -54,6 +55,10 @@ let g:fzf_colors =
   \ 'marker':  ['fg', 'Keyword'],
   \ 'spinner': ['fg', 'Label'],
   \ 'header':  ['fg', 'Comment'] }
+
+let &t_SI = "\<Esc>[6 q"
+let &t_SR = "\<Esc>[4 q"
+let &t_EI = "\<Esc>[2 q"
 
 " " let g:ackprg = 'ag --nogroup --nocolor --column'
 
