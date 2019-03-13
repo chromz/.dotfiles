@@ -5,11 +5,11 @@ set number
 set encoding=utf-8
 
 call plug#begin('~/.vim/plugged')
-
 Plug 'scrooloose/nerdtree'
 Plug 'drewtempelmeyer/palenight.vim'
 Plug 'tpope/vim-sleuth'
-Plug 'maralla/completor.vim'
+Plug 'tpope/vim-repeat'
+Plug 'Valloric/YouCompleteMe'
 " Plug 'ryanoasis/vim-devicons'
 Plug 'matze/vim-meson'
 Plug 'embear/vim-localvimrc'
@@ -120,13 +120,13 @@ let NERDTreeQuitOnOpen = 1
 let NERDTreeMinimalUI=1
 let g:NERDTreeDirArrowExpandable=""
 let g:NERDTreeDirArrowCollapsible=""
+map <silent> <C-n> :NERDTreeToggle<CR>
 " " Theme
 
 set background=dark
 colorscheme gruvbox
-let g:palenight_terminal_italics=1
+" let g:palenight_terminal_italics=1
 
-map <silent> <C-n> :NERDTreeToggle<CR>
 
 let g:lightline = {
       \ 'colorscheme': 'gruvbox',
