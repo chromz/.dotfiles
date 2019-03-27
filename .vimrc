@@ -163,7 +163,7 @@ set laststatus=2
 " " Vim search
 set incsearch
 set hlsearch
-nnoremap <C-c> :noh<CR>
+nnoremap <CR> :noh<CR> <CR>
 set mouse=a
 set ttymouse=xterm2
 hi Comment gui=italic
