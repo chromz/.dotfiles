@@ -10,7 +10,7 @@ Plug 'drewtempelmeyer/palenight.vim'
 Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-repeat'
 Plug 'Valloric/YouCompleteMe'
-" Plug 'ryanoasis/vim-devicons'
+Plug 'ryanoasis/vim-devicons'
 Plug 'matze/vim-meson'
 Plug 'embear/vim-localvimrc'
 Plug 'morhetz/gruvbox'
@@ -135,9 +135,25 @@ let g:lightline = {
       \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
       \ },
       \ 'component_function': {
-      \   'gitbranch': 'fugitive#head'
+      \   'gitbranch': 'CGBranch',
+      \   'filetype': 'CFileType',
+      \   'fileformat': 'CFileFormat'
       \ },
       \ }
+
+
+function! CGBranch()
+  let fugitivetext = fugitive#head()
+  return (strlen(fugitivetext) > 0) ? fugitivetext . ' ' : ''
+endfunction
+
+function! CFileType()
+  return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype . ' ' . WebDevIconsGetFileTypeSymbol() : 'no ft') : ''
+endfunction
+
+function! CFileFormat()
+  return winwidth(0) > 70 ? (&fileformat . ' ' . WebDevIconsGetFileFormatSymbol()) : ''
+endfunction
 
 set laststatus=2
 
