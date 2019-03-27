@@ -124,12 +124,12 @@ map <silent> <C-n> :NERDTreeToggle<CR>
 " " Theme
 
 set background=dark
-colorscheme gruvbox
+colorscheme palenight
 " let g:palenight_terminal_italics=1
 
 
 let g:lightline = {
-      \ 'colorscheme': 'gruvbox',
+      \ 'colorscheme': 'palenight',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
@@ -147,7 +147,7 @@ set laststatus=2
 " " Vim search
 set incsearch
 set hlsearch
-nnoremap <CR> :noh<CR><ESC>
+nnoremap <C-c> :noh<CR>
 set mouse=a
 set ttymouse=xterm2
 hi Comment gui=italic
