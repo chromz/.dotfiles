@@ -34,9 +34,10 @@ Plug 'pangloss/vim-javascript'
 
 call plug#end()
 
-set cursorline
 packadd termdebug
 let g:localvimrc_sandbox = 0
+set maxmempattern=2000000
+set synmaxcol=128
 
 nnoremap <Leader>a :Rg<Space>
 
