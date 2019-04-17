@@ -9,8 +9,8 @@ Plug 'scrooloose/nerdtree'
 Plug 'drewtempelmeyer/palenight.vim'
 Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-repeat'
-Plug 'Valloric/YouCompleteMe'
 Plug 'ryanoasis/vim-devicons'
+Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
 Plug 'matze/vim-meson'
 Plug 'embear/vim-localvimrc'
 Plug 'morhetz/gruvbox'
@@ -106,6 +106,7 @@ let g:ale_echo_msg_format = '%linter%: %s'
 let g:ale_linters = {
 \   'c': ['gcc', 'cppcheck', 'clangcheck', 'clangtidy'],
 \}
+let g:ale_c_build_dir_names = ['build', 'bin', 'builddir']
 
 
 
