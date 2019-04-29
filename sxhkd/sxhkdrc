@@ -147,6 +147,6 @@ XF86TouchpadToggle
 
 # Screenshot
 Print
-    maim ~/Pictures/'(date +%s)'.png
+    maim ~/Pictures/$(date +%s).png
 shift + Print
-    maim -s ~/Pictures/'(date +%s)'.png
+    maim -s ~/Pictures/$(date +%s).png
