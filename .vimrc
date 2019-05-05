@@ -9,8 +9,11 @@ Plug 'scrooloose/nerdtree'
 Plug 'drewtempelmeyer/palenight.vim'
 Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-repeat'
+Plug 'lervag/vimtex'
 Plug 'ryanoasis/vim-devicons'
-Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
+Plug 'tyrannicaltoucan/vim-quantum'
+" Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
+Plug 'Valloric/YouCompleteMe'
 Plug 'matze/vim-meson'
 Plug 'embear/vim-localvimrc'
 Plug 'morhetz/gruvbox'
@@ -126,12 +129,12 @@ map <silent> <C-n> :NERDTreeToggle<CR>
 " " Theme
 
 set background=dark
-colorscheme palenight
+colorscheme quantum
 " let g:palenight_terminal_italics=1
 
 
 let g:lightline = {
-      \ 'colorscheme': 'palenight',
+      \ 'colorscheme': 'quantum',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
