@@ -107,6 +107,12 @@ let g:ale_linters = {
 let g:ale_c_build_dir_names = ['build', 'bin', 'builddir']
 
 
+" Vimtex
+if !exists('g:ycm_semantic_triggers')
+  let g:ycm_semantic_triggers = {}
+endif
+let g:ycm_semantic_triggers.tex = g:vimtex#re#youcompleteme
+
 
 " " FZF
 let $FZF_DEFAULT_COMMAND = 'rg --files --hidden'
