@@ -78,11 +78,6 @@ let &t_EI = "\<Esc>[2 q"
 " let g:indentLine_setColors = 0
 " }}
 
-inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<cr>"
-let g:completor_clang_binary = '/usr/bin/clang'
-
 set timeoutlen=500
 inoremap jj <Esc>
 
