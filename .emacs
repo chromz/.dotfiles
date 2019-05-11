@@ -17,7 +17,7 @@
     ("1436d643b98844555d56c59c74004eb158dc85fc55d2e7205f8d9b8c860e177f" "1436d643b98844555d56c59c74004eb158dc85fc55d2e7205f8d9b8c860e177fb" default)))
  '(package-selected-packages
    (quote
-    (evil auctex company-auctex company-tern gruvbox-theme company flycheck projectile ## powerline all-the-icons neotree))))
+    (flycheck-clang-tidy auctex company-auctex company-tern gruvbox-theme company flycheck projectile ## powerline all-the-icons neotree))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -25,23 +25,40 @@
  ;; If there is more than one, they won't work right.
  )
 
+;; (setq my-packages
+;;       '(
+;;        ;; Packages list to restore
+;;     ))
+
+;; (dolist (pkg my-packages)
+;;   (unless (package-installed-p pkg)
+;;     (package-install pkg)))
+
+
 ;; Emacs whitespace
 (require 'whitespace)
 (setq whitespace-line-column 80)
-(setq whitespace-style '(spaces tabs space-mark tab-mark))
+(setq whitespace-style (quote (face spaces trailing tabs newline space-mark tab-mark newline-mark)))
+(setq whitespace-display-mappings
+;; all numbers are unicode codepoint in decimal. e.g. (insert-char 182 1)
+      '(
+	(space-mark ?\ [183] [46]) ; SPACE 32 「 」, 183 MIDDLE DOT 「·」, 46 FULL STOP 「.」
+	(space-mark ?\xA0 [?\x2422] [?_]) ; Hard space
+	(tab-mark ?\t [124 ?\t] [92 9]) ; tab
+	))
+
 (global-whitespace-mode 1)
 
 ;; AUCTex
 (setq-default TeX-engine 'xetex)
 (setq TeX-view-program-selection '((output-pdf "Zathura")))
 
-(evil-mode 1)
-
 ;; IDO
 (setq ido-enable-flex-matching t)
 (setq ido-everywhere t)
 (ido-mode 1)
-(setq backup-directory-alist `(("." . "~/.emacs.d/saves")))
+(setq backup-directory-alist
+      `(("." . ,(concat user-emacs-directory "backups"))))
 
 ;; ui things
 (menu-bar-mode -1)
@@ -81,6 +98,7 @@
 ;; Company-mode
 (global-company-mode)
 (add-to-list 'company-backends 'company-tern)
+(define-key company-active-map (kbd "TAB") 'company-complete-common-or-cycle)
 (setq company-idle-delay 0)
 
 (company-auctex-init)
