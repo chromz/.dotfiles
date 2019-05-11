@@ -17,13 +17,14 @@
     ("1436d643b98844555d56c59c74004eb158dc85fc55d2e7205f8d9b8c860e177f" "1436d643b98844555d56c59c74004eb158dc85fc55d2e7205f8d9b8c860e177fb" default)))
  '(package-selected-packages
    (quote
-    (flycheck-clang-tidy auctex company-auctex company-tern gruvbox-theme company flycheck projectile ## powerline all-the-icons neotree))))
+    (dracula-theme flycheck-clang-tidy auctex company-auctex company-tern gruvbox-theme company flycheck projectile ## powerline all-the-icons neotree))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+ '(whitespace-space ((t (:foreground "gray30"))))
+ '(whitespace-tab ((t (:foreground "grey30")))))
 
 ;; (setq my-packages
 ;;       '(
@@ -63,7 +64,7 @@
 ;; ui things
 (menu-bar-mode -1)
 (toggle-scroll-bar -1)
-(load-theme 'gruvbox)
+(load-theme 'dracula t)
 (tool-bar-mode -1)
 ;; (setq ido-auto-merge-work-directories-length -1)
 
