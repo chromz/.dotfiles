@@ -89,6 +89,7 @@
 (global-set-key (kbd "M-n") 'neotree-toggle)
 (setq neo-autorefresh nil)
 (setq projectile-switch-project-action 'neotree-projectile-action)
+(setq neo-smart-open t)
 
 ;; Helm
 ;; (require 'helm-config)
