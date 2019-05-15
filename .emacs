@@ -17,7 +17,7 @@
     ("1436d643b98844555d56c59c74004eb158dc85fc55d2e7205f8d9b8c860e177f" "1436d643b98844555d56c59c74004eb158dc85fc55d2e7205f8d9b8c860e177fb" default)))
  '(package-selected-packages
    (quote
-    (dracula-theme flycheck-clang-tidy auctex company-auctex company-tern gruvbox-theme company flycheck projectile ## powerline all-the-icons neotree))))
+    (js2-mode rg dracula-theme flycheck-clang-tidy auctex company-auctex company-tern gruvbox-theme company flycheck projectile ## powerline all-the-icons neotree))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -35,6 +35,12 @@
 ;;   (unless (package-installed-p pkg)
 ;;     (package-install pkg)))
 
+;; Cycle windows
+(global-set-key (kbd "C-.") #'other-window)
+(global-set-key (kbd "C-,") #'prev-window)
+(defun prev-window ()
+  (interactive)
+  (other-window -1))
 
 ;; Emacs whitespace
 (require 'whitespace)
@@ -50,6 +56,10 @@
 
 (global-whitespace-mode 1)
 
+;; Js2 mode
+(add-to-list 'auto-mode-alist '("\\.jsx?\\'" . js2-jsx-mode))
+(add-to-list 'interpreter-mode-alist '("node" . js2-jsx-mode))
+
 ;; AUCTex
 (setq-default TeX-engine 'xetex)
 (setq TeX-view-program-selection '((output-pdf "Zathura")))
@@ -60,20 +70,25 @@
 (ido-mode 1)
 (setq backup-directory-alist
       `(("." . ,(concat user-emacs-directory "backups"))))
+(setq auto-save-file-name-transforms
+      `((".*" "~/.emacs.d/autosaves/" t)))
 
 ;; ui things
 (menu-bar-mode -1)
 (toggle-scroll-bar -1)
 (load-theme 'dracula t)
 (tool-bar-mode -1)
-;; (setq ido-auto-merge-work-directories-length -1)
-
+(show-paren-mode 1)
+(setq show-paren-delay 0)
 (global-display-line-numbers-mode)
-(global-set-key (kbd "M-n") 'neotree-toggle)
+;; (setq ido-auto-merge-work-directories-length -1)
 
 ;; Tree view
 (setq neo-theme (if (display-graphic-p) 'icons 'arrow))
 (setq neo-window-fixed-size nil)
+(global-set-key (kbd "M-n") 'neotree-toggle)
+(setq neo-autorefresh nil)
+(setq projectile-switch-project-action 'neotree-projectile-action)
 
 ;; Helm
 ;; (require 'helm-config)
@@ -85,13 +100,12 @@
 ;; Powerline
 (powerline-default-theme)
 
-;; Neotree
-(setq projectile-switch-project-action 'neotree-projectile-action)
-
 ;; Projectile
 (projectile-mode +1)
 ;; (define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
 (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
+(setq projectile-enable-caching t)
+
 
 ;; Flycheck
 (add-hook 'after-init-hook #'global-flycheck-mode)
@@ -101,8 +115,11 @@
 (add-to-list 'company-backends 'company-tern)
 (define-key company-active-map (kbd "TAB") 'company-complete-common-or-cycle)
 (setq company-idle-delay 0)
+(setq company-minimum-prefix-length 1)
 
 (company-auctex-init)
 
 (provide '.emacs)
 ;;; .emacs ends here
+(put 'upcase-region 'disabled nil)
+(put 'downcase-region 'disabled nil)
