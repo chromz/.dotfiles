@@ -9,7 +9,7 @@
 
 ;; (setq my-packages
 ;;       '(
-;;        ;; Packages list to restore
+;;        cmake-ide go-mode js2-mode rg dracula-theme flycheck-clang-tidy auctex company-auctex company-tern gruvbox-theme company flycheck projectile all-the-icons neotree ;; Packages list to restore
 ;;     ))
 
 ;; (dolist (pkg my-packages)
@@ -29,16 +29,22 @@
 ;; Emacs whitespace
 (require 'whitespace)
 (setq whitespace-line-column 80)
-(setq whitespace-style (quote (face spaces trailing tabs newline space-mark tab-mark newline-mark)))
+(setq whitespace-style (quote (face spaces trailing tabs newline space-mark tab-mark newline-mark lines-tail)))
 (setq whitespace-display-mappings
 ;; all numbers are unicode codepoint in decimal. e.g. (insert-char 182 1)
       '(
-	(space-mark ?\ [183] [46]) ; SPACE 32 「 」, 183 MIDDLE DOT 「·」, 46 FULL STOP 「.」
-	(space-mark ?\xA0 [?\x2422] [?_]) ; Hard space
-	(tab-mark ?\t [124 ?\t] [92 9]) ; tab
+	(space-mark ?\ [183] [46])
+	(space-mark ?\xA0 [?\x2422] [?_])
+	(tab-mark ?\t [124 ?\t] [92 9])
 	))
 
 (global-whitespace-mode 1)
+
+;; C Style
+(setq c-default-style "linux")
+
+;; Cmake
+(cmake-ide-setup)
 
 ;; Js2 mode
 (add-to-list 'auto-mode-alist '("\\.jsx?\\'" . js2-jsx-mode))
@@ -80,15 +86,12 @@
 ;; (global-set-key (kbd "M-x") #'helm-M-x)
 ;; (global-set-key (kbd "C-x r b") #'helm-filtered-bookmarks)
 ;; (global-set-key (kbd "C-x C-f") #'helm-find-files)
-;; (helm-mode 1)
-
-;; Powerline
-(powerline-default-theme)
+;; (helm-mode
 
 ;; Projectile
 (projectile-mode +1)
 ;; (define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
-(define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
+(define-key projectile-mode-map (kbd "M-p") 'projectile-command-map)
 (setq projectile-enable-caching t)
 
 
@@ -104,7 +107,9 @@
 
 (company-auctex-init)
 
-(provide '.emacs)
-;;; .emacs ends here
+;; Golang
+;; (add-hook 'go-mode-hook 'gofmt-before-save)
+
+
 (put 'upcase-region 'disabled nil)
 (put 'downcase-region 'disabled nil)
