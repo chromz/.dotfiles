@@ -7,14 +7,14 @@
 (setq package-archives '(("gnu" . "https://elpa.gnu.org/packages/")
                          ("melpa" . "https://melpa.org/packages/")))
 
-;; (setq my-packages
-;;       '(
-;;        cmake-ide go-mode js2-mode rg dracula-theme flycheck-clang-tidy auctex company-auctex company-tern gruvbox-theme company flycheck projectile all-the-icons neotree ;; Packages list to restore
-;;     ))
+(setq my-packages
+      '(
+magit cmake-font-lock irony rtags cmake-ide go-mode js2-mode rg dracula-theme flycheck-clang-tidy auctex company-auctex company-tern gruvbox-theme company flycheck projectile  all-the-icons neotree
+    ))
 
-;; (dolist (pkg my-packages)
-;;   (unless (package-installed-p pkg)
-;;     (package-install pkg)))
+(dolist (pkg my-packages)
+  (unless (package-installed-p pkg)
+    (package-install pkg)))
 
 (setq custom-file "~/.emacs.d/custom.el")
 (load-file custom-file)
@@ -42,9 +42,22 @@
 
 ;; C Style
 (setq c-default-style "linux")
+(add-hook 'c++-mode-hook 'irony-mode)
+(add-hook 'c-mode-hook 'irony-mode)
+(add-hook 'objc-mode-hook 'irony-mode)
+
+(add-hook 'irony-mode-hook 'irony-cdb-autosetup-compile-options)
+
+;; Magit
+(global-set-key (kbd "C-x g") 'magit-status)
+(global-set-key (kbd "C-x M-g") 'magit-dispatch)
+(global-set-key (kbd "C-c g") 'magit-file-dispatch)
+
 
 ;; Cmake
 (cmake-ide-setup)
+(autoload 'cmake-font-lock-activate "cmake-font-lock" nil t)
+(add-hook 'cmake-mode-hook 'cmake-font-lock-activate)
 
 ;; Js2 mode
 (add-to-list 'auto-mode-alist '("\\.jsx?\\'" . js2-jsx-mode))
@@ -92,11 +105,13 @@
 (projectile-mode +1)
 ;; (define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
 (define-key projectile-mode-map (kbd "M-p") 'projectile-command-map)
-(setq projectile-enable-caching t)
+;; (setq projectile-enable-caching t)
 
 
 ;; Flycheck
 (add-hook 'after-init-hook #'global-flycheck-mode)
+(eval-after-load 'flycheck
+  '(add-hook 'flycheck-mode-hook #'flycheck-clang-tidy-setup))
 
 ;; Company-mode
 (global-company-mode)
@@ -108,8 +123,9 @@
 (company-auctex-init)
 
 ;; Golang
-;; (add-hook 'go-mode-hook 'gofmt-before-save)
+(add-hook 'go-mode-hook 'gofmt-before-save)
 
-
+(provide '.emacs)
+;;; .emacs ends here
 (put 'upcase-region 'disabled nil)
 (put 'downcase-region 'disabled nil)
