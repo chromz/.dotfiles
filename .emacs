@@ -7,14 +7,14 @@
 (setq package-archives '(("gnu" . "https://elpa.gnu.org/packages/")
                          ("melpa" . "https://melpa.org/packages/")))
 
-(setq my-packages
-      '(
-magit cmake-font-lock irony rtags cmake-ide go-mode js2-mode rg dracula-theme flycheck-clang-tidy auctex company-auctex company-tern gruvbox-theme company flycheck projectile  all-the-icons neotree
-    ))
+;; (setq my-packages
+;;       '(
+;;       magit cmake-font-lock irony rtags cmake-ide go-mode js2-mode rg dracula-theme flycheck-clang-tidy auctex company-auctex company-tern gruvbox-theme company flycheck projectile all-the-icons neotre ;; Packages list to restore
+;;     ))
 
-(dolist (pkg my-packages)
-  (unless (package-installed-p pkg)
-    (package-install pkg)))
+;; (dolist (pkg my-packages)
+;;   (unless (package-installed-p pkg)
+;;     (package-install pkg)))
 
 (setq custom-file "~/.emacs.d/custom.el")
 (load-file custom-file)
