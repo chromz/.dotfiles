@@ -5,7 +5,7 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "DejaVuSansMono Nerd Font:size=10:antialias=true:autohint=true";
+static char *font = "DankMono Nerd Font:size=10:antialias=true:autohint=true";
 static int borderpx = 2;
 
 /*
@@ -107,7 +107,7 @@ static const char *colorname[] = {
  * Default colors (colorname index)
  * foreground, background, cursor, reverse cursor
  */
-unsigned int alpha = 225;
+float alpha = 0.8F;
 unsigned int defaultbg = 0;
 unsigned int defaultfg = 15;
 static unsigned int defaultcs = 15;
