@@ -78,6 +78,9 @@ let &t_EI = "\<Esc>[2 q"
 " let g:indentLine_setColors = 0
 " }}
 
+" YouCompleteMe
+let g:ycm_autoclose_preview_window_after_completion=1
+
 " Indentation
 set cindent
 set cinoptions=(0,u0,U0
