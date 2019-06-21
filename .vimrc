@@ -78,6 +78,10 @@ let &t_EI = "\<Esc>[2 q"
 " let g:indentLine_setColors = 0
 " }}
 
+" Indentation
+set cindent
+set cinoptions=(0,u0,U0
+
 set timeoutlen=500
 inoremap jj <Esc>
 
