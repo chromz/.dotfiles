@@ -15,7 +15,6 @@ Plug 'tyrannicaltoucan/vim-quantum'
 " Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
 Plug 'Valloric/YouCompleteMe'
 Plug 'matze/vim-meson'
-Plug 'embear/vim-localvimrc'
 Plug 'morhetz/gruvbox'
 Plug '/usr/bin/fzf'
 Plug 'ayu-theme/ayu-vim'
@@ -181,3 +180,5 @@ set mouse=a
 set ttymouse=xterm2
 hi Comment gui=italic
 hi Normal guibg=NONE ctermbg=NONE
+set exrc
+set secure
