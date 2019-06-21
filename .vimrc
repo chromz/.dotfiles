@@ -7,6 +7,7 @@ set encoding=utf-8
 call plug#begin('~/.vim/plugged')
 Plug 'scrooloose/nerdtree'
 Plug 'drewtempelmeyer/palenight.vim'
+Plug 'embear/vim-localvimrc'
 Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-repeat'
 Plug 'lervag/vimtex'
