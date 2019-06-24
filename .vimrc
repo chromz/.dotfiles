@@ -135,7 +135,7 @@ let g:NERDTreeDirArrowExpandable=""
 let g:NERDTreeDirArrowCollapsible=""
 map <silent> <C-n> :NERDTreeToggle<CR>
 " " Theme
-
+autocmd ColorScheme * hi ExtraWhitespace ctermbg=red guibg='#ffcf9e'
 set background=dark
 colorscheme quantum
 " let g:palenight_terminal_italics=1
