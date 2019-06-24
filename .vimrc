@@ -180,6 +180,11 @@ nnoremap <CR> :noh<CR><ESC>
 set mouse=a
 set ttymouse=xterm2
 hi Comment gui=italic
-hi Normal guibg=NONE ctermbg=NONE
-set exrc
-set secure
+hi ExtraWhitespace ctermbg=red guibg='#ffcf9e'
+" hi Normal guibg=NONE ctermbg=NONE
+match ExtraWhitespace /\s\+$/
+
+" Indentation
+set cindent
+set cinoptions=(0,u0,U0
+filetype plugin indent on
