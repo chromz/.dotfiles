@@ -3,6 +3,13 @@ set termguicolors
 
 set number
 set encoding=utf-8
+" Trailing whitespaces
+hi ExtraWhitespace ctermbg=red guibg='#ffcf9e'
+match ExtraWhitespace /\s\+\%#\@<!$/
+autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
+autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+autocmd BufWinLeave * call clearmatches()
 
 call plug#begin('~/.vim/plugged')
 Plug 'scrooloose/nerdtree'
