@@ -3,6 +3,13 @@ set termguicolors
 
 set number
 set encoding=utf-8
+" Trailing whitespaces
+hi ExtraWhitespace ctermbg=red guibg='#ffcf9e'
+match ExtraWhitespace /\s\+\%#\@<!$/
+autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
+autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+autocmd BufWinLeave * call clearmatches()
 
 call plug#begin('~/.vim/plugged')
 Plug 'scrooloose/nerdtree'
@@ -135,7 +142,7 @@ let g:NERDTreeDirArrowExpandable=""
 let g:NERDTreeDirArrowCollapsible=""
 map <silent> <C-n> :NERDTreeToggle<CR>
 " " Theme
-
+autocmd ColorScheme * hi ExtraWhitespace ctermbg=red guibg='#ffcf9e'
 set background=dark
 colorscheme quantum
 " let g:palenight_terminal_italics=1
@@ -180,6 +187,11 @@ nnoremap <CR> :noh<CR><ESC>
 set mouse=a
 set ttymouse=xterm2
 hi Comment gui=italic
-hi Normal guibg=NONE ctermbg=NONE
-set exrc
-set secure
+hi ExtraWhitespace ctermbg=red guibg='#ffcf9e'
+" hi Normal guibg=NONE ctermbg=NONE
+match ExtraWhitespace /\s\+$/
+
+" Indentation
+set cindent
+set cinoptions=(0,u0,U0
+filetype plugin indent on
