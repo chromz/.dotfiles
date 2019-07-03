@@ -44,6 +44,10 @@ Plug 'pangloss/vim-javascript'
 
 call plug#end()
 
+set wildmode=longest,list,full
+set wildmenu
+
+
 packadd termdebug
 let g:localvimrc_sandbox = 0
 set maxmempattern=2000000
