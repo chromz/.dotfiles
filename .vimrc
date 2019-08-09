@@ -18,6 +18,7 @@ Plug 'embear/vim-localvimrc'
 Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-repeat'
 Plug 'lervag/vimtex'
+Plug 'lifepillar/vim-solarized8'
 Plug 'ryanoasis/vim-devicons'
 Plug 'tyrannicaltoucan/vim-quantum'
 " Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
@@ -196,8 +197,7 @@ endfunction
 
 set laststatus=2
 
-
-
+hi SpecialKey guifg=#93a1a1 guibg=NONE guisp=NONE
 
 " " Vim search
 set incsearch
