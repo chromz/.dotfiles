@@ -1,10 +1,10 @@
 [colors]
 transparent = #00000000
-color0 = #fcfcfc
+color0 = #ebdbb2
 color1 = #464B50
 # underline = #464B50
 underline = #ef476f
-color2 = #e00a0908
+color2 = #e0282828
 color3= #A89984
 color4= #282828
 color5= #504945
@@ -28,8 +28,8 @@ font-1 = DankMono Nerd Font:size=30;2
 
 [bar/top]
 inherit = bar/bar
-modules-left = bspwm 
-modules-center = xwindow 
+modules-left = bspwm
+modules-center = xwindow
 modules-right = date pulseaudio battery wlan ether
 tray-position = right
 wm-restack = bspwm
@@ -51,7 +51,7 @@ ws-icon-2 = III;
 ws-icon-3 = IV;
 ws-icon-4 = V;
 ws-icon-5 = VI;
-ws-icon-6 = VII;
+ws-icon-6 = VII;
 ws-icon-default = 
 
 label-focused = %icon%
@@ -84,7 +84,7 @@ icon-2 = III;
 icon-3 = IV;
 icon-4 = V;
 icon-5 = VI;
-icon-6 = VII;
+icon-6 = VII;
 icon-default = 
 
 label-active= %icon%
@@ -250,7 +250,7 @@ animation-charging-framerate = 550
 
 [module/wlan]
 type = internal/network
-interface = wlp3s0
+interface = wlo1
 interval = 3.0
 
 format-connected = <ramp-signal> 
@@ -268,7 +268,7 @@ ramp-signal-foreground = ${colors.color0}
 
 [module/ether]
 type = internal/network
-interface = eno1
+interface = eno2
 interval = 3.0
 format-connected = 
 format-connected-background = ${colors.color2}
