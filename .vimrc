@@ -17,6 +17,7 @@ Plug 'drewtempelmeyer/palenight.vim'
 Plug 'embear/vim-localvimrc'
 Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-repeat'
+Plug 'jacoborus/tender.vim'
 Plug 'lervag/vimtex'
 Plug 'lifepillar/vim-solarized8'
 Plug 'ryanoasis/vim-devicons'
@@ -164,12 +165,12 @@ map <silent> <C-n> :NERDTreeToggle<CR>
 " " Theme
 autocmd ColorScheme * hi ExtraWhitespace ctermbg=red guibg='#ffcf9e'
 set background=dark
-colorscheme quantum
+colorscheme tender
 " let g:palenight_terminal_italics=1
 
 
 let g:lightline = {
-      \ 'colorscheme': 'quantum',
+      \ 'colorscheme': 'tender',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
@@ -197,7 +198,7 @@ endfunction
 
 set laststatus=2
 
-hi SpecialKey guifg=#93a1a1 guibg=NONE guisp=NONE
+hi SpecialKey guifg=#666666 guibg=NONE guisp=NONE
 
 " " Vim search
 set incsearch
