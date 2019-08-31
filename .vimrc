@@ -32,6 +32,8 @@ Plug 'junegunn/fzf.vim'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'itchyny/lightline.vim'
+Plug 'mxw/vim-jsx'
+
 " Plug 'vim-airline/vim-airline'
 " Plug 'Yggdroot/indentLine'
 " Plug 'vim-airline/vim-airline-themes'
@@ -41,12 +43,15 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
 Plug 'Badacadabra/vim-archery'
 Plug 'whatyouhide/vim-gotham'
+Plug 'fatih/vim-go'
 " Plug 'rafi/awesome-vim-colorschemes'
 Plug 'tpope/vim-commentary'
 Plug 'mattn/emmet-vim'
 Plug 'pangloss/vim-javascript'
 
 call plug#end()
+
+let g:vimtex_view_method='zathura'
 
 set wildmode=longest,list,full
 set wildmenu
@@ -56,6 +61,7 @@ packadd termdebug
 let g:localvimrc_sandbox = 0
 set maxmempattern=2000000
 set synmaxcol=128
+
 
 nnoremap <Leader>a :Rg<Space>
 
@@ -113,6 +119,8 @@ let g:ycm_echo_current_diagnostic = 0
 set cindent
 set cinoptions=(0,u0,U0
 
+let g:tex_flavor='latex'
+
 set timeoutlen=500
 inoremap jj <Esc>
 
@@ -123,7 +131,7 @@ let g:DevIconsEnableFoldersOpenClose = 1
 command! Bd :bp|:bd#
 
 
-set list lcs=nbsp:␣,trail:·,tab:\\ ,space:·
+set list lcs=nbsp:␣,trail:·,tab:\|\ ,space:·
 
 
 " " Save session
