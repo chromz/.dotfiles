@@ -22,8 +22,8 @@ Plug 'lervag/vimtex'
 Plug 'lifepillar/vim-solarized8'
 Plug 'ryanoasis/vim-devicons'
 Plug 'tyrannicaltoucan/vim-quantum'
-" Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
-Plug 'Valloric/YouCompleteMe'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Plug 'Valloric/YouCompleteMe'
 Plug 'matze/vim-meson'
 Plug 'morhetz/gruvbox'
 Plug '/usr/bin/fzf'
@@ -50,6 +50,7 @@ Plug 'mattn/emmet-vim'
 Plug 'pangloss/vim-javascript'
 
 call plug#end()
+
 
 let g:vimtex_view_method='zathura'
 
