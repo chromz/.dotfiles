@@ -1,0 +1,8 @@
+{
+	"java.home": "/usr/lib/jvm/java-1.8.0-openjdk-amd64",
+	"java.import.maven.enabled": true,
+	"diagnostic.infoSign": "",
+	"diagnostic.warningSign": "",
+	"diagnostic.hintSign": "",
+	"diagnostic.errorSign": ""
+}
