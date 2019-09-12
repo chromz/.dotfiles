@@ -26,7 +26,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Plug 'Valloric/YouCompleteMe'
 Plug 'matze/vim-meson'
 Plug 'morhetz/gruvbox'
-Plug '/usr/bin/fzf'
+Plug '~/.fzf'
 Plug 'ayu-theme/ayu-vim'
 Plug 'junegunn/fzf.vim'
 Plug 'SirVer/ultisnips'
@@ -35,7 +35,6 @@ Plug 'itchyny/lightline.vim'
 Plug 'mxw/vim-jsx'
 
 " Plug 'vim-airline/vim-airline'
-" Plug 'Yggdroot/indentLine'
 " Plug 'vim-airline/vim-airline-themes'
 Plug 'w0rp/ale'
 Plug 'cseelus/vim-colors-lucid'
@@ -44,6 +43,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'Badacadabra/vim-archery'
 Plug 'whatyouhide/vim-gotham'
 Plug 'fatih/vim-go'
+Plug 'Yggdroot/indentLine'
 " Plug 'rafi/awesome-vim-colorschemes'
 Plug 'tpope/vim-commentary'
 Plug 'mattn/emmet-vim'
@@ -62,6 +62,7 @@ let g:localvimrc_sandbox = 0
 set maxmempattern=2000000
 set synmaxcol=128
 
+let &shell='/bin/zsh'
 
 nnoremap <Leader>a :Rg<Space>
 
@@ -93,10 +94,9 @@ let &t_EI = "\<Esc>[2 q"
 " set tabstop=4
 
 " IndentLine {{
-" let g:indentLine_char = ''
-" let g:indentLine_first_char = ''
-" let g:indentLine_showFirstIndentLevel = 1
-" let g:indentLine_setColors = 0
+let g:indentLine_char = '¦'
+let g:indentLine_first_char = '¦'
+let g:indentLine_showFirstIndentLevel = 1
 " }}
 
 " ultisnips
@@ -131,7 +131,7 @@ let g:DevIconsEnableFoldersOpenClose = 1
 command! Bd :bp|:bd#
 
 
-set list lcs=nbsp:␣,trail:·,tab:\|\ ,space:·
+set list lcs=nbsp:␣,trail:·,tab:\¦\ ,space:·
 
 
 " " Save session
@@ -206,7 +206,7 @@ endfunction
 
 set laststatus=2
 
-hi SpecialKey guifg=#666666 guibg=NONE guisp=NONE
+" hi SpecialKey guifg=#3E4452 guibg=NONE guisp=NONE
 
 " " Vim search
 set incsearch
