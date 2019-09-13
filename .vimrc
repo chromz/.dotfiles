@@ -26,7 +26,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Plug 'Valloric/YouCompleteMe'
 Plug 'matze/vim-meson'
 Plug 'morhetz/gruvbox'
-Plug '~/.fzf'
+Plug '/usr/bin/fzf'
 Plug 'ayu-theme/ayu-vim'
 Plug 'junegunn/fzf.vim'
 Plug 'SirVer/ultisnips'
@@ -43,7 +43,6 @@ Plug 'tpope/vim-fugitive'
 Plug 'Badacadabra/vim-archery'
 Plug 'whatyouhide/vim-gotham'
 Plug 'fatih/vim-go'
-Plug 'Yggdroot/indentLine'
 " Plug 'rafi/awesome-vim-colorschemes'
 Plug 'tpope/vim-commentary'
 Plug 'mattn/emmet-vim'
@@ -94,9 +93,9 @@ let &t_EI = "\<Esc>[2 q"
 " set tabstop=4
 
 " IndentLine {{
-let g:indentLine_char = '¦'
-let g:indentLine_first_char = '¦'
-let g:indentLine_showFirstIndentLevel = 1
+" let g:indentLine_char = '¦'
+" let g:indentLine_first_char = '¦'
+" let g:indentLine_showFirstIndentLevel = 1
 " }}
 
 " ultisnips
