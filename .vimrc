@@ -222,3 +222,9 @@ match ExtraWhitespace /\s\+$/
 set cindent
 set cinoptions=(0,u0,U0
 filetype plugin indent on
+
+" Coc nvim settings
+nmap <silent> g" <Plug>(coc-definition)
+nmap <silent> g{ <Plug>(coc-type-definition)
+nmap <silent> g} <Plug>(coc-implementation)
+nmap <silent> g\| <Plug>(coc-references)
