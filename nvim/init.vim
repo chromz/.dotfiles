@@ -3,22 +3,37 @@ set termguicolors
 
 set number
 set encoding=utf-8
+" Trailing whitespaces
+hi ExtraWhitespace ctermbg=red guibg='#ffcf9e'
+match ExtraWhitespace /\s\+\%#\@<!$/
+autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
+autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+autocmd BufWinLeave * call clearmatches()
 
-call plug#begin('~/.vim/plugged')
+call plug#begin('~/.local/share/nvim/plugged')
 Plug 'scrooloose/nerdtree'
 Plug 'drewtempelmeyer/palenight.vim'
+Plug 'embear/vim-localvimrc'
 Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-repeat'
+Plug 'jacoborus/tender.vim'
+Plug 'lervag/vimtex'
+Plug 'lifepillar/vim-solarized8'
 Plug 'ryanoasis/vim-devicons'
+Plug 'tyrannicaltoucan/vim-quantum'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Plug 'Valloric/YouCompleteMe'
 Plug 'matze/vim-meson'
-Plug 'embear/vim-localvimrc'
 Plug 'morhetz/gruvbox'
-Plug '/usr/bin/fzf'
+Plug '~/.fzf'
 Plug 'ayu-theme/ayu-vim'
 Plug 'junegunn/fzf.vim'
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
 Plug 'itchyny/lightline.vim'
+Plug 'MaxMEllon/vim-jsx-pretty'
 " Plug 'vim-airline/vim-airline'
-" Plug 'Yggdroot/indentLine'
 " Plug 'vim-airline/vim-airline-themes'
 Plug 'w0rp/ale'
 Plug 'cseelus/vim-colors-lucid'
@@ -26,6 +41,7 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
 Plug 'Badacadabra/vim-archery'
 Plug 'whatyouhide/vim-gotham'
+Plug 'fatih/vim-go'
 " Plug 'rafi/awesome-vim-colorschemes'
 Plug 'tpope/vim-commentary'
 Plug 'mattn/emmet-vim'
@@ -33,11 +49,18 @@ Plug 'pangloss/vim-javascript'
 
 call plug#end()
 
-set cursorline
-" packadd termdebug
+let g:vimtex_view_method='zathura'
+
+set wildmode=longest,list,full
+set wildmenu
+
+
+packadd termdebug
 let g:localvimrc_sandbox = 0
 set maxmempattern=2000000
 set synmaxcol=128
+
+let &shell='/bin/zsh'
 
 nnoremap <Leader>a :Rg<Space>
 
@@ -57,9 +80,9 @@ let g:fzf_colors =
   \ 'spinner': ['fg', 'Label'],
   \ 'header':  ['fg', 'Comment'] }
 
-" let &t_SI = "\<Esc>[6 q"
-" let &t_SR = "\<Esc>[4 q"
-" let &t_EI = "\<Esc>[2 q"
+let &t_SI = "\<Esc>[6 q"
+let &t_SR = "\<Esc>[4 q"
+let &t_EI = "\<Esc>[2 q"
 
 " " let g:ackprg = 'ag --nogroup --nocolor --column'
 
@@ -69,22 +92,44 @@ let g:fzf_colors =
 " set tabstop=4
 
 " IndentLine {{
-" let g:indentLine_char = ''
-" let g:indentLine_first_char = ''
+" let g:indentLine_char = '¦'
+" let g:indentLine_first_char = '¦'
 " let g:indentLine_showFirstIndentLevel = 1
-" let g:indentLine_setColors = 0
 " }}
+
+" ultisnips
+let g:UltiSnipsExpandTrigger = "<tab>"
+let g:UltiSnipsJumpForwardTrigger = "<tab>"
+let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
+
+
+" YouCompleteMe
+" let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+" let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+" let g:ycm_autoclose_preview_window_after_completion=1
+" let g:ycm_show_diagnostics_ui = 0
+" let g:ycm_enable_diagnostic_signs = 0
+" let g:ycm_enable_diagnostic_highlighting = 0
+" let g:ycm_echo_current_diagnostic = 0
+
+
+" Indentation
+set cindent
+set cinoptions=(0,u0,U0
+
+let g:tex_flavor='latex'
 
 set timeoutlen=500
 inoremap jj <Esc>
 
+set cursorline
 set colorcolumn=80
 let g:WebDevIconsUnicodeDecorateFolderNodes = 1
 let g:DevIconsEnableFoldersOpenClose = 1
 command! Bd :bp|:bd#
 
 
-set list lcs=nbsp:␣,trail:·,tab:\\ ,space:·
+set list lcs=nbsp:␣,trail:·,tab:\¦\ ,space:·
 
 
 " " Save session
@@ -100,7 +145,14 @@ let g:ale_echo_msg_format = '%linter%: %s'
 let g:ale_linters = {
 \   'c': ['gcc', 'cppcheck', 'clangcheck', 'clangtidy'],
 \}
+let g:ale_c_build_dir_names = ['build', 'bin', 'builddir']
 
+
+" Vimtex
+" if !exists('g:ycm_semantic_triggers')
+"   let g:ycm_semantic_triggers = {}
+" endif
+" let g:ycm_semantic_triggers.tex = g:vimtex#re#youcompleteme
 
 
 " " FZF
@@ -117,7 +169,7 @@ let g:NERDTreeDirArrowExpandable=""
 let g:NERDTreeDirArrowCollapsible=""
 map <silent> <C-n> :NERDTreeToggle<CR>
 " " Theme
-
+autocmd ColorScheme * hi ExtraWhitespace ctermbg=red guibg='#ffcf9e'
 set background=dark
 colorscheme palenight
 " let g:palenight_terminal_italics=1
@@ -152,12 +204,19 @@ endfunction
 
 set laststatus=2
 
+" hi SpecialKey guifg=#3E4452 guibg=NONE guisp=NONE
 
 " " Vim search
 set incsearch
 set hlsearch
 nnoremap <CR> :noh<CR><ESC>
 set mouse=a
-" set ttymouse=xterm2
 hi Comment gui=italic
-hi Normal guibg=NONE ctermbg=NONE
+hi ExtraWhitespace ctermbg=red guibg='#ffcf9e'
+" hi Normal guibg=NONE ctermbg=NONE
+match ExtraWhitespace /\s\+$/
+
+" Indentation
+set cindent
+set cinoptions=(0,u0,U0
+filetype plugin indent on

@@ -7,6 +7,7 @@ cp dunst ~/.config -r
 cp termite ~/.config -r
 cp rofi ~/.config -r
 cp xinitrc ~/.xinitrc
+cp nvim ~/.config/nvim -r
 cp .tmux.conf ~/
 cp cava ~/.config -r
 cp polybar ~/.config -r

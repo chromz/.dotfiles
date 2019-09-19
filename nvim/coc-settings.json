@@ -1,0 +1,13 @@
+{
+	"diagnostic.infoSign": "",
+	"diagnostic.warningSign": "",
+	"diagnostic.hintSign": "",
+	"diagnostic.errorSign": "",
+	"languageserver": {
+		"golang": {
+			"command": "gopls",
+			"rootPatterns": ["go.mod"],
+			"filetypes": ["go"]
+		}
+	}
+}
