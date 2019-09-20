@@ -1,5 +1,9 @@
 " True color
-set termguicolors
+if exists('+termguicolors')
+  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+  set termguicolors
+endif
 
 set number
 set encoding=utf-8
@@ -26,7 +30,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Plug 'Valloric/YouCompleteMe'
 Plug 'matze/vim-meson'
 Plug 'morhetz/gruvbox'
-Plug '/usr/bin/fzf'
+Plug '~/.fzf'
 Plug 'ayu-theme/ayu-vim'
 Plug 'junegunn/fzf.vim'
 Plug 'SirVer/ultisnips'
