@@ -19,6 +19,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'scrooloose/nerdtree'
 Plug 'drewtempelmeyer/palenight.vim'
 Plug 'embear/vim-localvimrc'
+Plug 'mhinz/vim-startify'
 Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-repeat'
 Plug 'jacoborus/tender.vim'
