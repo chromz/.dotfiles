@@ -49,7 +49,7 @@ Plug 'Badacadabra/vim-archery'
 Plug 'whatyouhide/vim-gotham'
 Plug 'fatih/vim-go'
 " Plug 'rafi/awesome-vim-colorschemes'
-Plug 'tpope/vim-commentary'
+Plug 'scrooloose/nerdcommenter'
 Plug 'mattn/emmet-vim'
 Plug 'pangloss/vim-javascript'
 
