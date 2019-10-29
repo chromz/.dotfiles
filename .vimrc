@@ -233,3 +233,8 @@ nmap <silent> g" <Plug>(coc-definition)
 nmap <silent> g{ <Plug>(coc-type-definition)
 nmap <silent> g} <Plug>(coc-implementation)
 nmap <silent> g\| <Plug>(coc-references)
+set updatetime=300
+set cmdheight=2
+nmap <leader>ac  <Plug>(coc-codeaction)
+nmap <leader>qf  <Plug>(coc-fix-current)
+set pastetoggle=<F10>
