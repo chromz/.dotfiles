@@ -19,12 +19,13 @@ call plug#begin('~/.vim/plugged')
 Plug 'scrooloose/nerdtree'
 Plug 'drewtempelmeyer/palenight.vim'
 Plug 'embear/vim-localvimrc'
-Plug 'mhinz/vim-startify'
 Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-repeat'
+Plug 'mhinz/vim-startify'
 Plug 'jacoborus/tender.vim'
 Plug 'lervag/vimtex'
 Plug 'lifepillar/vim-solarized8'
+Plug 'posva/vim-vue'
 Plug 'ryanoasis/vim-devicons'
 Plug 'tyrannicaltoucan/vim-quantum'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -37,7 +38,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'itchyny/lightline.vim'
-Plug 'mxw/vim-jsx'
+Plug 'neoclide/vim-jsx-improve'
 
 " Plug 'vim-airline/vim-airline'
 " Plug 'vim-airline/vim-airline-themes'
@@ -51,7 +52,6 @@ Plug 'fatih/vim-go'
 " Plug 'rafi/awesome-vim-colorschemes'
 Plug 'scrooloose/nerdcommenter'
 Plug 'mattn/emmet-vim'
-Plug 'pangloss/vim-javascript'
 
 call plug#end()
 
@@ -103,6 +103,9 @@ let &t_EI = "\<Esc>[2 q"
 " let g:indentLine_showFirstIndentLevel = 1
 " }}
 
+" NERD commenter
+let g:NERDSpaceDelims = 1
+
 " ultisnips
 let g:UltiSnipsExpandTrigger = "<tab>"
 let g:UltiSnipsJumpForwardTrigger = "<tab>"
@@ -143,6 +146,7 @@ set list lcs=nbsp:␣,trail:·,tab:\¦\ ,space:·
 set hidden
 
 " " Ale
+let g:ale_set_balloons = 1
 let g:ale_sign_warning = ''
 let g:ale_sign_error = ''
 let g:ale_statusline_format = ['X %d', '? %d', '']
@@ -238,3 +242,4 @@ set cmdheight=2
 nmap <leader>ac  <Plug>(coc-codeaction)
 nmap <leader>qf  <Plug>(coc-fix-current)
 set pastetoggle=<F10>
+nnoremap <silent> <F5> :let _s=@/ <Bar> :%s/\s\+$//e <Bar> :let @/=_s <Bar> :nohl <Bar> :unlet _s <CR>
