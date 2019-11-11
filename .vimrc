@@ -7,6 +7,7 @@ endif
 
 set number
 set encoding=utf-8
+let g:ale_set_balloons = 1
 " Trailing whitespaces
 hi ExtraWhitespace ctermbg=red guibg='#ffcf9e'
 match ExtraWhitespace /\s\+\%#\@<!$/
@@ -146,7 +147,6 @@ set list lcs=nbsp:␣,trail:·,tab:\¦\ ,space:·
 set hidden
 
 " " Ale
-let g:ale_set_balloons = 1
 let g:ale_sign_warning = ''
 let g:ale_sign_error = ''
 let g:ale_statusline_format = ['X %d', '? %d', '']
