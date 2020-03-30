@@ -1,0 +1,10 @@
+#/bin/bash
+if [[ $1 == -r ]]
+then
+  maim -s ~/Pictures/$(date +%s).png
+else
+  if [[ $1 == -f ]]
+  then
+    maim ~/Pictures/$(date +%s).png 
+  fi
+fi
