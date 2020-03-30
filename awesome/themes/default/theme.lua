@@ -7,6 +7,7 @@ local xresources = require("beautiful.xresources")
 local dpi = xresources.apply_dpi
 
 local gfs = require("gears.filesystem")
+local gears = require("gears")
 local themes_path = "~/.config/awesome/themes/"
 local titlep = themes_path .. "/default/titlebar/"
 
@@ -57,8 +58,13 @@ theme.taglist_squares_unsel = theme_assets.taglist_squares_unsel(
 )
 
 theme.taglist_disable_icon = true
-theme.taglist_spacing = 15
+theme.taglist_spacing = 0
+local tag_rect= function(cr, width, height)
+    gears.shape.rounded_rect(cr, width, height, 2)
+end
+theme.taglist_shape = tag_rect
 theme.taglist_bg_focus = "#3f4457"
+
 
 -- Variables set for theming notifications:
 -- notification_font
