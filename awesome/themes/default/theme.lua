@@ -15,7 +15,7 @@ local theme = {}
 theme.font          = "DankMono Nerd Font  10"
 
 theme.bg_normal     = "#1d1f28"
-heme.bg_focus      = "#1d1f28"
+theme.bg_focus      = "#1d1f28"
 theme.bg_urgent     = "#ff0000"
 theme.bg_minimize   = "#444444"
 theme.bg_systray    = theme.bg_normal
@@ -44,6 +44,9 @@ theme.border_marked = "#91231c"
 -- Example:
 --theme.taglist_bg_focus = "#ff0000"
 
+theme.tasklist_disable_icon = true
+theme.tasklist_align = "center"
+
 -- Generate taglist squares:
 local taglist_square_size = dpi(4)
 theme.taglist_squares_sel = theme_assets.taglist_squares_sel(
@@ -53,6 +56,7 @@ theme.taglist_squares_unsel = theme_assets.taglist_squares_unsel(
     taglist_square_size, theme.fg_normal
 )
 
+theme.taglist_disable_icon = true
 theme.taglist_spacing = 15
 theme.taglist_bg_focus = "#3f4457"
 
@@ -77,6 +81,7 @@ theme.menu_width  = dpi(100)
 
 -- Define the image to load
 theme.titlebar_size = dpi(48)
+theme.titlebar_title_enabled = false
 -- Titlebar buttons
 -- Define the images to load
 theme.titlebar_close_button_normal = titlep .. "close_normal.svg"
@@ -124,7 +129,7 @@ theme.titlebar_maximized_button_focus_active_hover  = titlep .. "maximized_focus
 
 theme.wallpaper = "~/Pictures/Wallpapers/1.png"
 
--- You can use your own ayout icons like this:
+-- You can use your own layout icons like this:
 theme.layout_fairh = themes_path.."default/layouts/fairhw.png"
 theme.layout_fairv = themes_path.."default/layouts/fairvw.png"
 theme.layout_floating  = themes_path.."default/layouts/floatingw.png"

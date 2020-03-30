@@ -14,6 +14,7 @@ local beautiful = require("beautiful")
 local naughty = require("naughty")
 local menubar = require("menubar")
 local hotkeys_popup = require("awful.hotkeys_popup")
+local volumebar_widget = require("awesome-wm-widgets.volumebar-widget.volumebar")
 -- Enable hotkeys help widget for VIM and other apps
 -- when client with a matching name is opened:
 require("awful.hotkeys_popup.keys")
@@ -199,7 +200,6 @@ awful.screen.connect_for_each_screen(function(s)
     s.mywibox = awful.wibar({
        position = "top",
        screen = s,
-       opacity = 0.7,
        height = 30
     })
 
@@ -214,7 +214,10 @@ awful.screen.connect_for_each_screen(function(s)
         s.mytasklist, -- Middle widget
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
-            mykeyboardlayout,
+            volumebar_widget({
+               shape = "octogon"
+
+            }),
             wibox.widget.systray(),
             mytextclock,
         },
@@ -578,7 +581,7 @@ client.connect_signal("request::titlebars", function(c)
 
     awful.titlebar(c) : setup {
         { -- Left
-            awful.titlebar.widget.iconwidget(c),
+            -- awful.titlebar.widget.iconwidget(c),
             buttons = buttons,
             layout  = wibox.layout.fixed.horizontal
         },
