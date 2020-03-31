@@ -1,6 +1,5 @@
 ---------------------------
 -- Default awesome theme --
----------------------------
 
 local theme_assets = require("beautiful.theme_assets")
 local xresources = require("beautiful.xresources")
@@ -16,20 +15,20 @@ local theme = {}
 theme.font          = "DankMono Nerd Font  10"
 
 theme.bg_normal     = "#1d1f28"
-theme.bg_focus      = "#1d1f28"
+theme.bg_focus      = "#3f4457"
 theme.bg_urgent     = "#ff0000"
 theme.bg_minimize   = "#444444"
 theme.bg_systray    = theme.bg_normal
 
 theme.fg_normal     = "#fdfdfd"
 theme.fg_focus      = "#ffffff"
-theme.fg_urgent     = "#ffffff"
+theme.fg_urgent     = "#ed1f28"
 theme.fg_minimize   = "#ffffff"
 
 theme.useless_gap   = dpi(4)
 theme.border_width  = dpi(2)
 theme.border_normal = "#14161c"
-theme.border_focus  = "#1d1f28"
+theme.border_focus  = "#3f4457"
 theme.border_marked = "#91231c"
 
 -- There are other variable sets
@@ -58,12 +57,14 @@ theme.taglist_squares_unsel = theme_assets.taglist_squares_unsel(
 )
 
 theme.taglist_disable_icon = true
-theme.taglist_spacing = 0
+-- theme.taglist_spacing = 0
 local tag_rect= function(cr, width, height)
     gears.shape.rounded_rect(cr, width, height, 2)
 end
 theme.taglist_shape = tag_rect
 theme.taglist_bg_focus = "#3f4457"
+
+theme.separator_color = "#1d1f28"
 
 
 -- Variables set for theming notifications:

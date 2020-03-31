@@ -49,7 +49,7 @@ end
 beautiful.init(gears.filesystem.get_configuration_dir() .. "/themes/default/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
-terminal = "termite"
+terminal = "termite -e tmux"
 editor = os.getenv("EDITOR") or "vim"
 editor_cmd = terminal .. " -e " .. editor
 
@@ -170,7 +170,7 @@ awful.screen.connect_for_each_screen(function(s)
     set_wallpaper(s)
 
     -- Each screen has its own tag table.
-    awful.tag({ "1", "2", "3", "4", "5", "6", "7", "8", "9" }, s, awful.layout.layouts[1])
+    awful.tag({ "", "", "", "", "", "", "" }, s, awful.layout.layouts[1])
 
     -- Create a promptbox for each screen
     s.mypromptbox = awful.widget.prompt()
@@ -186,7 +186,31 @@ awful.screen.connect_for_each_screen(function(s)
     s.mytaglist = awful.widget.taglist {
         screen  = s,
         filter  = awful.widget.taglist.filter.all,
-        buttons = taglist_buttons
+        buttons = taglist_buttons,
+        widget_template = {
+           {
+              {
+                 {
+                    {
+                       id     = 'icon_role',
+                       widget = wibox.widget.imagebox,
+                    },
+                    margins = 2,
+                    widget  = wibox.container.margin,
+                 },
+                 {
+                    id     = 'text_role',
+                    widget = wibox.widget.textbox,
+                 },
+                 layout = wibox.layout.fixed.horizontal,
+              },
+              left  = 10,
+              right = 14,
+              widget = wibox.container.margin
+           },
+           id     = 'background_role',
+           widget = wibox.container.background,
+        }
     }
 
     -- Create a tasklist widget
@@ -203,6 +227,12 @@ awful.screen.connect_for_each_screen(function(s)
        height = 30
     })
 
+    s.separator = wibox.widget {
+       widget = wibox.widget.separator,
+       orientation = "vertical",
+       forced_width = 20,
+    }
+
     -- Add widgets to the wibox
     s.mywibox:setup {
         layout = wibox.layout.align.horizontal,
@@ -210,13 +240,15 @@ awful.screen.connect_for_each_screen(function(s)
             layout = wibox.layout.fixed.horizontal,
             s.mytaglist,
             s.mypromptbox,
+            s.separator,
         },
         s.mytasklist, -- Middle widget
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
+            s.separator,
             volumebar_widget({
-               shape = "octogon"
-
+               shape = "octogon",
+               main_color = "#22a6f3",
             }),
             wibox.widget.systray(),
             mytextclock,
@@ -227,9 +259,9 @@ end)
 
 -- {{{ Mouse bindings
 root.buttons(gears.table.join(
-    awful.button({ }, 3, function () mymainmenu:toggle() end),
-    awful.button({ }, 4, awful.tag.viewnext),
-    awful.button({ }, 5, awful.tag.viewprev)
+    awful.button({ }, 3, function () mymainmenu:toggle() end)
+--[[     awful.button({ }, 4, awful.tag.viewnext), ]]
+    --[[ awful.button({ }, 5, awful.tag.viewprev) ]]
 ))
 -- }}}
 
