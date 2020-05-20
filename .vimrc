@@ -29,6 +29,7 @@ Plug 'lifepillar/vim-solarized8'
 Plug 'posva/vim-vue'
 Plug 'ryanoasis/vim-devicons'
 Plug 'tyrannicaltoucan/vim-quantum'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 Plug 'Valloric/YouCompleteMe'
 Plug 'matze/vim-meson'
@@ -54,6 +55,8 @@ Plug 'fatih/vim-go'
 " Plug 'rafi/awesome-vim-colorschemes'
 Plug 'scrooloose/nerdcommenter'
 Plug 'mattn/emmet-vim'
+
+Plug 'rbonvall/snipmate-snippets-bib'
 
 call plug#end()
 
@@ -91,6 +94,17 @@ let g:fzf_colors =
 let &t_SI = "\<Esc>[6 q"
 let &t_SR = "\<Esc>[4 q"
 let &t_EI = "\<Esc>[2 q"
+
+let g:vimtex_compiler_latexmk = {
+    \ 'options' : [
+    \   '-pdf',
+    \   '-shell-escape',
+    \   '-verbose',
+    \   '-file-line-error',
+    \   '-synctex=1',
+    \   '-interaction=nonstopmode',
+    \ ],
+    \}
 
 " " let g:ackprg = 'ag --nogroup --nocolor --column'
 
@@ -164,10 +178,10 @@ let g:ale_c_build_dir_names = ['build', 'bin', 'builddir']
 
 
 " Vimtex
-" if !exists('g:ycm_semantic_triggers')
-"   let g:ycm_semantic_triggers = {}
-" endif
-" let g:ycm_semantic_triggers.tex = g:vimtex#re#youcompleteme
+if !exists('g:ycm_semantic_triggers')
+  let g:ycm_semantic_triggers = {}
+endif
+let g:ycm_semantic_triggers.tex = g:vimtex#re#youcompleteme
 
 
 " " FZF
@@ -237,8 +251,19 @@ set cindent
 set cinoptions=(0,u0,U0
 filetype plugin indent on
 
-nmap <silent> g" :YcmCompleter FixIt<CR>
-nmap <silent> g{ :YcmCompleter GoToDefinition<CR>
+" nmap <silent> g" :YcmCompleter FixIt<CR>
+" nmap <silent> g{ :YcmCompleter GoToDefinition<CR>
+
+nmap <silent> g" <Plug>(coc-definition)
+nmap <silent> g{ <Plug>(coc-type-definition)
+
+nmap <silent> g} <Plug>(coc-implementation)
+nmap <silent> g\| <Plug>(coc-references)
+set updatetime=300
+set cmdheight=2
+nmap <leader>ac  <Plug>(coc-codeaction)
+nmap <leader>qf  <Plug>(coc-fix-current)
 
 set pastetoggle=<F10>
 nnoremap <silent> <F5> :let _s=@/ <Bar> :%s/\s\+$//e <Bar> :let @/=_s <Bar> :nohl <Bar> :unlet _s <CR>
+
