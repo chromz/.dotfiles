@@ -130,12 +130,12 @@ let g:UltiSnipsListSnippets="<C-Space>"
 
 
 " YouCompleteMe
-let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
-let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
-let g:ycm_autoclose_preview_window_after_completion=1
-let g:ycm_error_symbol = ''
-let g:ycm_warning_symbol = ''
-let g:ycm_cache_omnifunc = 0
+" let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+" let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+" let g:ycm_autoclose_preview_window_after_completion=1
+" let g:ycm_error_symbol = ''
+" let g:ycm_warning_symbol = ''
+" let g:ycm_cache_omnifunc = 0
 " let g:ycm_show_diagnostics_ui = 0
 " let g:ycm_enable_diagnostic_signs = 0
 " let g:ycm_enable_diagnostic_highlighting = 0
@@ -178,10 +178,10 @@ let g:ale_c_build_dir_names = ['build', 'bin', 'builddir']
 
 
 " Vimtex
-if !exists('g:ycm_semantic_triggers')
-  let g:ycm_semantic_triggers = {}
-endif
-let g:ycm_semantic_triggers.tex = g:vimtex#re#youcompleteme
+" if !exists('g:ycm_semantic_triggers')
+  " let g:ycm_semantic_triggers = {}
+" endif
+" let g:ycm_semantic_triggers.tex = g:vimtex#re#youcompleteme
 
 
 " " FZF
