@@ -31,7 +31,6 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'tyrannicaltoucan/vim-quantum'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
-Plug 'Valloric/YouCompleteMe'
 Plug 'matze/vim-meson'
 Plug 'morhetz/gruvbox'
 Plug '~/.fzf'
