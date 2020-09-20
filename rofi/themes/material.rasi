@@ -13,7 +13,7 @@
   base0B: #C3E88D;
   base0D: #82AAFF;
   base0F: #FF5370;
-  background: #1d1f28EF;
+  background: #1d1f28AF;
   selected: #fcfcfc;
 
   spacing: 0;
@@ -25,14 +25,14 @@
 
 window {
   transparency: "real";
-  fullscreen: true;
+  fullscreen: false;
   /* background-color: @background; [>base00 + CC (80% opacity)<] */
 }
 
 mainbox {
   children: [inputbar, message, listview];
   spacing: 30px;
-  margin: 30%;
+  /* margin: 30%; */
   background-color: @background;
   padding: 16px;
   border-radius: 10px;

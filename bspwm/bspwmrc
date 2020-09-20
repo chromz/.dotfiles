@@ -24,4 +24,4 @@ bspc config focus_follows_pointer true
 
 $HOME/.config/polybar/launch.sh &
 
-compton --config /home/chromz/.config/compton/compton.conf &
+picom --experimental-backends --config /home/chromz/.config/picom/picom.conf &
