@@ -13,27 +13,29 @@
   base0B: #C3E88D;
   base0D: #82AAFF;
   base0F: #FF5370;
-  background: #1d1f28AF;
+  background: #1d1f28EF;
   selected: #fcfcfc;
-
 
   spacing: 0;
   background-color: transparent;
   bgselected: #22a6f3;
 
-  font: "DankMono Nerd Font 13";
+  font: "Open Sans 13";
 }
 
 window {
   transparency: "real";
-  /*fullscreen: true;*/
-  background-color: @background; /*base00 + CC (80% opacity)*/
+  fullscreen: true;
+  /* background-color: @background; [>base00 + CC (80% opacity)<] */
 }
 
 mainbox {
-  children: [inputbar, message, sidebar, listview];
+  children: [inputbar, message, listview];
   spacing: 30px;
   margin: 30%;
+  background-color: @background;
+  padding: 16px;
+  border-radius: 10px;
 }
 
 inputbar {
@@ -71,12 +73,12 @@ button, textbox {
 }
 
 button selected {
-  background-color: @base0D;
+  background-color: @base0F;
 }
 
 listview {
   scrollbar: true;
-  margin: -250px 10px 0 30px;
+  margin: 0px 10px 0 30px;
 }
 
 element {
@@ -103,7 +105,6 @@ element normal normal, element alternate normal {
 element selected normal {
   text-color: @selected;
 }
-
 
 element normal urgent, element selected urgent, element alternate urgent {
   text-color: @base0F;

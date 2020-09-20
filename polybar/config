@@ -4,7 +4,7 @@ color0 = #fdfdfd
 color1 = #464B50
 # underline = #464B50
 underline = #ef476f
-color2 = #e01d1f28
+color2 = #ef1d1f28
 color3= #A89984
 color4= #282828
 color5= #504945
@@ -23,8 +23,8 @@ spacing = 0
 padding-right = 0
 radius = 0
 
-font-0 = DankMono Nerd Font:size=10;1
-font-1 = DankMono Nerd Font:size=30;2
+font-0 = Open Sans Nerd Font:size=12;1
+font-1 = Open Sans Nerd Font:size=30;2
 
 [bar/top]
 inherit = bar/bar

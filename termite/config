@@ -1,9 +1,9 @@
 [options]
-font = DankMono Nerd Font  10
+font = Fira Code Nerd Font Medium 10
 
 [colors]
 # hard contrast: background = #1d2021
-background = rgba(29, 31, 40, 0.7)
+background = rgba(29, 31, 40, 0.82)
 # soft contrast: background = #32302f
 foreground = #fdfdfd
 foreground_bold = #fdfdfd
