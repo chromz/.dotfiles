@@ -1,7 +1,8 @@
 #/bin/bash
+
 mkdir ~/.config
-# cp .vimrc ~/.vimrc
-# cp .vim ~/.vim -r
+cp .vimrc ~/.vimrc
+cp .vim ~/.vim -r
 cp bspwm ~/.config -r
 cp dunst ~/.config -r
 cp termite ~/.config -r
@@ -11,5 +12,4 @@ cp .vimrc ~/ -r
 cp .tmux.conf ~/
 cp cava ~/.config -r
 cp awesome ~/.config -r
-mkdir ~/.config/compton
-cp compton.conf ~/.config/compton
+cp picom ~/.config -r
