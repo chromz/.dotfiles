@@ -30,6 +30,7 @@ Plug 'posva/vim-vue'
 Plug 'ryanoasis/vim-devicons'
 Plug 'tyrannicaltoucan/vim-quantum'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'jpalardy/vim-slime'
 
 Plug 'matze/vim-meson'
 Plug 'morhetz/gruvbox'
@@ -58,6 +59,8 @@ Plug 'mattn/emmet-vim'
 Plug 'rbonvall/snipmate-snippets-bib'
 
 call plug#end()
+
+let g:slime_target = "tmux"
 
 let g:vimtex_view_method='zathura'
 
@@ -265,4 +268,5 @@ nmap <leader>qf  <Plug>(coc-fix-current)
 
 set pastetoggle=<F10>
 nnoremap <silent> <F5> :let _s=@/ <Bar> :%s/\s\+$//e <Bar> :let @/=_s <Bar> :nohl <Bar> :unlet _s <CR>
+highlight Comment cterm=italic gui=italic
 
