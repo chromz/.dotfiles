@@ -31,6 +31,7 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'tyrannicaltoucan/vim-quantum'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'jpalardy/vim-slime'
+Plug 'dhruvasagar/vim-table-mode'
 
 Plug 'matze/vim-meson'
 Plug 'morhetz/gruvbox'
@@ -149,9 +150,6 @@ set cindent
 set cinoptions=(0,u0,U0
 
 let g:tex_flavor='latex'
-
-set timeoutlen=500
-inoremap jj <Esc>
 
 set cursorline
 set colorcolumn=80
