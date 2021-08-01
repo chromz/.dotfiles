@@ -5,7 +5,7 @@ if exists('+termguicolors')
   set termguicolors
 endif
 
-set number
+set number relativenumber
 set encoding=utf-8
 " Trailing whitespaces
 hi ExtraWhitespace ctermbg=red guibg='#ffcf9e'
@@ -17,7 +17,6 @@ autocmd BufWinLeave * call clearmatches()
 let g:ale_set_balloons = 1
 
 call plug#begin('~/.vim/plugged')
-Plug 'scrooloose/nerdtree'
 Plug 'drewtempelmeyer/palenight.vim'
 Plug 'embear/vim-localvimrc'
 Plug 'tpope/vim-sleuth'
@@ -28,6 +27,7 @@ Plug 'lervag/vimtex'
 Plug 'lifepillar/vim-solarized8'
 Plug 'posva/vim-vue'
 Plug 'ryanoasis/vim-devicons'
+Plug 'voldikss/vim-floaterm'
 Plug 'tyrannicaltoucan/vim-quantum'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'jpalardy/vim-slime'
@@ -43,6 +43,7 @@ Plug 'honza/vim-snippets'
 Plug 'itchyny/lightline.vim'
 Plug 'neoclide/vim-jsx-improve'
 Plug 'junegunn/goyo.vim'
+Plug 'rakr/vim-one'
 
 " Plug 'vim-airline/vim-airline'
 " Plug 'vim-airline/vim-airline-themes'
@@ -61,12 +62,17 @@ Plug 'rbonvall/snipmate-snippets-bib'
 
 call plug#end()
 
-let g:slime_target = "tmux"
+imap jj <Esc>
+
+let g:slime_target = 'tmux'
 
 let g:vimtex_view_method='zathura'
 
 set wildmode=longest,list,full
 set wildmenu
+
+let g:floaterm_position = 'right'
+let g:floaterm_opener = 'edit'
 
 
 packadd termdebug
@@ -97,6 +103,8 @@ let g:fzf_colors =
 let &t_SI = "\<Esc>[6 q"
 let &t_SR = "\<Esc>[4 q"
 let &t_EI = "\<Esc>[2 q"
+
+map <silent> <C-n> :FloatermNew nnn<CR>
 
 let g:vimtex_compiler_latexmk = {
     \ 'options' : [
@@ -191,21 +199,21 @@ let g:fzf_layout = { 'down': '~20%' }
 
 
 " " NERDTree
-let g:NERDTreeChDirMode = 2
-let NERDTreeQuitOnOpen = 1
-let NERDTreeMinimalUI=1
-let g:NERDTreeDirArrowExpandable=""
-let g:NERDTreeDirArrowCollapsible=""
-map <silent> <C-n> :NERDTreeToggle<CR>
+" let g:NERDTreeChDirMode = 2
+" let NERDTreeQuitOnOpen = 1
+" let NERDTreeMinimalUI=1
+" let g:NERDTreeDirArrowExpandable=""
+" let g:NERDTreeDirArrowCollapsible=""
+" map <silent> <C-n> :NERDTreeToggle<CR>
 " " Theme
 autocmd ColorScheme * hi ExtraWhitespace ctermbg=red guibg='#ffcf9e'
 set background=dark
-colorscheme palenight
+colorscheme one
 " let g:palenight_terminal_italics=1
 
 
 let g:lightline = {
-      \ 'colorscheme': 'palenight',
+      \ 'colorscheme': 'one',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
