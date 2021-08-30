@@ -32,6 +32,7 @@ Plug 'tyrannicaltoucan/vim-quantum'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'jpalardy/vim-slime'
 Plug 'dhruvasagar/vim-table-mode'
+Plug 'preservim/nerdtree'
 
 Plug 'matze/vim-meson'
 Plug 'morhetz/gruvbox'
@@ -104,7 +105,7 @@ let &t_SI = "\<Esc>[6 q"
 let &t_SR = "\<Esc>[4 q"
 let &t_EI = "\<Esc>[2 q"
 
-map <silent> <C-n> :FloatermNew nnn<CR>
+" map <silent> <C-n> :FloatermNew nnn<CR>
 
 let g:vimtex_compiler_latexmk = {
     \ 'options' : [
@@ -198,13 +199,13 @@ nnoremap <C-p> :Files <CR>
 let g:fzf_layout = { 'down': '~20%' }
 
 
-" " NERDTree
-" let g:NERDTreeChDirMode = 2
-" let NERDTreeQuitOnOpen = 1
-" let NERDTreeMinimalUI=1
-" let g:NERDTreeDirArrowExpandable=""
-" let g:NERDTreeDirArrowCollapsible=""
-" map <silent> <C-n> :NERDTreeToggle<CR>
+" NERDTree
+let g:NERDTreeChDirMode = 2
+let NERDTreeQuitOnOpen = 1
+let NERDTreeMinimalUI=1
+let g:NERDTreeDirArrowExpandable=""
+let g:NERDTreeDirArrowCollapsible=""
+map <silent> <C-n> :NERDTreeToggle<CR>
 " " Theme
 autocmd ColorScheme * hi ExtraWhitespace ctermbg=red guibg='#ffcf9e'
 set background=dark
