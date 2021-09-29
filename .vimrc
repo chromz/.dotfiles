@@ -19,7 +19,7 @@ let g:ale_set_balloons = 1
 call plug#begin('~/.vim/plugged')
 Plug 'drewtempelmeyer/palenight.vim'
 Plug 'embear/vim-localvimrc'
-Plug 'tpope/vim-sleuth'
+" Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-repeat'
 Plug 'mhinz/vim-startify'
 Plug 'jacoborus/tender.vim'
@@ -33,6 +33,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'jpalardy/vim-slime'
 Plug 'dhruvasagar/vim-table-mode'
 Plug 'preservim/nerdtree'
+Plug 'sheerun/vim-polyglot'
 
 Plug 'matze/vim-meson'
 Plug 'morhetz/gruvbox'
