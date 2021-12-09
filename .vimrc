@@ -64,7 +64,7 @@ Plug 'rbonvall/snipmate-snippets-bib'
 
 call plug#end()
 
-imap jj <Esc>
+imap ii <Esc>
 
 let g:slime_target = 'tmux'
 
@@ -80,7 +80,6 @@ let g:floaterm_opener = 'edit'
 packadd termdebug
 let g:localvimrc_sandbox = 0
 set maxmempattern=2000000
-set synmaxcol=128
 
 let &shell='/bin/zsh'
 
@@ -105,6 +104,7 @@ let g:fzf_colors =
 let &t_SI = "\<Esc>[6 q"
 let &t_SR = "\<Esc>[4 q"
 let &t_EI = "\<Esc>[2 q"
+
 
 " map <silent> <C-n> :FloatermNew nnn<CR>
 
@@ -210,7 +210,8 @@ map <silent> <C-n> :NERDTreeToggle<CR>
 " " Theme
 autocmd ColorScheme * hi ExtraWhitespace ctermbg=red guibg='#ffcf9e'
 set background=dark
-colorscheme one
+colorscheme gruvbox
+hi Normal guibg=NONE ctermbg=NONE
 " let g:palenight_terminal_italics=1
 
 
@@ -253,7 +254,6 @@ set mouse=a
 set ttymouse=xterm2
 hi Comment gui=italic
 hi ExtraWhitespace ctermbg=red guibg='#ffcf9e'
-" hi Normal guibg=NONE ctermbg=NONE
 match ExtraWhitespace /\s\+$/
 
 " Indentation
@@ -277,4 +277,7 @@ nmap <leader>qf  <Plug>(coc-fix-current)
 set pastetoggle=<F10>
 nnoremap <silent> <F5> :let _s=@/ <Bar> :%s/\s\+$//e <Bar> :let @/=_s <Bar> :nohl <Bar> :unlet _s <CR>
 highlight Comment cterm=italic gui=italic
+
+
+
 
