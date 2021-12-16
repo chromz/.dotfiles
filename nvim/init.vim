@@ -169,7 +169,7 @@ hi Normal guibg=NONE ctermbg=NONE
 
 
 let g:lightline = {
-      \ 'colorscheme': 'one',
+      \ 'colorscheme': 'gruvbox',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
