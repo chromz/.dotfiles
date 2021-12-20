@@ -89,6 +89,7 @@ let g:fzf_colors =
       \ 'spinner': ['fg', 'Label'],
       \ 'header':  ['fg', 'Comment'] }
 
+
 let &t_SI = "\<Esc>[6 q"
 let &t_SR = "\<Esc>[4 q"
 let &t_EI = "\<Esc>[2 q"
@@ -150,7 +151,7 @@ let g:ale_c_build_dir_names = ['build', 'bin', 'builddir']
 " " FZF
 let $FZF_DEFAULT_COMMAND = 'rg --files --hidden'
 nnoremap <C-p> :Files <CR>
-let g:fzf_layout = { 'down': '~20%' }
+let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6 } }
 
 
 " NERDTree
