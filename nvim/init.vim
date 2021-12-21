@@ -54,6 +54,8 @@ Plug 'rbonvall/snipmate-snippets-bib'
 
 call plug#end()
 
+nnoremap <SPACE> <Nop>
+let mapleader=" "
 imap ii <Esc>
 
 let g:vimtex_view_method='zathura'
@@ -151,6 +153,7 @@ let g:ale_c_build_dir_names = ['build', 'bin', 'builddir']
 " " FZF
 let $FZF_DEFAULT_COMMAND = 'rg --files --hidden'
 nnoremap <C-p> :Files <CR>
+nnoremap <leader>p :Buffers <CR>
 let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6 } }
 
 
@@ -213,16 +216,8 @@ match ExtraWhitespace /\s\+$/
 set cindent
 set cinoptions=(0,u0,U0
 filetype plugin indent on
-
-nmap <silent> g" <Plug>(coc-definition)
-nmap <silent> g{ <Plug>(coc-type-definition)
-
-nmap <silent> g} <Plug>(coc-implementation)
-nmap <silent> g\| <Plug>(coc-references)
 set updatetime=300
 set cmdheight=2
-nmap <leader>ac  <Plug>(coc-codeaction)
-nmap <leader>qf  <Plug>(coc-fix-current)
 
 set pastetoggle=<F10>
 nnoremap <silent> <F5> :let _s=@/ <Bar> :%s/\s\+$//e <Bar> :let @/=_s <Bar> :nohl <Bar> :unlet _s <CR>
