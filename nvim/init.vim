@@ -54,7 +54,7 @@ Plug 'rbonvall/snipmate-snippets-bib'
 
 call plug#end()
 
-nnoremap <SPACE> <Nop>
+nnoremap <Space> <Nop>
 let mapleader=" "
 imap ii <Esc>
 
