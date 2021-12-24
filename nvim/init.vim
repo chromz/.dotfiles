@@ -48,7 +48,6 @@ Plug 'dense-analysis/ale'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
 Plug 'fatih/vim-go'
-Plug 'scrooloose/nerdcommenter'
 Plug 'mattn/emmet-vim'
 Plug 'rbonvall/snipmate-snippets-bib'
 
@@ -224,5 +223,18 @@ nnoremap <silent> <F5> :let _s=@/ <Bar> :%s/\s\+$//e <Bar> :let @/=_s <Bar> :noh
 highlight Comment cterm=italic gui=italic
 
 
+" LSP
 set completeopt=menu,menuone,noselect
 lua require('lsp')
+
+nnoremap gD :lua vim.lsp.buf.declaration()<CR>
+nnoremap gd :lua vim.lsp.buf.definition()<CR>
+nnoremap K :lua vim.lsp.buf.hover()<CR>
+nnoremap gi :lua vim.lsp.buf.implementation()<CR>
+nnoremap <leader>D, :lua vim.lsp.buf.type_definition()<CR>
+nnoremap <leader>rn :lua vim.lsp.buf.rename()<CR>
+nnoremap <leader>ca :lua vim.lsp.buf.code_action()<CR>
+nnoremap gr :lua vim.lsp.buf.references()<CR>
+nnoremap <leader>e :lua vim.diagnostic.open_float()<CR>
+nnoremap [d :lua vim.diagnostic.goto_prev()<CR>
+nnoremap ]d :lua vim.diagnostic.goto_next()<CR>
