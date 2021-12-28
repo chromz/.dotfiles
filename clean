@@ -7,3 +7,4 @@ stow -D picom
 stow -D rofi
 stow -D sxhkd
 stow -D tmux
+stow -D polybar

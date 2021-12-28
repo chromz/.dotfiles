@@ -8,3 +8,4 @@ stow rofi
 stow sxhkd
 stow tmux
 stow polybar
+stow xinitrc
