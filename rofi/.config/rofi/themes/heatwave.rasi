@@ -1,41 +1,38 @@
 /*
  * ROFI color theme
  *
- * Based on Base16 Material Color Scheme (https://github.com/ntpeters/base16-materialtheme-scheme)
- *
- * User: Tomaszal
- * Copyright: Tomas Zaluckij
+ * User: Chromz
+ * Copyright: Chromz
  */
 
 * {
 
   base07: #fcfcfc;
-  base0B: #C3E88D;
-  base0D: #82AAFF;
-  base0F: #FF5370;
-  background: #1d1f28AF;
+  base0B: #c3e88d;
+  base0D: #82aaff;
+  base0F: #ff5370;
+  background: #1d1f28aa;
   selected: #fcfcfc;
 
   spacing: 0;
   background-color: transparent;
-  bgselected: #22a6f3;
-
+  bgselected: #ef476f;
   font: "Open Sans 13";
 }
 
 window {
   transparency: "real";
   fullscreen: false;
-  /* background-color: @background; [>base00 + CC (80% opacity)<] */
+  text-color: @base07;
 }
 
 mainbox {
   children: [inputbar, message, listview];
   spacing: 30px;
-  /* margin: 30%; */
   background-color: @background;
   padding: 16px;
   border-radius: 10px;
+  text-color: @base07;
 }
 
 inputbar {
@@ -62,10 +59,6 @@ case-indicator {
   text-color: @base0F;
 }
 
-sidebar, message {
-
-}
-
 button, textbox {
   background-color: @background;
   text-color: @base07;
@@ -84,6 +77,14 @@ listview {
 element {
   padding: 5px;
   highlight: bold underline;
+}
+
+element-icon {
+  margin: 0 10px 0 0;
+}
+
+element-text {
+  text-color: @base07;
 }
 
 element normal {

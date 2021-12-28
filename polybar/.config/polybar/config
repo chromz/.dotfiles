@@ -4,7 +4,7 @@ color0 = #fdfdfd
 color1 = #464B50
 # underline = #464B50
 underline = #ef476f
-color2 = #ef1d1f28
+color2 = #aa1d1f28
 color3= #A89984
 color4= #282828
 color5= #504945
@@ -30,7 +30,7 @@ font-1 = Open Sans Nerd Font:size=30;2
 inherit = bar/bar
 modules-left = bspwm
 modules-center = xwindow
-modules-right = date pulseaudio battery wlan ether
+modules-right = date pulseaudio wlan ether
 tray-position = right
 wm-restack = bspwm
 
@@ -250,7 +250,7 @@ animation-charging-framerate = 550
 
 [module/wlan]
 type = internal/network
-interface = wlo1
+interface = wlp3s0
 interval = 3.0
 
 format-connected = <ramp-signal> 
@@ -268,7 +268,7 @@ ramp-signal-foreground = ${colors.color0}
 
 [module/ether]
 type = internal/network
-interface = eno2
+interface = enp4s0
 interval = 3.0
 format-connected = 
 format-connected-background = ${colors.color2}

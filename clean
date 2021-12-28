@@ -1,0 +1,9 @@
+#/bin/bash
+
+stow -D dunst
+stow -D bspwm
+stow -D nvim
+stow -D picom
+stow -D rofi
+stow -D sxhkd
+stow -D tmux
