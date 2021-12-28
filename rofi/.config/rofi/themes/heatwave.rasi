@@ -16,7 +16,7 @@
 
   spacing: 0;
   background-color: transparent;
-  bgselected: #ef476f;
+  bgselected: #f92b12;
   font: "Open Sans 13";
 }
 
