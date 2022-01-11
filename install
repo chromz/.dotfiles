@@ -1,11 +1,4 @@
 #/bin/bash
 
-stow dunst
-stow bspwm
 stow nvim
-stow picom
-stow rofi
-stow sxhkd
 stow tmux
-stow polybar
-stow xinitrc
