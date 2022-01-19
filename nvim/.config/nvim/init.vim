@@ -118,10 +118,6 @@ let g:UltiSnipsJumpForwardTrigger = "<tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 let g:UltiSnipsListSnippets="<C-Space>"
 
-" Indentation
-set cindent
-set cinoptions=(0,u0,U0
-
 let g:tex_flavor='latex'
 
 set cursorline
@@ -213,7 +209,7 @@ match ExtraWhitespace /\s\+$/
 
 " Indentation
 set cindent
-set cinoptions=(0,u0,U0
+"set cinoptions=(0,u0,U0
 filetype plugin indent on
 set updatetime=300
 set cmdheight=2
