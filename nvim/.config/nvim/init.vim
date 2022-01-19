@@ -38,7 +38,7 @@ Plug 'dhruvasagar/vim-table-mode'
 Plug 'preservim/nerdtree'
 Plug 'sheerun/vim-polyglot'
 Plug 'morhetz/gruvbox'
-Plug '~/.fzf'
+Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
@@ -117,10 +117,6 @@ let g:UltiSnipsExpandTrigger = "<tab>"
 let g:UltiSnipsJumpForwardTrigger = "<tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 let g:UltiSnipsListSnippets="<C-Space>"
-
-" Indentation
-set cindent
-set cinoptions=(0,u0,U0
 
 let g:tex_flavor='latex'
 
@@ -213,7 +209,7 @@ match ExtraWhitespace /\s\+$/
 
 " Indentation
 set cindent
-set cinoptions=(0,u0,U0
+"set cinoptions=(0,u0,U0
 filetype plugin indent on
 set updatetime=300
 set cmdheight=2
