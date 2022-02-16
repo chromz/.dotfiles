@@ -99,6 +99,7 @@ let &t_EI = "\<Esc>[2 q"
 let g:netrw_banner = 0
 let g:netrw_localcopydircmd = 'cp -r'
 let g:netrw_winsize = 30
+let g:netrw_bufsettings = 'noma nomod nu nowrap ro nobl'
 nnoremap <C-n> :Lex <CR>
 
 " map <silent> <C-n> :FloatermNew nnn<CR>
