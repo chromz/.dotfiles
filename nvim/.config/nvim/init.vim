@@ -95,6 +95,11 @@ let &t_SR = "\<Esc>[4 q"
 let &t_EI = "\<Esc>[2 q"
 
 
+" Netrw settings
+let g:netrw_banner = 0
+let g:netrw_localcopydircmd = 'cp -r'
+
+
 " map <silent> <C-n> :FloatermNew nnn<CR>
 
 let g:vimtex_compiler_latexmk = {
