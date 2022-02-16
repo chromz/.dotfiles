@@ -35,7 +35,6 @@ Plug 'posva/vim-vue'
 Plug 'ryanoasis/vim-devicons'
 Plug 'voldikss/vim-floaterm'
 Plug 'dhruvasagar/vim-table-mode'
-Plug 'preservim/nerdtree'
 Plug 'sheerun/vim-polyglot'
 Plug 'morhetz/gruvbox'
 Plug '~/.fzf'
@@ -109,9 +108,6 @@ let g:vimtex_compiler_latexmk = {
     \ ],
     \}
 
-" NERD commenter
-let g:NERDSpaceDelims = 1
-
 " ultisnips
 let g:UltiSnipsExpandTrigger = "<tab>"
 let g:UltiSnipsJumpForwardTrigger = "<tab>"
@@ -152,13 +148,6 @@ nnoremap <leader>p :Buffers <CR>
 let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6 } }
 
 
-" NERDTree
-let g:NERDTreeChDirMode = 2
-let NERDTreeQuitOnOpen = 1
-let NERDTreeMinimalUI=1
-let g:NERDTreeDirArrowExpandable=""
-let g:NERDTreeDirArrowCollapsible=""
-map <silent> <C-n> :NERDTreeToggle<CR>
 " " Theme
 autocmd ColorScheme * hi ExtraWhitespace ctermbg=red guibg='#ffcf9e'
 set background=dark
