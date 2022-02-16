@@ -40,3 +40,4 @@ local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protoco
 local nvim_lsp = require('lspconfig')
 -- Go lang setup
 nvim_lsp.gopls.setup{}
+nvim_lsp.tsserver.setup{}
