@@ -101,10 +101,10 @@ let g:netrw_banner = 0
 let g:netrw_localcopydircmd = 'cp -r'
 let g:netrw_winsize = 30
 let g:netrw_bufsettings = 'noma nomod nu nowrap ro nobl'
-let g:netrw_liststyle = 3
-nnoremap <C-n> :Lex <CR>
+" let g:netrw_liststyle = 3
+" nnoremap <C-n> :Lex <CR>
 
-" map <silent> <C-n> :FloatermNew nnn<CR>
+map <silent> <C-n> :FloatermNew nnn<CR>
 
 let g:vimtex_compiler_latexmk = {
     \ 'options' : [
@@ -180,7 +180,7 @@ let g:lightline = {
 
 
 function! CGBranch()
-  let fugitivetext = fugitive#head()
+  let fugitivetext = FugitiveHead()
   return (strlen(fugitivetext) > 0) ? fugitivetext . ' ' : ''
 endfunction
 
