@@ -54,7 +54,6 @@ call plug#end()
 
 nnoremap <Space> <Nop>
 let mapleader=" "
-imap ii <Esc>
 
 let g:vimtex_view_method='zathura'
 
