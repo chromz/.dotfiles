@@ -52,9 +52,11 @@ Plug 'rbonvall/snipmate-snippets-bib'
 
 call plug#end()
 
+let g:go_fmt_command = "gofmt"
+let g:go_fmt_fail_silently = 1
 nnoremap <Space> <Nop>
 let mapleader=" "
-imap ii <Esc>
+imap <C-c> <Esc>
 
 let g:vimtex_view_method='zathura'
 
@@ -99,10 +101,11 @@ let &t_EI = "\<Esc>[2 q"
 let g:netrw_keepdir = 0
 let g:netrw_banner = 0
 let g:netrw_localcopydircmd = 'cp -r'
-let g:netrw_winsize = 30
+let g:netrw_winsize = 10
 let g:netrw_bufsettings = 'noma nomod nu nowrap ro nobl'
-let g:netrw_liststyle = 3
-nnoremap <C-n> :Lex <CR>
+
+
+ nnoremap <C-n> :FloatermNew nnn <CR>
 
 " map <silent> <C-n> :FloatermNew nnn<CR>
 
@@ -130,6 +133,7 @@ set colorcolumn=80
 let g:WebDevIconsUnicodeDecorateFolderNodes = 1
 let g:DevIconsEnableFoldersOpenClose = 1
 command! Bd :bp|:bd#
+
 
 
 set list lcs=nbsp:␣,trail:·,tab:\¦\ ,space:·
@@ -180,7 +184,7 @@ let g:lightline = {
 
 
 function! CGBranch()
-  let fugitivetext = fugitive#head()
+  let fugitivetext = FugitiveHead()
   return (strlen(fugitivetext) > 0) ? fugitivetext . ' ' : ''
 endfunction
 
@@ -232,3 +236,5 @@ nnoremap gr :lua vim.lsp.buf.references()<CR>
 nnoremap <leader>e :lua vim.diagnostic.open_float()<CR>
 nnoremap [d :lua vim.diagnostic.goto_prev()<CR>
 nnoremap ]d :lua vim.diagnostic.goto_next()<CR>
+
+command Yalo :0r ~/.config/nvim/yalo.txt

@@ -2,16 +2,20 @@
 local cmp = require'cmp'
 
 cmp.setup({
+	preselect = cmp.PreselectMode.None,
 	snippet = {
 		expand = function(args)
 			vim.fn["UltiSnips#Anon"](args.body)
 		end,
 	},
-	mapping = {
-		['<C-u>'] = cmp.mapping(cmp.mapping.scroll_docs(-4), { 'i', 'c' }),
-		['<C-d>'] = cmp.mapping(cmp.mapping.scroll_docs(4), { 'i', 'c' }),
-		['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
-	},
+	mapping = cmp.mapping.preset.insert({
+		['<C-u>'] = cmp.mapping.scroll_docs(-4),
+		['<C-d>'] = cmp.mapping.scroll_docs(4),
+		['<C-Space>'] = cmp.mapping.complete(),
+		['<C-y>'] = cmp.mapping.confirm({ select = true }),
+		['<C-p>'] = cmp.mapping.select_prev_item(),
+		['<C-n>'] = cmp.mapping.select_next_item(),
+	}),
 	sources = cmp.config.sources({
 		{ name = 'nvim_lsp' },
 		{ name = 'ultisnips' },
