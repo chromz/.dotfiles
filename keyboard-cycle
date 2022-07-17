@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+
+CURRENT_LAYOUT_OUT=$(setxkbmap -query)
+
+LAYOUT=`grep layout <<< "$CURRENT_LAYOUT_OUT" | awk '{ print $2 }'`
+VARIANT=`grep variant <<< "$CURRENT_LAYOUT_OUT" | awk '{ print $2 }'`
+
+
+notify_layout() {
+	notify-send 'Keyboard layout changed' "$1"
+}
+if [[ "$LAYOUT" = 'us' && "$VARIANT" = 'colemak' ]];
+then
+	setxkbmap -layout us
+	notify_layout 'QWERTY - us'
+else
+	setxkbmap -layout us -variant colemak
+	notify_layout 'QWERTY - us - colemak'
+fi
