@@ -18,6 +18,9 @@ super + Escape
 # bspwm hotkeys
 #
 
+super + ctrl + bracketleft
+	keyboard-cycle
+
 # quit bspwm normally
 super + alt + Escape
 	bspc quit
