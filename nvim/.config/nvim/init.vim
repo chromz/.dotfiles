@@ -46,7 +46,6 @@ Plug 'junegunn/goyo.vim'
 Plug 'dense-analysis/ale'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
-Plug 'fatih/vim-go'
 Plug 'mattn/emmet-vim'
 Plug 'rbonvall/snipmate-snippets-bib'
 
@@ -56,7 +55,6 @@ let g:go_fmt_command = "gofmt"
 let g:go_fmt_fail_silently = 1
 nnoremap <Space> <Nop>
 let mapleader=" "
-imap <C-c> <Esc>
 
 let g:vimtex_view_method='zathura'
 
