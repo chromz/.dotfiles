@@ -11,10 +11,10 @@ cmp.setup({
 	mapping = {
 		['<C-u>'] = cmp.mapping.scroll_docs(-4),
 		['<C-d>'] = cmp.mapping.scroll_docs(4),
-		['<C-Space>'] = cmp.mapping.complete(),
-		['<C-y>'] = cmp.mapping.confirm({ select = true }),
-		['<C-p>'] = cmp.mapping.select_prev_item(),
-		['<C-n>'] = cmp.mapping.select_next_item(),
+		['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), {'i', 'c'}),
+		['<C-y>'] = cmp.mapping(cmp.mapping.confirm({ select = true }), {'i', 'c'}),
+		['<C-p>'] = cmp.mapping(cmp.mapping.select_prev_item(), {'i', 'c'}),
+		['<C-n>'] = cmp.mapping(cmp.mapping.select_next_item(), {'i', 'c'}),
 	},
 	sources = cmp.config.sources({
 		{ name = 'nvim_lsp' },
