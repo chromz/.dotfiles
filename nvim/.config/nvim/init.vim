@@ -24,6 +24,7 @@ Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/cmp-cmdline'
 Plug 'hrsh7th/nvim-cmp'
 Plug 'quangnguyen30192/cmp-nvim-ultisnips'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 Plug 'drewtempelmeyer/palenight.vim'
 Plug 'embear/vim-localvimrc'
@@ -97,15 +98,14 @@ let &t_EI = "\<Esc>[2 q"
 
 " Netrw settings
 let g:netrw_keepdir = 0
-let g:netrw_banner = 0
+let g:netrw_banner = 1
 let g:netrw_localcopydircmd = 'cp -r'
 let g:netrw_winsize = 10
 let g:netrw_bufsettings = 'noma nomod nu nowrap ro nobl'
 
 
- nnoremap <C-n> :FloatermNew nnn <CR>
-
-" map <silent> <C-n> :FloatermNew nnn<CR>
+" nnoremap <C-n> :Lexplore <CR>
+nnoremap <C-n> :FloatermNew nnn <CR>
 
 let g:vimtex_compiler_latexmk = {
     \ 'options' : [
@@ -222,6 +222,7 @@ highlight Comment cterm=italic gui=italic
 " LSP
 set completeopt=menu,menuone,noselect
 lua require('lsp')
+lua require('treesitter')
 
 nnoremap gD :lua vim.lsp.buf.declaration()<CR>
 nnoremap gd :lua vim.lsp.buf.definition()<CR>
