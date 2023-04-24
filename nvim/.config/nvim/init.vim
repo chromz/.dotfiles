@@ -219,6 +219,7 @@ highlight Comment cterm=italic gui=italic
 " LSP
 set completeopt=menu,menuone,noselect
 lua require('lsp')
+lua require('treesitter')
 
 nnoremap gD :lua vim.lsp.buf.declaration()<CR>
 nnoremap gd :lua vim.lsp.buf.definition()<CR>
