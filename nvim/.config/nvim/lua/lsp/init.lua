@@ -44,3 +44,5 @@ local capabilities = require('cmp_nvim_lsp').default_capabilities()
 local nvim_lsp = require('lspconfig')
 -- Go lang setup
 nvim_lsp.gopls.setup{}
+
+nvim_lsp.rust_analyzer.setup{}

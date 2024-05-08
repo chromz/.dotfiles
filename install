@@ -1,6 +1,7 @@
 #/bin/bash
 
 stow dunst
+stow hypr
 stow bspwm
 stow nvim
 stow picom

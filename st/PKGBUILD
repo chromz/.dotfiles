@@ -2,7 +2,7 @@
 # Maintainer: Christoph Vigano <mail@cvigano.de>
 
 pkgname=st
-pkgver=0.9
+pkgver=0.9.2
 pkgrel=4
 pkgdesc='A simple virtual terminal emulator for X.'
 arch=('i686' 'x86_64')
@@ -12,7 +12,7 @@ makedepends=('ncurses')
 url="http://st.suckless.org"
 source=(http://dl.suckless.org/st/$pkgname-$pkgver.tar.gz
        https://st.suckless.org/patches/alpha/st-alpha-20220206-0.8.5.diff
-       https://st.suckless.org/patches/ligatures/0.9/st-ligatures-alpha-20221120-0.9.diff)
+       https://st.suckless.org/patches/ligatures/0.9/st-ligatures-alpha-20240105-0.9.diff)
 md5sums=('SKIP'
          'SKIP'
          'SKIP')
