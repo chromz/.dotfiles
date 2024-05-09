@@ -3,6 +3,7 @@
 stow dunst
 stow hypr
 stow bspwm
+stow waybar
 stow nvim
 stow picom
 stow rofi
