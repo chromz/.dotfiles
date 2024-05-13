@@ -43,6 +43,9 @@ local capabilities = require('cmp_nvim_lsp').default_capabilities()
 -- LSP configs.
 local nvim_lsp = require('lspconfig')
 -- Go lang setup
-nvim_lsp.gopls.setup{}
+nvim_lsp.gopls.setup{
+	cmd = {"gopls", "serve"},
+}
 nvim_lsp.tsserver.setup{}
 nvim_lsp.pyright.setup{}
+nvim_lsp.rust_analyzer.setup{}

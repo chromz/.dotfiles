@@ -237,3 +237,8 @@ nnoremap [d :lua vim.diagnostic.goto_prev()<CR>
 nnoremap ]d :lua vim.diagnostic.goto_next()<CR>
 
 command Yalo :0r ~/.config/nvim/yalo.txt
+
+set foldmethod=expr
+set foldexpr=nvim_treesitter#foldexpr()
+set nofoldenable
+let g:python3_host_prog = '/Users/rocu/.pyenv/versions/3.10.1/bin/python'
