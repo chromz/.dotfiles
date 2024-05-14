@@ -1,14 +1,11 @@
 vim.keymap.set("n", "<Space>", "<Nop>", { silent = true })
 vim.keymap.set("n", "<C-n>", ":FloatermNew nnn<CR>", { silent = true })
-
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
-vim.cmd.highlight({"ExtraWhitespace", "ctermbg=red", "guibg='#ffcf9e'"})
-vim.cmd.highlight({"Comment", "gui=italic"})
+
 vim.opt.number = true
-vim.opt.relativenumber = true 
+vim.opt.relativenumber = true
 vim.opt.encoding = "utf-8"
--- vim.opt.list = true
 vim.opt.cursorline = true
 vim.opt.colorcolumn = "80"
 if vim.fn.exists("+termguicolors") then
