@@ -13,6 +13,11 @@ return {
 
     end
   },
-  "voldikss/vim-floaterm",
+  {
+    "voldikss/vim-floaterm",
+    config = function()
+      vim.g.floaterm_opener = 'edit'
+    end
+  },
   "mhinz/vim-startify",
 }
