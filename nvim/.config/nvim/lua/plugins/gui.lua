@@ -20,4 +20,5 @@ return {
     end
   },
   "mhinz/vim-startify",
+  "nvim-tree/nvim-web-devicons",
 }
