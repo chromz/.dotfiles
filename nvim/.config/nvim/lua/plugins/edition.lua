@@ -1,14 +1,51 @@
 return {
   {
     "neovim/nvim-lspconfig",
+    dependencies = {
+      "williamboman/mason.nvim",
+      "williamboman/mason-lspconfig.nvim",
+    },
     config = function()
-      local nvim_lsp = require('lspconfig')
-      nvim_lsp.gopls.setup{
+      vim.diagnostic.config({
+        signs = {
+          text = {
+            [vim.diagnostic.severity.ERROR] = "",
+            [vim.diagnostic.severity.WARN] = "",
+            [vim.diagnostic.severity.INFO] = "",
+            [vim.diagnostic.severity.HINT] = "",
+          },
+        },
+      })
+      local signs = {
+        Error = "",
+        Warn = "",
+        Hint = "",
+        Info = ""
+      }
+      for type, icon in pairs(signs) do
+        local hl = "DiagnosticSign" .. type
+        vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
+      end
+      local lsp = require("lspconfig")
+      local mason = require("mason")
+      local masonlspconfig = require("mason-lspconfig")
+      mason.setup()
+      masonlspconfig.setup({
+        ensure_installed = {
+          "lua_ls",
+          "rust_analyzer",
+          "gopls",
+        }
+      })
+
+      vim.lsp.set_log_level("debug")
+      lsp.gopls.setup{
         cmd = {"gopls", "serve"},
       }
-      nvim_lsp.tsserver.setup{}
-      nvim_lsp.pyright.setup{}
-      nvim_lsp.rust_analyzer.setup{}
+      lsp.tsserver.setup{}
+      lsp.pyright.setup{}
+      lsp.rust_analyzer.setup{}
+      lsp.eslint.setup{}
 
       local bufopts = { noremap = true, silent = true }
       vim.keymap.set("n", "gD", vim.lsp.buf.declaration, bufopts)
