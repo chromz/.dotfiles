@@ -35,7 +35,6 @@ return {
           "lua_ls",
           "rust_analyzer",
           "gopls",
-          "eslint@4.8.0",
         }
       })
 
@@ -46,7 +45,6 @@ return {
       lsp.tsserver.setup{}
       lsp.pyright.setup{}
       lsp.rust_analyzer.setup{}
-      lsp.eslint.setup{}
 
       local bufopts = { noremap = true, silent = true }
       vim.keymap.set("n", "gD", vim.lsp.buf.declaration, bufopts)
