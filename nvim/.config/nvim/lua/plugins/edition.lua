@@ -35,6 +35,7 @@ return {
           "lua_ls",
           "rust_analyzer",
           "gopls",
+          "eslint@4.8.0",
         }
       })
 
