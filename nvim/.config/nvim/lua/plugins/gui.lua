@@ -10,7 +10,7 @@ return {
 
         hi ExtraWhitespace ctermbg=red guibg='#ffcf9e'
         match ExtraWhitespace /\s\+\%#\@<!$/
-        ]])
+      ]])
 
     end
   },
