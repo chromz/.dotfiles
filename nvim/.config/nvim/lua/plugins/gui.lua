@@ -1,13 +1,18 @@
 return {
   {
-    "morhetz/gruvbox",
+    "EdenEast/nightfox.nvim",
+    lazy = false,
+    priority = 1000,
     config = function()
-      vim.cmd.colorscheme("gruvbox")
+      require("nightfox").setup({
+          options = {
+            transparent = true,
+          },
+      })
+      vim.cmd.colorscheme("terafox")
       vim.opt.background = "dark"
       vim.cmd([[
         hi Comment gui=italic cterm=italic
-        hi! Normal ctermbg=NONE guibg=NONE
-
         hi ExtraWhitespace ctermbg=red guibg='#ffcf9e'
         match ExtraWhitespace /\s\+\%#\@<!$/
       ]])
@@ -15,12 +20,37 @@ return {
     end
   },
   {
-    "voldikss/vim-floaterm",
+    "stevearc/oil.nvim",
     config = function()
-      vim.g.floaterm_opener = 'edit'
-      vim.keymap.set("n", "<C-n>", ":FloatermNew nnn<CR>", { silent = true })
+      local oil = require("oil")
+      oil.setup({
+        float = {
+          max_width = 100,
+          max_height = 50,
+        },
+      })
+      vim.keymap.set("n", "<C-n>", oil.toggle_float, { desc = "Open parent directory" })
     end
   },
-  "mhinz/vim-startify",
+  {
+    "goolord/alpha-nvim",
+    dependencies = {
+      'nvim-lua/plenary.nvim',
+    },
+    config = function ()
+      local alpha = require("alpha")
+      local theta = require("alpha.themes.theta")
+      local dashboard = require("alpha.themes.dashboard")
+      theta.buttons.val = {
+        { type = "text", val = "Quick links", opts = { hl = "SpecialComment", position = "center" } },
+        { type = "padding", val = 1 },
+        dashboard.button("e", "  New file", "<cmd>ene<CR>"),
+        dashboard.button("c", "  Configuration", "<cmd>cd ~/.config/nvim/ <CR>"),
+        dashboard.button("u", "  Update plugins", "<cmd>Lazy sync<CR>"),
+        dashboard.button("q", "󰅚  Quit", "<cmd>qa<CR>"),
+      }
+      alpha.setup(theta.config)
+    end
+  },
   "nvim-tree/nvim-web-devicons",
 }
