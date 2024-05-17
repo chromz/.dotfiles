@@ -41,6 +41,14 @@ return {
       local alpha = require("alpha")
       local theta = require("alpha.themes.theta")
       local dashboard = require("alpha.themes.dashboard")
+      theta.header.val = {
+        [[███╗   ██╗██╗   ██╗██╗███╗   ███╗]],
+        [[████╗  ██║██║   ██║██║████╗ ████║]],
+        [[██╔██╗ ██║██║   ██║██║██╔████╔██║]],
+        [[██║╚██╗██║╚██╗ ██╔╝██║██║╚██╔╝██║]],
+        [[██║ ╚████║ ╚████╔╝ ██║██║ ╚═╝ ██║]],
+        [[╚═╝  ╚═══╝  ╚═══╝  ╚═╝╚═╝     ╚═╝]],
+      }
       theta.buttons.val = {
         { type = "text", val = "Quick links", opts = { hl = "SpecialComment", position = "center" } },
         { type = "padding", val = 1 },
