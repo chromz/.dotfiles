@@ -13,6 +13,8 @@ return {
       vim.opt.background = "dark"
       vim.cmd([[
         hi Comment gui=italic cterm=italic
+        hi Normal guibg=NONE ctermbg=NONE
+        hi NormalFloat guibg=NONE ctermbg=NONE
         hi ExtraWhitespace ctermbg=red guibg='#ffcf9e'
         match ExtraWhitespace /\s\+\%#\@<!$/
       ]])
@@ -27,6 +29,9 @@ return {
         float = {
           max_width = 100,
           max_height = 50,
+        },
+        view_options = {
+          show_hidden = true,
         },
       })
       vim.keymap.set("n", "<C-n>", oil.toggle_float, { desc = "Open parent directory" })
