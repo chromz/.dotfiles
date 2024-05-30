@@ -100,12 +100,13 @@ return {
     },
     config = function()
       local cmp = require'cmp'
+      local luasnip = require('luasnip')
 
       cmp.setup({
           preselect = cmp.PreselectMode.None,
           snippet = {
             expand = function(args)
-              require('luasnip').lsp_expand(args.body)
+              luasnip.lsp_expand(args.body)
             end,
           },
           mapping = cmp.mapping.preset.insert({
@@ -115,6 +116,38 @@ return {
               ['<C-y>'] = cmp.mapping(cmp.mapping.confirm({ select = true }), {'i', 'c'}),
               ['<C-p>'] = cmp.mapping(cmp.mapping.select_prev_item(), { 'i', 'c' }),
               ['<C-n>'] = cmp.mapping(cmp.mapping.select_next_item(), { 'i', 'c' }),
+              ['<Tab>'] = cmp.mapping(function(fallback)
+                if cmp.visible() then
+                  if luasnip.expandable() then
+                    luasnip.expand()
+                  else
+                    cmp.confirm({
+                        select = true,
+                      })
+                  end
+                else
+                  fallback()
+                end
+              end),
+              ["<C-b>"] = cmp.mapping(function(fallback)
+                if cmp.visible() then
+                  cmp.select_next_item()
+                elseif luasnip.locally_jumpable(1) then
+                  luasnip.jump(1)
+                else
+                  fallback()
+                end
+              end, { "i", "s" }),
+
+            ["<C-z>"] = cmp.mapping(function(fallback)
+              if cmp.visible() then
+                cmp.select_prev_item()
+              elseif luasnip.locally_jumpable(-1) then
+                luasnip.jump(-1)
+              else
+                fallback()
+              end
+            end, { "i", "s" }),
             }),
           sources = cmp.config.sources({
               { name = 'nvim_lsp' },
@@ -137,8 +170,6 @@ return {
               { name = 'cmdline' }
             })
         })
-
-      local capabilities = require('cmp_nvim_lsp').default_capabilities()
     end
   },
 }

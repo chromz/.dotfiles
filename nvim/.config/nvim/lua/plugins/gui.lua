@@ -8,8 +8,7 @@ return {
           options = {
             transparent = true,
           },
-      })
-      vim.cmd.colorscheme("terafox")
+      }) vim.cmd.colorscheme("terafox")
       vim.opt.background = "dark"
       vim.cmd([[
         hi Comment gui=italic cterm=italic
