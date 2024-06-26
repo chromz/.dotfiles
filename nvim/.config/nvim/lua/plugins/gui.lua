@@ -7,6 +7,9 @@ return {
       require("nightfox").setup({
           options = {
             transparent = true,
+            inverse = {
+              visual = true,
+            },
           },
       }) vim.cmd.colorscheme("terafox")
       vim.opt.background = "dark"
