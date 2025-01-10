@@ -64,7 +64,7 @@ return {
       lsp.gopls.setup{
         cmd = {"gopls", "serve"},
       }
-      lsp.tsserver.setup{}
+      lsp.ts_ls.setup{}
       lsp.pyright.setup{}
       lsp.rust_analyzer.setup{}
 
