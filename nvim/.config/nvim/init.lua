@@ -11,6 +11,8 @@ end
 -- vim.opt.lcs = "nbsp:␣,trail:·,tab:\¦\ ,space:·"
 vim.opt.hidden = true
 
+vim.api.nvim_create_user_command('Yalo', ':0r ~/.config/nvim/yalo.txt', {})
+
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
   vim.fn.system({

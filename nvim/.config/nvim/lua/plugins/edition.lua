@@ -35,6 +35,7 @@ return {
           "lua_ls",
           "rust_analyzer",
           "gopls",
+          "ts_ls",
         }
       })
 
@@ -64,9 +65,10 @@ return {
       lsp.gopls.setup{
         cmd = {"gopls", "serve"},
       }
-      lsp.tsserver.setup{}
+      lsp.ts_ls.setup{}
       lsp.pyright.setup{}
       lsp.rust_analyzer.setup{}
+      lsp.clangd.setup{}
 
       local bufopts = { noremap = true, silent = true }
       vim.keymap.set("n", "gD", vim.lsp.buf.declaration, bufopts)
@@ -81,6 +83,16 @@ return {
       vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, bufopts)
       vim.keymap.set("n", "]d", vim.diagnostic.goto_next, bufopts)
 
+    end
+  },
+  {
+    "github/copilot.vim",
+    config = function()
+      vim.keymap.set('i', '<C-J>', 'copilot#Accept("\\<CR>")', {
+          expr = true,
+          replace_keycodes = false
+        })
+      vim.g.copilot_no_tab_map = true
     end
   },
   "sheerun/vim-polyglot",

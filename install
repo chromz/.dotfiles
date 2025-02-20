@@ -11,3 +11,4 @@ stow sxhkd
 stow tmux
 stow polybar
 stow xinitrc
+stow wezterm

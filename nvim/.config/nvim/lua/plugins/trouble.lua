@@ -8,11 +8,11 @@ return {
         trouble.toggle("diagnostics")
       end)
 
-      vim.keymap.set("n", "[t", function()
+      vim.keymap.set("n", "]t", function()
         trouble.next({skip_groups = true, jump = true});
       end)
 
-      vim.keymap.set("n", "]t", function()
+      vim.keymap.set("n", "[t", function()
         trouble.prev({skip_groups = true, jump = true});
       end)
 
